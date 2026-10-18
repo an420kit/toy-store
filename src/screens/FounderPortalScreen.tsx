@@ -49,7 +49,7 @@ export const FounderPortalScreen: React.FC<FounderPortalProps> = ({ onNavigate, 
   const breakEvenUnits = Math.ceil((80000 + 45000) / (retailPrice - (rawTimberBase + cncMachiningBase + handFinishing + hardwareJoinery + packagingBox + freightD2C)));
 
   const handleExportModel = () => {
-    onShowToast('Financial Model Exported', 'LUMEN_Batch01_UnitEconomics_Q3.csv downloaded to your device.');
+    onShowToast('Financial Model Exported', 'WOODKIND_Pilot_UnitEconomics.csv downloaded to your device.');
   };
 
   return (
@@ -62,7 +62,7 @@ export const FounderPortalScreen: React.FC<FounderPortalProps> = ({ onNavigate, 
               Confidential
             </span>
             <h1 className="text-sm md:text-base font-mono tracking-wider text-[#d0c5b4]">
-              FOUNDER PORTAL • PILOT ECONOMICS MODEL (BATCH #01)
+              WOODKIND FOUNDER WORKSPACE • PLANNING SCENARIO
             </h1>
           </div>
           <div className="flex flex-wrap items-center gap-2.5 text-xs font-mono">
@@ -104,7 +104,7 @@ export const FounderPortalScreen: React.FC<FounderPortalProps> = ({ onNavigate, 
             <p className="text-[11px] font-mono tracking-wider uppercase text-[#7a746e]">Target Batch Run</p>
             <p className="text-2xl font-serif font-bold text-[#171411] mt-1">{batchSize} Units</p>
             <span className="text-[10px] text-[#55866b] font-medium flex items-center gap-1 mt-1">
-              ✓ Pilot tooling locked
+              Planning assumption · editable
             </span>
           </div>
 
@@ -144,9 +144,9 @@ export const FounderPortalScreen: React.FC<FounderPortalProps> = ({ onNavigate, 
 
           <div className="bg-[#ffffff] p-4 rounded-xl border border-[#e4e2df] shadow-xs">
             <p className="text-[11px] font-mono tracking-wider uppercase text-[#7a746e]">Pre-Order Validation</p>
-            <p className="text-2xl font-serif font-bold text-[#171411] mt-1">68% Pledged</p>
+            <p className="text-2xl font-serif font-bold text-[#171411] mt-1">Not connected</p>
             <div className="w-full bg-[#eeeae3] rounded-full h-1.5 mt-2">
-              <div className="bg-[#55866b] h-1.5 rounded-full" style={{ width: '68%' }}></div>
+              <div className="bg-[#55866b] h-1.5 rounded-full" style={{ width: '0%' }}></div>
             </div>
           </div>
         </div>
@@ -226,7 +226,7 @@ export const FounderPortalScreen: React.FC<FounderPortalProps> = ({ onNavigate, 
                   onChange={(e) => setTimberGrade(e.target.value as any)}
                   className="w-full text-xs p-2.5 rounded-lg border border-[#e4e2df] bg-[#ffffff] text-[#171411] font-sans focus:outline-none focus:ring-1 focus:ring-[#171411]"
                 >
-                  <option value="premium-steamed">Bavarian Steamed Beech (FSC®)</option>
+                  <option value="premium-steamed">Premium steamed beech (quote pending)</option>
                   <option value="a-grade">Nordic White Birch (A-Grade)</option>
                 </select>
               </div>
@@ -264,19 +264,19 @@ export const FounderPortalScreen: React.FC<FounderPortalProps> = ({ onNavigate, 
               </div>
               <div className="divide-y divide-[#eeeae3] text-xs font-sans">
                 <div className="px-4 py-2 flex justify-between">
-                  <span className="text-[#4a453e]">FSC® Beech Timber Raw Blanks & Kiln Drying</span>
+                  <span className="text-[#4a453e]">Solid-wood raw blanks & kiln drying (quote needed)</span>
                   <span className="font-mono text-[#171411]">{formatINR(Math.round(rawTimberBase))}</span>
                 </div>
                 <div className="px-4 py-2 flex justify-between">
-                  <span className="text-[#4a453e]">5-Axis CNC Precision Lathe & Routing Time</span>
+                  <span className="text-[#4a453e]">CNC machining estimate (process quote needed)</span>
                   <span className="font-mono text-[#171411]">{formatINR(Math.round(cncMachiningBase))}</span>
                 </div>
                 <div className="px-4 py-2 flex justify-between">
-                  <span className="text-[#4a453e]">Triple Hand-Sanding & Non-Toxic Organic Finish</span>
+                  <span className="text-[#4a453e]">Sanding and finish estimate (material unverified)</span>
                   <span className="font-mono text-[#171411]">{formatINR(Math.round(handFinishing))}</span>
                 </div>
                 <div className="px-4 py-2 flex justify-between">
-                  <span className="text-[#4a453e]">Solid Brass Fasteners & Silent Bearing Rings</span>
+                  <span className="text-[#4a453e]">Hardware and wheel assembly estimate</span>
                   <span className="font-mono text-[#171411]">{formatINR(hardwareJoinery)}</span>
                 </div>
                 <div className="px-4 py-2 flex justify-between">
@@ -284,7 +284,7 @@ export const FounderPortalScreen: React.FC<FounderPortalProps> = ({ onNavigate, 
                   <span className="font-mono text-[#171411]">{formatINR(packagingBox)}</span>
                 </div>
                 <div className="px-4 py-2 flex justify-between text-[#7a746e]">
-                  <span>EN71 European Lab Certification (Amortized over batch)</span>
+                  <span>Independent toy-safety testing budget (estimate)</span>
                   <span className="font-mono">{formatINR(en71CertAmortization)}</span>
                 </div>
                 <div className="px-4 py-2 flex justify-between text-[#7a746e]">
@@ -292,7 +292,7 @@ export const FounderPortalScreen: React.FC<FounderPortalProps> = ({ onNavigate, 
                   <span className="font-mono">{formatINR(toolingAmortization)}</span>
                 </div>
                 <div className="px-4 py-2 flex justify-between">
-                  <span className="text-[#4a453e]">Insured Domestic Doorstep Courier (Avg India Tier-1)</span>
+                  <span className="text-[#4a453e]">Domestic shipping estimate (verify per pin code)</span>
                   <span className="font-mono text-[#171411]">{formatINR(freightD2C)}</span>
                 </div>
                 <div className="px-4 py-3 bg-[#faf8f4] flex justify-between font-bold text-sm border-t border-[#e4e2df]">
@@ -375,21 +375,21 @@ export const FounderPortalScreen: React.FC<FounderPortalProps> = ({ onNavigate, 
               <div className="mt-4 space-y-3.5">
                 <div className="flex items-start gap-3">
                   <div className="w-5 h-5 rounded-full bg-[#55866b] text-white flex items-center justify-center text-xs shrink-0 mt-0.5">
-                    ✓
+                    1
                   </div>
                   <div className="text-xs">
-                    <p className="font-semibold text-[#171411]">M1: CAD Geometry & CNC G-Code Validation</p>
-                    <p className="text-[#7a746e] mt-0.5">Physical beechwood prototypes milled & drop-tested to 50kg load.</p>
+                    <p className="font-semibold text-[#171411]">M1: CAD geometry and supplier design review</p>
+                    <p className="text-[#7a746e] mt-0.5">Prototype and structural testing have not yet been completed; no load rating is approved.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
                   <div className="w-5 h-5 rounded-full bg-[#55866b] text-white flex items-center justify-center text-xs shrink-0 mt-0.5">
-                    ✓
+                    1
                   </div>
                   <div className="text-xs">
-                    <p className="font-semibold text-[#171411]">M2: EN71-1/2/3 European Child Safety & BIS Protocol</p>
-                    <p className="text-[#7a746e] mt-0.5">Heavy metal saliva migration and zero pinch-point clearance certified.</p>
+                    <p className="font-semibold text-[#171411]">M2: Applicable safety requirements and test plan</p>
+                    <p className="text-[#7a746e] mt-0.5">Testing and certification are not complete; confirm applicable requirements before sale.</p>
                   </div>
                 </div>
 
@@ -398,8 +398,8 @@ export const FounderPortalScreen: React.FC<FounderPortalProps> = ({ onNavigate, 
                     3
                   </div>
                   <div className="text-xs">
-                    <p className="font-semibold text-[#171411]">M3: Founder Circle Early Backers (In Progress)</p>
-                    <p className="text-[#7a746e] mt-0.5">68 of 100 debut batch units claimed. Target close: October 25.</p>
+                    <p className="font-semibold text-[#171411]">M3: Validate buyer interest</p>
+                    <p className="text-[#7a746e] mt-0.5">No verified pre-order or waitlist data is connected to this planning tool.</p>
                   </div>
                 </div>
 
@@ -408,8 +408,8 @@ export const FounderPortalScreen: React.FC<FounderPortalProps> = ({ onNavigate, 
                     4
                   </div>
                   <div className="text-xs">
-                    <p className="font-semibold text-[#171411]">M4: Mass Production & Hand Linseed Finishing</p>
-                    <p className="text-[#7a746e] mt-0.5">14 days production lead time at our Bavarian partner mill.</p>
+                    <p className="font-semibold text-[#171411]">M4: Production planning and finish selection</p>
+                    <p className="text-[#7a746e] mt-0.5">Supplier, manufacturing lead time and finish are not yet confirmed.</p>
                   </div>
                 </div>
 
@@ -418,8 +418,8 @@ export const FounderPortalScreen: React.FC<FounderPortalProps> = ({ onNavigate, 
                     5
                   </div>
                   <div className="text-xs">
-                    <p className="font-semibold text-[#171411]">M5: Climate-Neutral D2C Heirloom Delivery</p>
-                    <p className="text-[#7a746e] mt-0.5">Individual wax-stamped certificates & numbered chassis plates.</p>
+                    <p className="font-semibold text-[#171411]">M5: Release, packaging and delivery readiness</p>
+                    <p className="text-[#7a746e] mt-0.5">Final packaging, labels, inspection and fulfilment process remain to be specified.</p>
                   </div>
                 </div>
               </div>
@@ -605,7 +605,7 @@ export const FounderPortalScreen: React.FC<FounderPortalProps> = ({ onNavigate, 
             </div>
 
             <div className="mt-8 pt-4 border-t border-[#eeeae3] flex justify-between items-center">
-              <span className="text-xs font-mono text-[#7a746e]">Status: Production Ready (G-code signed off)</span>
+              <span className="text-xs font-mono text-[#7a746e]">Status: Draft BOM · engineering and supplier review pending</span>
               <button
                 onClick={() => {
                   setShowBomModal(false);
@@ -613,7 +613,7 @@ export const FounderPortalScreen: React.FC<FounderPortalProps> = ({ onNavigate, 
                 }}
                 className="px-4 py-2 bg-[#171411] text-white rounded-lg text-xs font-medium hover:bg-[#322f2b]"
               >
-                Download Technical Spec (PDF)
+                Print / Save BOM
               </button>
             </div>
           </div>
