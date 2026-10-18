@@ -55,8 +55,8 @@ export const ProductDetailScreen: React.FC<ProductDetailScreenProps> = ({
         <div className="mx-auto grid max-w-[1450px] gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
           <div>
             <div className="relative aspect-[4/4.1] overflow-hidden bg-[#eee6da] sm:aspect-[1.12/1]">
-              <img key={activeImage} src={activeImage} alt={product.name} className="h-full w-full object-cover" onError={(event) => { event.currentTarget.style.display = 'none'; }} />
-              <div className="absolute inset-0 -z-0 flex items-center justify-center bg-[radial-gradient(circle_at_50%_35%,#f8f3eb,#e5d4bd)]"><div className="text-center"><div className="font-serif text-5xl italic text-[#9a7955]">W.</div><div className="mt-2 text-[9px] uppercase tracking-[0.22em] text-[#927c62]">Concept image</div></div></div>
+              <img key={activeImage} src={activeImage} alt={product.name} className="relative z-10 h-full w-full object-cover" onError={(event) => { event.currentTarget.style.display = 'none'; }} />
+              <div className="absolute inset-0 z-0 flex items-center justify-center bg-[radial-gradient(circle_at_50%_35%,#f8f3eb,#e5d4bd)]"><div className="text-center"><div className="font-serif text-5xl italic text-[#9a7955]">W.</div><div className="mt-2 text-[9px] uppercase tracking-[0.22em] text-[#927c62]">Concept image</div></div></div>
               <div className="absolute left-4 top-4 rounded-full border border-white/70 bg-[#fbf8f1]/90 px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[0.15em] text-[#62533f] backdrop-blur">{product.badge || 'Pilot collection'}</div>
               {images.length > 1 && (
                 <div className="absolute bottom-4 right-4 flex gap-2">
