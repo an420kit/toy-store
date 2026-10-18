@@ -154,8 +154,8 @@ export const CollectionsScreen: React.FC<CollectionsScreenProps> = ({
                     <div className="relative">
                       <button type="button" onClick={() => onQuickView(product)} className="block w-full text-left" aria-label={`Quick view ${product.name}`}>
                         <div className="relative aspect-[4/4.3] overflow-hidden bg-[#eee6da]">
-                          <img src={product.image} alt={product.name} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" onError={(event) => { event.currentTarget.style.display = 'none'; }} />
-                          <div className="absolute inset-0 -z-0 flex items-center justify-center bg-[radial-gradient(circle_at_50%_35%,#f8f3eb,#e5d4bd)]">
+                          <img src={product.image} alt={product.name} loading="lazy" className="relative z-10 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" onError={(event) => { event.currentTarget.style.display = 'none'; }} />
+                          <div className="absolute inset-0 z-0 flex items-center justify-center bg-[radial-gradient(circle_at_50%_35%,#f8f3eb,#e5d4bd)]">
                             <span className="font-serif text-3xl italic text-[#8b7053]">W.</span>
                           </div>
                         </div>
