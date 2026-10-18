@@ -43,7 +43,7 @@ export const AiGiftAdvisorModal: React.FC<AiGiftAdvisorModalProps> = ({
   >([
     {
       role: 'assistant',
-      text: 'Greetings. I am LUMEN’s Pediatric & Atelier Advisor. Ask me anything about child developmental milestones, European beechwood care, or selecting the ideal heirloom piece for your nursery.',
+      text: 'Hi, I’m the WOODKIND Play Guide. I can help compare pilot products, explain intended play use, and flag details that still need confirmation. I can’t assess an individual child’s development or certify product safety.',
       time: 'Just now',
     },
   ]);
@@ -63,7 +63,7 @@ export const AiGiftAdvisorModal: React.FC<AiGiftAdvisorModalProps> = ({
     if (age === '0-6m') {
       match = PRODUCTS.find((p) => p.id === 'sensory-stacking-rings') || PRODUCTS[4];
       rationale =
-        'Infants under 6 months thrive on tactile feedback and weight differentiation. Turned organic beechwood provides non-toxic, saliva-safe sensory nourishment free of overstimulating plastic noise.';
+        'For infant use, confirm age guidance, piece dimensions and small-part risks for the specific final product. WOODKIND’s pilot catalogue does not yet publish verified age ratings.';
     } else if (age === '6-12m') {
       match = PRODUCTS.find((p) => p.id === 'stacking-stones-sorter') || PRODUCTS[3];
       rationale =
@@ -131,10 +131,10 @@ export const AiGiftAdvisorModal: React.FC<AiGiftAdvisorModalProps> = ({
 
       if (q.includes('finish') || q.includes('saliva') || q.includes('mouth') || q.includes('safe') || q.includes('chemical')) {
         reply =
-          'All LUMEN heirloom works undergo double-immersion in cold-pressed Scandinavian linseed oil and organic food-grade beeswax (DIN 53160 & EN 71-3 saliva and sweat resistance certified). They are 100% free of heavy metals, phthalates, volatile organic solvents, and synthetic polyurethanes.';
+          'WOODKIND’s pilot products are still at concept and supplier-review stages. Final materials, coatings and applicable safety test results have not been verified across the range; check the specific product status before choosing.';
       } else if (q.includes('humid') || q.includes('care') || q.includes('clean') || q.includes('maintain') || q.includes('wipe')) {
         reply =
-          'European Beechwood is a breathing natural material. Wipe gently with a soft cotton cloth dampened with tepid water and mild organic soap. Never submerge in water. Once every 6 to 12 months, apply a pea-sized dab of cold-pressed coconut or linseed oil to revitalize the golden timber luster.';
+          'Follow the care instructions supplied with the final product. Until its material and coating are confirmed, avoid applying oils or cleaners that the manufacturer has not approved.';
       } else if (q.includes('plastic') || q.includes('compare') || q.includes('wood')) {
         reply =
           'Unlike plastic toys which produce sensory fatigue from flashing diodes and synthetic odors, natural beechwood possesses natural antibacterial properties, comforting tactile warmth, and an intentional weight that anchors a child’s concentration.';
@@ -173,10 +173,10 @@ export const AiGiftAdvisorModal: React.FC<AiGiftAdvisorModalProps> = ({
             <div>
               <div className="flex items-center gap-2">
                 <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#171411]">
-                  LUMEN AI Concierge
+                  WOODKIND AI Concierge
                 </h3>
                 <span className="bg-[#7d562d]/10 text-[#7d562d] text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider border border-[#7d562d]/20">
-                  Pediatric &amp; Atelier AI
+                  Play &amp; Product Guide
                 </span>
               </div>
               <p className="text-xs text-[#7e756f]">
@@ -329,7 +329,7 @@ export const AiGiftAdvisorModal: React.FC<AiGiftAdvisorModalProps> = ({
                         {recommendedProduct.categoryLabel} • {recommendedProduct.timber}
                       </p>
                       <div className="p-3 bg-[#fbf9f6] rounded-xl border border-[#e4e2df] text-xs text-[#4d4540] leading-relaxed">
-                        <span className="font-bold text-[#171411]">Pediatric Rationale: </span>
+                        <span className="font-bold text-[#171411]">Play idea: </span>
                         {aiRationale}
                       </div>
                       <div className="flex items-center justify-between pt-2">
@@ -372,7 +372,7 @@ export const AiGiftAdvisorModal: React.FC<AiGiftAdvisorModalProps> = ({
             <div className="space-y-4 animate-in fade-in duration-200">
               <div className="p-4 bg-[#f5f3f0] rounded-xl border border-[#e4e2df] space-y-3">
                 <p className="text-xs text-[#4d4540] leading-relaxed">
-                  LUMEN includes complimentary laser monogramming on European beechwood dowels. Enter
+                  Personalisation is a possible future feature; it is not confirmed for the pilot range. Enter
                   the child’s details to generate an evocative letterpress dedication card for their
                   unboxing dossier.
                 </p>
