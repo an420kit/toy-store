@@ -479,7 +479,7 @@ export const MarketingKitScreen: React.FC<MarketingKitProps> = ({ onNavigate, on
                 <h3 className="font-serif text-2xl font-bold text-[#171411] mt-1">
                   WOODKIND Shares Its Pilot Range of Wooden Play Concepts
                 </h3>
-                <p className="text-xs text-[#7a746e] font-mono mt-0.5">NEW DELHI / STOCKHOLM — Q3 2024</p>
+                <p className="text-xs text-[#7a746e] font-mono mt-0.5">PILOT CONTENT DRAFT · DATE TO BE CONFIRMED</p>
               </div>
               <button
                 onClick={() =>
