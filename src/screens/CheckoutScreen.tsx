@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CartItem, Product, ScreenType } from '../types.ts';
 import { formatINR, PRODUCTS } from '../data/products.ts';
+import { OrderDocumentsModal } from '../components/OrderDocumentsModal.tsx';
 
 interface CheckoutScreenProps {
   cartItems: CartItem[];
@@ -56,8 +57,28 @@ export const CheckoutScreen: React.FC<CheckoutScreenProps> = ({
 
   const companionProduct = PRODUCTS.find((p) => p.id === 'organic-stacking-stones') || PRODUCTS[2];
 
-  // Order confirmation state
+  // Order confirmation & document state
   const [completedOrder, setCompletedOrder] = useState<any | null>(null);
+  const [showUpiQrModal, setShowUpiQrModal] = useState<boolean>(false);
+  const [isDocModalOpen, setIsDocModalOpen] = useState<boolean>(false);
+  const [upiTimer, setUpiTimer] = useState<number>(300);
+  const [copiedUpi, setCopiedUpi] = useState<boolean>(false);
+
+  useEffect(() => {
+    let interval: any;
+    if (showUpiQrModal && upiTimer > 0) {
+      interval = setInterval(() => {
+        setUpiTimer((prev) => (prev > 0 ? prev - 1 : 0));
+      }, 1000);
+    }
+    return () => clearInterval(interval);
+  }, [showUpiQrModal, upiTimer]);
+
+  const formatTimer = (seconds: number) => {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+  };
 
   const handleApplyVoucher = () => {
     if (voucherCode.trim().toLowerCase() === 'heirloom' || voucherCode.trim().length > 3) {
@@ -65,25 +86,56 @@ export const CheckoutScreen: React.FC<CheckoutScreenProps> = ({
     }
   };
 
-  const handleConfirmOrder = () => {
+  const handleFinalizeOrder = (methodOverride?: string) => {
+    const method = methodOverride || paymentMethod;
     const orderData = {
       orderId: `LMN-${Math.floor(10000 + Math.random() * 90000)}`,
       total,
+      subtotal,
       fullName,
+      phone,
       email,
       address,
       city,
+      state,
+      pinCode,
+      items: cartItems.map((c) => ({
+        name: c.product.name,
+        sku: c.product.sku,
+        price: c.product.price,
+        quantity: c.quantity,
+        selectedColorway: c.selectedColorway,
+      })),
       cartItems: [...cartItems],
       monogramText: engravingEnabled ? monogramText : undefined,
       leatherTagEnabled,
+      paymentMethod: method,
       date: new Date().toLocaleDateString('en-IN', {
         month: 'short',
         day: 'numeric',
         year: 'numeric',
       }),
     };
+    setShowUpiQrModal(false);
     setCompletedOrder(orderData);
     onOrderSuccess(orderData);
+  };
+
+  const handleInitiatePayment = (chosenMethod?: 'card' | 'upi' | 'netbanking' | 'cod') => {
+    const selected = chosenMethod || paymentMethod;
+    setPaymentMethod(selected);
+    if (selected === 'upi') {
+      setUpiTimer(300);
+      setShowUpiQrModal(true);
+    } else {
+      handleFinalizeOrder(selected);
+    }
+  };
+
+  const handleCopyUpiId = () => {
+    navigator.clipboard?.writeText('lumen.crafts@okhdfcbank');
+    setCopiedUpi(true);
+    setTimeout(() => setCopiedUpi(false), 2000);
   };
 
   return (
@@ -760,7 +812,7 @@ export const CheckoutScreen: React.FC<CheckoutScreenProps> = ({
                 {/* Instant Express Checkout Button */}
                 <div className="space-y-2 pt-1">
                   <button
-                    onClick={handleConfirmOrder}
+                    onClick={() => handleInitiatePayment()}
                     disabled={cartItems.length === 0}
                     className="w-full bg-[#171411] hover:bg-[#7d562d] disabled:opacity-50 text-white py-4 px-6 rounded-xl text-sm font-bold tracking-wide transition-all shadow-lg flex items-center justify-center gap-2 group cursor-pointer"
                   >
@@ -786,20 +838,19 @@ export const CheckoutScreen: React.FC<CheckoutScreenProps> = ({
                   {/* Fast UPI & Wallet Row */}
                   <div className="grid grid-cols-4 gap-2">
                     {[
-                      { name: 'GPay', sub: 'UPI One-Tap' },
-                      { name: 'PhonePe', sub: 'Fast QR' },
-                      { name: 'CRED', sub: 'Members' },
-                      { name: 'ApplePay', sub: 'Biometric' },
+                      { name: 'GPay', sub: 'Instant QR' },
+                      { name: 'PhonePe', sub: 'Scan & Pay' },
+                      { name: 'Paytm', sub: 'UPI Direct' },
+                      { name: 'CRED', sub: 'UPI Members' },
                     ].map((g) => (
                       <div
                         key={g.name}
-                        onClick={() => {
-                          setPaymentMethod('upi');
-                          handleConfirmOrder();
-                        }}
-                        className="bg-[#f5f3f0] p-2 rounded-xl flex flex-col items-center justify-center hover:bg-[#eae8e5] cursor-pointer transition-colors text-center border border-[#e4e2df]"
+                        onClick={() => handleInitiatePayment('upi')}
+                        className="bg-[#f5f3f0] p-2 rounded-xl flex flex-col items-center justify-center hover:bg-[#eae8e5] cursor-pointer transition-colors text-center border border-[#e4e2df] group"
                       >
-                        <span className="text-xs font-bold text-[#171411]">{g.name}</span>
+                        <span className="text-xs font-bold text-[#171411] group-hover:text-[#7d562d]">
+                          {g.name}
+                        </span>
                         <span className="text-[9px] text-[#7e756f]">{g.sub}</span>
                       </div>
                     ))}
@@ -807,11 +858,37 @@ export const CheckoutScreen: React.FC<CheckoutScreenProps> = ({
 
                   {/* Payment Types Radio List */}
                   <div className="space-y-2 pt-1">
+                    {/* UPI Radio Option */}
+                    <label
+                      onClick={() => setPaymentMethod('upi')}
+                      className={`flex items-center justify-between p-3 rounded-xl cursor-pointer transition-all border ${
+                        paymentMethod === 'upi'
+                          ? 'bg-[#efeeeb] border-[#171411] shadow-sm'
+                          : 'bg-[#f5f3f0] border-[#e4e2df]'
+                      }`}
+                    >
+                      <div className="flex items-center gap-2.5">
+                        <input
+                          type="radio"
+                          name="payment_choice"
+                          checked={paymentMethod === 'upi'}
+                          onChange={() => setPaymentMethod('upi')}
+                          className="w-4 h-4 accent-[#171411]"
+                        />
+                        <span className="text-xs font-bold text-[#171411]">
+                          UPI (Google Pay, PhonePe, Paytm, BHIM QR)
+                        </span>
+                      </div>
+                      <span className="text-[10px] bg-[#10b981]/15 text-[#059669] px-2 py-0.5 rounded font-bold">
+                        ⚡ Instant
+                      </span>
+                    </label>
+
                     <label
                       onClick={() => setPaymentMethod('card')}
                       className={`flex items-center justify-between p-3 rounded-xl cursor-pointer transition-all border ${
                         paymentMethod === 'card'
-                          ? 'bg-[#efeeeb] border-[#171411]'
+                          ? 'bg-[#efeeeb] border-[#171411] shadow-sm'
                           : 'bg-[#f5f3f0] border-[#e4e2df]'
                       }`}
                     >
@@ -834,7 +911,7 @@ export const CheckoutScreen: React.FC<CheckoutScreenProps> = ({
                       onClick={() => setPaymentMethod('netbanking')}
                       className={`flex items-center justify-between p-3 rounded-xl cursor-pointer transition-all border ${
                         paymentMethod === 'netbanking'
-                          ? 'bg-[#efeeeb] border-[#171411]'
+                          ? 'bg-[#efeeeb] border-[#171411] shadow-sm'
                           : 'bg-[#f5f3f0] border-[#e4e2df]'
                       }`}
                     >
@@ -859,7 +936,7 @@ export const CheckoutScreen: React.FC<CheckoutScreenProps> = ({
                       onClick={() => setPaymentMethod('cod')}
                       className={`flex items-center justify-between p-3 rounded-xl cursor-pointer transition-all border ${
                         paymentMethod === 'cod'
-                          ? 'bg-[#efeeeb] border-[#171411]'
+                          ? 'bg-[#efeeeb] border-[#171411] shadow-sm'
                           : 'bg-[#f5f3f0] border-[#e4e2df]'
                       }`}
                     >
@@ -1064,27 +1141,132 @@ export const CheckoutScreen: React.FC<CheckoutScreenProps> = ({
             </div>
 
             {/* Actions */}
-            <div className="mt-6 flex flex-col sm:flex-row gap-3">
+            <div className="mt-6 flex flex-col gap-3">
               <button
-                onClick={() => window.print()}
-                className="flex-1 py-3 rounded-xl border border-[#cfc4bd] hover:bg-[#eae8e5] text-[#171411] text-xs font-mono font-medium transition-colors flex items-center justify-center gap-2"
+                onClick={() => setIsDocModalOpen(true)}
+                className="w-full py-3.5 rounded-xl bg-[#7d562d] hover:bg-[#171411] text-white text-xs font-mono font-bold tracking-wider uppercase transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer"
               >
-                <span className="material-symbols-outlined text-[16px]">print</span>
-                <span>Print Archival Receipt</span>
+                <span className="material-symbols-outlined text-[18px]">workspace_premium</span>
+                <span>View Tax Invoice &amp; Provenance Certificate</span>
+              </button>
+
+              <div className="flex flex-col sm:flex-row gap-3">
+                <button
+                  onClick={() => window.print()}
+                  className="flex-1 py-3 rounded-xl border border-[#cfc4bd] hover:bg-[#eae8e5] text-[#171411] text-xs font-mono font-medium transition-colors flex items-center justify-center gap-2 cursor-pointer"
+                >
+                  <span className="material-symbols-outlined text-[16px]">print</span>
+                  <span>Print Archival Receipt</span>
+                </button>
+                <button
+                  onClick={() => {
+                    setCompletedOrder(null);
+                    onNavigate('all-collections');
+                  }}
+                  className="flex-1 py-3 rounded-xl bg-[#171411] hover:bg-[#322f2b] text-white text-xs font-mono font-medium transition-colors flex items-center justify-center gap-2 cursor-pointer"
+                >
+                  <span>Continue Exploring Archive →</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* DYNAMIC UPI QR CODE PAYMENT MODAL */}
+      {showUpiQrModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#171411]/80 backdrop-blur-md animate-in fade-in duration-200">
+          <div
+            className="bg-[#fbf9f6] rounded-2xl max-w-md w-full p-6 shadow-2xl relative border border-[#cfc4bd] text-center space-y-4"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setShowUpiQrModal(false)}
+              className="absolute top-4 right-4 p-1.5 text-[#4d4540] hover:text-[#171411] rounded-full hover:bg-[#eae8e5] transition-colors"
+            >
+              <span className="material-symbols-outlined text-[20px]">close</span>
+            </button>
+
+            {/* Header */}
+            <div>
+              <div className="inline-flex items-center gap-1.5 bg-[#10b981]/15 text-[#059669] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2">
+                <span className="w-2 h-2 rounded-full bg-[#10b981] animate-ping"></span>
+                <span>Dynamic UPI Payment Gateway</span>
+              </div>
+              <h3 className="font-serif text-2xl font-bold text-[#171411]">
+                Scan &amp; Pay with Any UPI App
+              </h3>
+              <p className="text-xs text-[#7e756f] mt-1">
+                Google Pay, PhonePe, Paytm, BHIM, or Banking Apps
+              </p>
+            </div>
+
+            {/* QR Code Container */}
+            <div className="bg-white p-4 rounded-2xl border-2 border-[#171411] inline-block shadow-md relative mx-auto">
+              <img
+                src={`https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(
+                  `upi://pay?pa=lumen.crafts@okhdfcbank&pn=LUMEN%20Heirloom%20Toys&am=${total}&cu=INR&tn=LUMEN%20Heirloom%20Order`
+                )}&bgcolor=ffffff&color=171411&margin=1`}
+                alt="Scan UPI QR Code"
+                className="w-48 h-48 object-contain mx-auto"
+              />
+              <div className="mt-2 text-[11px] font-mono font-bold text-[#171411]">
+                Amount: {formatINR(total)}
+              </div>
+            </div>
+
+            {/* Timer and VPA */}
+            <div className="space-y-2">
+              <div className="flex items-center justify-center gap-2 text-xs font-mono text-[#7d562d]">
+                <span className="material-symbols-outlined text-[16px]">schedule</span>
+                <span>QR expires in {formatTimer(upiTimer)}</span>
+              </div>
+
+              {/* VPA Copy Pill */}
+              <div className="flex items-center justify-between p-2.5 bg-[#f5f3f0] rounded-xl border border-[#e4e2df] text-xs">
+                <div className="text-left">
+                  <span className="text-[10px] text-[#7e756f] block uppercase font-bold">
+                    Official VPA
+                  </span>
+                  <span className="font-mono font-bold text-[#171411]">
+                    lumen.crafts@okhdfcbank
+                  </span>
+                </div>
+                <button
+                  onClick={handleCopyUpiId}
+                  className="px-2.5 py-1 bg-white hover:bg-[#eae8e5] text-[#171411] rounded-lg text-xs font-semibold border border-[#cfc4bd] transition-colors cursor-pointer"
+                >
+                  {copiedUpi ? 'Copied ✓' : 'Copy'}
+                </button>
+              </div>
+            </div>
+
+            {/* Simulation & Confirmation Trigger */}
+            <div className="pt-2 space-y-2">
+              <button
+                onClick={() => handleFinalizeOrder('upi')}
+                className="w-full py-3 bg-[#171411] hover:bg-[#7d562d] text-white rounded-xl text-xs font-bold uppercase tracking-wider transition-colors shadow-md flex items-center justify-center gap-2 cursor-pointer"
+              >
+                <span className="material-symbols-outlined text-[18px]">verified</span>
+                <span>Simulate App Approval (Test Payment)</span>
               </button>
               <button
-                onClick={() => {
-                  setCompletedOrder(null);
-                  onNavigate('all-collections');
-                }}
-                className="flex-1 py-3 rounded-xl bg-[#171411] hover:bg-[#322f2b] text-white text-xs font-mono font-medium transition-colors flex items-center justify-center gap-2"
+                onClick={() => setShowUpiQrModal(false)}
+                className="w-full py-2 text-xs text-[#7e756f] hover:text-[#171411] transition-colors cursor-pointer"
               >
-                <span>Continue Exploring Archive →</span>
+                Cancel and Choose Another Gateway
               </button>
             </div>
           </div>
         </div>
       )}
+
+      {/* DOCUMENT VIEWER MODAL (TAX INVOICE & PROVENANCE CERTIFICATE) */}
+      <OrderDocumentsModal
+        isOpen={isDocModalOpen}
+        onClose={() => setIsDocModalOpen(false)}
+        order={completedOrder}
+      />
     </div>
   );
 };

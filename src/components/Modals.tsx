@@ -1062,7 +1062,8 @@ export const WishlistDrawer: React.FC<{
 export const CustomerAccountModal: React.FC<{
   isOpen: boolean;
   onClose: () => void;
-}> = ({ isOpen, onClose }) => {
+  onNavigate?: (screen: any) => void;
+}> = ({ isOpen, onClose, onNavigate }) => {
   if (!isOpen) return null;
 
   return (
@@ -1083,7 +1084,7 @@ export const CustomerAccountModal: React.FC<{
           />
           <div>
             <span className="text-[10px] font-bold uppercase tracking-wider bg-[#ffdcbd] text-[#2c1600] px-2 py-0.5 rounded">
-              Verified Patron
+              Verified Patron &amp; Founder
             </span>
             <h3 className="font-serif text-xl font-bold text-[#171411] mt-1">Ananya Singhania</h3>
             <p className="text-xs text-[#7e756f]">Worli Sea Face, Mumbai • Client #LMN-84920</p>
@@ -1116,6 +1117,30 @@ export const CustomerAccountModal: React.FC<{
                 View Certificate ↗
               </span>
             </div>
+          </div>
+
+          {/* Admin & Founder Mode Shortcut */}
+          <div className="p-4 bg-[#f2ede7] rounded-xl border border-[#e2d9cf] flex items-center justify-between">
+            <div>
+              <p className="font-bold text-[#171411] flex items-center gap-1.5">
+                <span className="material-symbols-outlined text-[16px] text-[#c46927]">admin_panel_settings</span>
+                Executive &amp; Founder Portal
+              </p>
+              <p className="text-[11px] text-[#7e756f] mt-0.5">
+                Unit economics, BOM cost waterfall, production runs &amp; marketing collateral.
+              </p>
+            </div>
+            {onNavigate && (
+              <button
+                onClick={() => {
+                  onClose();
+                  onNavigate('founder-portal');
+                }}
+                className="bg-[#171411] hover:bg-[#c46927] text-white px-3 py-1.5 rounded-lg text-xs font-semibold uppercase tracking-wider transition-colors shrink-0 cursor-pointer ml-3"
+              >
+                Open Admin
+              </button>
+            )}
           </div>
         </div>
 

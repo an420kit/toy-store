@@ -377,10 +377,27 @@ export const PRODUCTS: Product[] = [
   }
 ];
 
+export type CurrencyCode = 'INR' | 'USD' | 'EUR';
+
+export const CURRENCY_RATES: Record<CurrencyCode, { symbol: string; label: string; rate: number }> = {
+  INR: { symbol: '₹', label: 'INR (₹)', rate: 1 },
+  USD: { symbol: '$', label: 'USD ($)', rate: 0.012 },
+  EUR: { symbol: '€', label: 'EUR (€)', rate: 0.011 },
+};
+
 export function getProductById(id: string): Product | undefined {
   return PRODUCTS.find((p) => p.id === id);
 }
 
 export function formatINR(val: number): string {
   return '₹' + Math.round(val).toLocaleString('en-IN');
+}
+
+export function formatPrice(valInINR: number, currency: CurrencyCode = 'INR'): string {
+  const config = CURRENCY_RATES[currency] || CURRENCY_RATES.INR;
+  const converted = valInINR * config.rate;
+  if (currency === 'INR') {
+    return '₹' + Math.round(valInINR).toLocaleString('en-IN');
+  }
+  return `${config.symbol}${Math.round(converted).toLocaleString('en-US')}`;
 }

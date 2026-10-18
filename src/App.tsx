@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ScreenType, Product, CartItem, ToastMessage } from './types.ts';
-import { PRODUCTS } from './data/products.ts';
+import { PRODUCTS, CurrencyCode } from './data/products.ts';
 import { Header } from './components/Header.tsx';
 import { Footer } from './components/Footer.tsx';
 import { HomeScreen } from './screens/HomeScreen.tsx';
@@ -11,6 +11,7 @@ import { FounderPortalScreen } from './screens/FounderPortalScreen.tsx';
 import { MarketingKitScreen } from './screens/MarketingKitScreen.tsx';
 import { GiftRegistryHubScreen } from './screens/GiftRegistryHubScreen.tsx';
 import { BrandPhilosophyScreen } from './screens/BrandPhilosophyScreen.tsx';
+import { AiGiftAdvisorModal } from './components/AiGiftAdvisorModal.tsx';
 import {
   QuickViewModal,
   SearchModal,
@@ -26,28 +27,57 @@ export default function App() {
   const [currentScreen, setCurrentScreen] = useState<ScreenType>('home');
   const [activeProductId, setActiveProductId] = useState<string>('minimal-ride-on');
   const [initialCategory, setInitialCategory] = useState<string | undefined>(undefined);
+  const [currency, setCurrency] = useState<CurrencyCode>('INR');
 
-  // Cart State (Initialized with Debut items for rich interactive checkout)
-  const [cartItems, setCartItems] = useState<CartItem[]>([
-    {
-      product: PRODUCTS[0], // The Minimal Ride-On
-      quantity: 1,
-      selectedColorway: 'Warm Nordic Beech',
-      monogram: 'LEO',
-      includeLeatherTag: true,
-    },
-    {
-      product: PRODUCTS[4], // Sensory Stacking Rings
-      quantity: 1,
-      selectedColorway: 'Natural Beechwood',
-    },
-  ]);
+  // Cart State (Hydrated from localStorage or Default Debut items)
+  const [cartItems, setCartItems] = useState<CartItem[]>(() => {
+    try {
+      const saved = localStorage.getItem('lumen_cart_v1');
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      }
+    } catch {}
+    return [
+      {
+        product: PRODUCTS[0], // The Minimal Ride-On
+        quantity: 1,
+        selectedColorway: 'Warm Nordic Beech',
+        monogram: 'LEO',
+        includeLeatherTag: true,
+      },
+      {
+        product: PRODUCTS[4], // Sensory Stacking Rings
+        quantity: 1,
+        selectedColorway: 'Natural Beechwood',
+      },
+    ];
+  });
 
-  // Wishlist state
-  const [wishlistIds, setWishlistIds] = useState<string[]>([
-    'sculpted-rocking-swan',
-    'geometric-arch-pikler',
-  ]);
+  // Wishlist state (Hydrated from localStorage)
+  const [wishlistIds, setWishlistIds] = useState<string[]>(() => {
+    try {
+      const saved = localStorage.getItem('lumen_wishlist_v1');
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed)) return parsed;
+      }
+    } catch {}
+    return ['sculpted-rocking-swan', 'geometric-arch-pikler'];
+  });
+
+  // Sync state changes to localStorage
+  useEffect(() => {
+    try {
+      localStorage.setItem('lumen_cart_v1', JSON.stringify(cartItems));
+    } catch {}
+  }, [cartItems]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('lumen_wishlist_v1', JSON.stringify(wishlistIds));
+    } catch {}
+  }, [wishlistIds]);
 
   // Modals state
   const [quickViewProduct, setQuickViewProduct] = useState<Product | null>(null);
@@ -58,6 +88,7 @@ export default function App() {
   const [isSpecPdfOpen, setIsSpecPdfOpen] = useState<boolean>(false);
   const [isBOMOpen, setIsBOMOpen] = useState<boolean>(false);
   const [isBespokeOpen, setIsBespokeOpen] = useState<boolean>(false);
+  const [isAiAdvisorOpen, setIsAiAdvisorOpen] = useState<boolean>(false);
   const [modalProductName, setModalProductName] = useState<string>('The Minimal Ride-On');
 
   // Global Toasts
@@ -246,6 +277,9 @@ export default function App() {
         onOpenSearch={() => setIsSearchOpen(true)}
         onOpenWishlist={() => setIsWishlistOpen(true)}
         onOpenAccount={() => setIsAccountOpen(true)}
+        onOpenAiAdvisor={() => setIsAiAdvisorOpen(true)}
+        currency={currency}
+        onCurrencyChange={setCurrency}
       />
 
       {/* Screen Router */}
@@ -395,6 +429,7 @@ export default function App() {
       <CustomerAccountModal
         isOpen={isAccountOpen}
         onClose={() => setIsAccountOpen(false)}
+        onNavigate={handleNavigate}
       />
 
       {/* Bespoke Architectural Consultation Modal */}
@@ -408,6 +443,31 @@ export default function App() {
           );
         }}
       />
+
+      {/* LUMEN AI Milestone & Keepsake Concierge Modal */}
+      <AiGiftAdvisorModal
+        isOpen={isAiAdvisorOpen}
+        onClose={() => setIsAiAdvisorOpen(false)}
+        onAddToCart={(product) => handleAddToCart(product, 1)}
+        onViewProduct={(id) => handleNavigate('product-detail', id)}
+        onApplyEngraving={(text) => {
+          showToast('Engraving Applied', `Dedicated monogram "${text}" registered for your unboxing dossier.`);
+        }}
+      />
+
+      {/* Floating AI Advisor Trigger Pill */}
+      <button
+        onClick={() => setIsAiAdvisorOpen(true)}
+        className="fixed bottom-6 left-6 z-40 bg-[#171411] hover:bg-[#7d562d] text-white px-4 py-2.5 rounded-full shadow-2xl border border-[#ffca98]/40 flex items-center gap-2 group transition-all transform hover:scale-105 cursor-pointer"
+        title="Ask LUMEN AI Toy Advisor"
+      >
+        <span className="material-symbols-outlined text-[#ffca98] text-[20px] animate-pulse">
+          auto_awesome
+        </span>
+        <span className="text-xs font-serif font-bold tracking-wide">
+          ✨ Ask AI Toy Advisor
+        </span>
+      </button>
 
       {/* Toast Notifications Overlay */}
       <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-2 max-w-sm pointer-events-none">

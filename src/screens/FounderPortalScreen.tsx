@@ -65,16 +65,28 @@ export const FounderPortalScreen: React.FC<FounderPortalProps> = ({ onNavigate, 
               FOUNDER PORTAL • PILOT ECONOMICS MODEL (BATCH #01)
             </h1>
           </div>
-          <div className="flex items-center gap-3 text-xs font-mono">
+          <div className="flex flex-wrap items-center gap-2.5 text-xs font-mono">
+            <button
+              onClick={() => onNavigate('home')}
+              className="px-3.5 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white font-sans font-medium transition-colors flex items-center gap-1.5 cursor-pointer"
+            >
+              <span>← Return to Store</span>
+            </button>
+            <button
+              onClick={() => onNavigate('marketing-kit')}
+              className="px-3 py-1.5 rounded-lg border border-[#6b645c] text-[#d0c5b4] hover:bg-[#2b2722] hover:text-white transition-colors cursor-pointer"
+            >
+              Launch Kit →
+            </button>
             <button
               onClick={() => setHideConfidential(!hideConfidential)}
-              className="px-3 py-1.5 rounded border border-[#6b645c] text-[#d0c5b4] hover:bg-[#2b2722] transition-colors"
+              className="px-3 py-1.5 rounded border border-[#6b645c] text-[#d0c5b4] hover:bg-[#2b2722] transition-colors cursor-pointer"
             >
-              {hideConfidential ? '👁 Reveal Sensitive Figures' : '🔒 Presentation Mask Mode'}
+              {hideConfidential ? '👁 Reveal Figures' : '🔒 Mask Mode'}
             </button>
             <button
               onClick={handleExportModel}
-              className="px-3 py-1.5 rounded bg-[#e58a47] text-white hover:bg-[#cc7535] font-sans font-medium transition-colors flex items-center gap-1.5"
+              className="px-3 py-1.5 rounded bg-[#e58a47] text-white hover:bg-[#cc7535] font-sans font-medium transition-colors flex items-center gap-1.5 cursor-pointer"
             >
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />

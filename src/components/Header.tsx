@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ScreenType } from '../types.ts';
+import { CurrencyCode, CURRENCY_RATES } from '../data/products.ts';
 
 interface HeaderProps {
   currentScreen: ScreenType;
@@ -9,6 +10,9 @@ interface HeaderProps {
   onOpenSearch: () => void;
   onOpenWishlist: () => void;
   onOpenAccount: () => void;
+  onOpenAiAdvisor: () => void;
+  currency?: CurrencyCode;
+  onCurrencyChange?: (c: CurrencyCode) => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -19,8 +23,12 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenSearch,
   onOpenWishlist,
   onOpenAccount,
+  onOpenAiAdvisor,
+  currency = 'INR',
+  onCurrencyChange,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [currencyDropdownOpen, setCurrencyDropdownOpen] = useState(false);
 
   const navLinks: { label: string; screen: ScreenType; highlight?: boolean }[] = [
     { label: 'All Collections', screen: 'all-collections' },
@@ -36,16 +44,34 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header className="sticky top-0 w-full z-50 bg-[#fbf9f6]/98 backdrop-blur-xl border-b border-[#e4e2df] shadow-[0_1px_6px_rgba(0,0,0,0.03)]">
       {/* Top Announcement Banner */}
-      <div className="bg-[#171411] text-[#fbf9f6] py-1.5 px-4 text-center text-[11px] tracking-wider uppercase font-medium flex items-center justify-center gap-2 sm:gap-3">
-        <span>Free insured shipping on heirloom orders across India</span>
-        <span className="opacity-30 hidden sm:inline">•</span>
-        <span className="hidden sm:inline">100% Sustainable European Beech Wood</span>
+      <div className="bg-[#171411] text-[#fbf9f6] py-1.5 px-4 text-[11px] tracking-wider uppercase font-medium">
+        <div className="max-w-[1440px] mx-auto flex items-center justify-between gap-3">
+          <div className="flex items-center gap-2 sm:gap-3 overflow-hidden text-ellipsis whitespace-nowrap">
+            <span>Free insured shipping on heirloom orders across India</span>
+            <span className="opacity-30 hidden sm:inline">•</span>
+            <span className="hidden sm:inline">100% Sustainable European Beech Wood</span>
+          </div>
+          <div className="flex items-center gap-3 shrink-0">
+            <button
+              onClick={() => onNavigate('founder-portal')}
+              className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wider transition-all cursor-pointer ${
+                currentScreen === 'founder-portal'
+                  ? 'bg-[#e58a47] text-white shadow-sm'
+                  : 'text-[#e58a47] hover:text-white hover:bg-white/10'
+              }`}
+              title="Founder & Admin Economics Sandbox"
+            >
+              <span className="material-symbols-outlined text-[13px]">admin_panel_settings</span>
+              <span>Admin / Founder Portal</span>
+            </button>
+          </div>
+        </div>
       </div>
 
       {/* Main Brand & Action Bar */}
       <div className="h-16 md:h-20 max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 flex items-center justify-between gap-4">
-        {/* Left Side: Mobile Menu + Currency Badge */}
-        <div className="flex items-center gap-3">
+        {/* Left Side: Mobile Menu + Currency Selector + Search */}
+        <div className="flex items-center gap-2.5">
           {/* Mobile menu toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -57,10 +83,47 @@ export const Header: React.FC<HeaderProps> = ({
             </span>
           </button>
 
-          {/* Currency Pill */}
-          <div className="hidden sm:inline-flex items-center gap-1.5 text-[11px] font-semibold text-[#4d4540] bg-[#efeeeb] hover:bg-[#eae8e5] px-2.5 py-1 rounded border border-[#e4e2df] transition-colors cursor-default">
-            <span className="font-bold text-[#171411]">₹</span>
-            <span>INR • India</span>
+          {/* Interactive Currency Switcher */}
+          <div className="relative">
+            <button
+              onClick={() => setCurrencyDropdownOpen(!currencyDropdownOpen)}
+              className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#4d4540] hover:text-[#171411] bg-[#efeeeb] hover:bg-[#eae8e5] px-2.5 py-1.5 rounded-lg border border-[#e4e2df] transition-colors cursor-pointer"
+              title="Change Currency"
+            >
+              <span className="font-extrabold text-[#171411]">
+                {CURRENCY_RATES[currency]?.symbol || '₹'}
+              </span>
+              <span>{currency}</span>
+              <span className="material-symbols-outlined text-[14px] text-[#7e756f]">
+                expand_more
+              </span>
+            </button>
+
+            {currencyDropdownOpen && (
+              <div className="absolute top-full left-0 mt-1 w-32 bg-white rounded-xl shadow-xl border border-[#e4e2df] py-1 z-50 animate-in fade-in slide-in-from-top-1">
+                {(['INR', 'USD', 'EUR'] as CurrencyCode[]).map((c) => (
+                  <button
+                    key={c}
+                    onClick={() => {
+                      onCurrencyChange?.(c);
+                      setCurrencyDropdownOpen(false);
+                    }}
+                    className={`w-full text-left px-3 py-1.5 text-xs flex items-center justify-between transition-colors ${
+                      currency === c
+                        ? 'bg-[#f5f3f0] font-bold text-[#171411]'
+                        : 'text-[#4d4540] hover:bg-[#fbf9f6]'
+                    }`}
+                  >
+                    <span>{CURRENCY_RATES[c].label}</span>
+                    {currency === c && (
+                      <span className="material-symbols-outlined text-[14px] text-[#7d562d]">
+                        check
+                      </span>
+                    )}
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Quick Search Button on Desktop */}
@@ -99,6 +162,18 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Right Side: Action Icons */}
         <div className="flex items-center gap-1.5 sm:gap-2.5">
+          {/* AI Advisor Trigger Button */}
+          <button
+            onClick={onOpenAiAdvisor}
+            className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#171411] bg-gradient-to-r from-[#ffdcbd] via-[#fbf9f6] to-[#ffdcbd] hover:from-[#ffca98] hover:to-[#f5f3f0] px-2.5 sm:px-3.5 py-1.5 rounded-full border border-[#ffca98] shadow-sm transition-all cursor-pointer group"
+            title="LUMEN AI Toy Concierge & Milestone Advisor"
+          >
+            <span className="material-symbols-outlined text-[16px] text-[#c46927] group-hover:rotate-12 transition-transform">
+              auto_awesome
+            </span>
+            <span className="hidden sm:inline">AI Advisor</span>
+          </button>
+
           {/* Mobile search icon */}
           <button
             onClick={onOpenSearch}
@@ -209,6 +284,26 @@ export const Header: React.FC<HeaderProps> = ({
                 <span className="material-symbols-outlined text-[16px] opacity-40">chevron_right</span>
               </button>
             ))}
+
+            <div className="pt-2 mt-2 border-t border-[#e4e2df] flex flex-col gap-1">
+              <button
+                onClick={() => {
+                  onNavigate('founder-portal');
+                  setMobileMenuOpen(false);
+                }}
+                className={`text-left py-2 px-3 rounded-lg flex items-center justify-between text-xs font-bold transition-colors ${
+                  currentScreen === 'founder-portal'
+                    ? 'bg-[#171411] text-white'
+                    : 'text-[#c46927] hover:bg-[#ffdcbd]/30'
+                }`}
+              >
+                <span className="flex items-center gap-2">
+                  <span className="material-symbols-outlined text-[16px]">admin_panel_settings</span>
+                  <span>Founder / Admin Portal</span>
+                </span>
+                <span className="material-symbols-outlined text-[14px]">chevron_right</span>
+              </button>
+            </div>
           </div>
         </div>
       )}

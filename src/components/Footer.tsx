@@ -141,6 +141,24 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onShowToast }) => {
                   Track Heirloom Order
                 </button>
               </li>
+              <li>
+                <button
+                  onClick={() => onNavigate('founder-portal')}
+                  className="hover:text-[#171411] transition-colors cursor-pointer text-left font-bold text-[#c46927] flex items-center gap-1.5"
+                >
+                  <span className="material-symbols-outlined text-[15px]">admin_panel_settings</span>
+                  Founder &amp; Admin Portal (Economics)
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => onNavigate('marketing-kit')}
+                  className="hover:text-[#171411] transition-colors cursor-pointer text-left text-[#7d562d] flex items-center gap-1.5"
+                >
+                  <span className="material-symbols-outlined text-[15px]">campaign</span>
+                  Launch &amp; Marketing Kit
+                </button>
+              </li>
             </ul>
           </div>
 
