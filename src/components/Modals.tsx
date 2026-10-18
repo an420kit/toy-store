@@ -58,7 +58,7 @@ export const QuickViewModal: React.FC<{
               </div>
               {product.specifications?.testedCapacity && (
                 <div className="flex justify-between">
-                  <span>Certification:</span>
+                  <span>Product note:</span>
                   <span className="font-semibold text-[#171411]">
                     {product.specifications.testedCapacity}
                   </span>
@@ -502,7 +502,7 @@ export const WishlistDrawer: React.FC<{
   const [registryTitle, setRegistryTitle] = useState("My WOODKIND Gift Registry");
   const [childName, setChildName] = useState('Leo');
   const [occasion, setOccasion] = useState('1st Birthday Celebration');
-  const [eventDate, setEventDate] = useState('2024-11-20');
+  const [eventDate, setEventDate] = useState('');
   const [noteToFamily, setNoteToFamily] = useState(
     "I'm creating a gift list from the WOODKIND pilot catalogue. Product specifications and availability are still being confirmed."
   );
@@ -1030,9 +1030,9 @@ export const WishlistDrawer: React.FC<{
 
                 {/* Reassurance Note */}
                 <div className="p-3 bg-[#f5f2ed] rounded-xl text-[11px] text-[#5c554e] border border-[#e4e2df] space-y-1">
-                  <p className="font-medium text-[#171411]">✨ Archival Gifting Guarantee:</p>
+                  <p className="font-medium text-[#171411]">✨ Gift registry preview:</p>
                   <p>
-                    Every gift from this registry is hand-stamped with a custom serialized provenance card and packaged in an archival unboxing box.
+                    Registry preview only: payment, inventory, shipping, gift packaging and fulfilment are not connected yet.
                   </p>
                 </div>
 
@@ -1156,15 +1156,15 @@ export const BespokeConsultationModal: React.FC<{
   onClose: () => void;
   onSubmit: (data: any) => void;
 }> = ({ isOpen, onClose, onSubmit }) => {
-  const [parentName, setParentName] = useState('Your WOODKIND profile');
-  const [email, setEmail] = useState('ananya.s@singhaniagroup.in');
-  const [city, setCity] = useState('Mumbai, Maharashtra');
+  const [parentName, setParentName] = useState('');
+  const [email, setEmail] = useState('');
+  const [city, setCity] = useState('');
   const [nurseryStyle, setNurseryStyle] = useState('Nordic Warm Minimalist');
-  const [preferredTimber, setPreferredTimber] = useState('Bavarian Steamed Beech');
-  const [roomSqft, setRoomSqft] = useState('250 sq.ft');
-  const [childAgeGroup, setChildAgeGroup] = useState('Toddler (1–3 Yrs)');
+  const [preferredTimber, setPreferredTimber] = useState('Material to be confirmed');
+  const [roomSqft, setRoomSqft] = useState('');
+  const [childAgeGroup, setChildAgeGroup] = useState('Not specified');
   const [customNotes, setCustomNotes] = useState(
-    'Seeking integrated climbing arch and silent ride-on suite matching white oak flooring.'
+    ''
   );
 
   if (!isOpen) return null;
@@ -1275,9 +1275,9 @@ export const BespokeConsultationModal: React.FC<{
                 onChange={(e) => setPreferredTimber(e.target.value)}
                 className="w-full p-2.5 rounded-lg border border-[#e4e2df] bg-white text-[#171411] focus:outline-none focus:border-[#171411]"
               >
-                <option value="Bavarian Steamed Beech">Bavarian Steamed Beech (Warm Honey)</option>
-                <option value="Nordic Raw Birch">Nordic Raw Birch (Pale Blonde)</option>
-                <option value="Natural Ash & Lacquer">Natural Ash &amp; Waterborne Lacquer</option>
+                <option value="Material to be confirmed">Material to be confirmed</option>
+                <option value="Birch / plywood direction">Birch / plywood direction</option>
+                <option value="Finish to be confirmed">Finish to be confirmed</option>
               </select>
             </div>
             <div>
