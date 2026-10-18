@@ -536,7 +536,7 @@ export const FounderPortalScreen: React.FC<FounderPortalProps> = ({ onNavigate, 
                 <h3 className="font-serif text-2xl font-bold text-[#171411] mt-1">
                   Bill of Materials (BOM) — {currentProduct.name}
                 </h3>
-                <p className="text-xs text-[#7a746e] font-mono mt-0.5">Rev 2.4 • ISO 8124 & EN 71 Verified</p>
+                <p className="text-xs text-[#7a746e] font-mono mt-0.5">Planning model · standards review pending</p>
               </div>
               <button
                 onClick={() => setShowBomModal(false)}
