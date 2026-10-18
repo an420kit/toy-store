@@ -41,7 +41,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onShowToast }) => {
               </div>
               <div className="flex items-center gap-1.5 bg-[#fbf9f6] px-2.5 py-1 rounded border border-[#e4e2df]">
                 <span className="material-symbols-outlined text-[#7d562d] text-[16px]">eco</span>
-                <span>Organic Non-Toxic Oils</span>
+                <span>Finish details to be confirmed</span>
               </div>
             </div>
           </div>
