@@ -16,7 +16,7 @@ export const PRODUCTS: Product[] = [
     ageGroup: 'toddler',
     timber: 'Ivory • European Beech',
     timberCode: 'lacquer',
-    image: '/products/woodkind-ride-on.webp',
+    image: 'products/woodkind-ride-on.webp',
     additionalImages: [
       'https://lh3.googleusercontent.com/aida-public/AB6AXuCCXFwyYpMXm29hiCHg5SnfmayU0RRM12Ydbqb5CGHo5z35_ifBwpj-d73FgllzURYTLyDdyMVcc8VsArxXHcQ5fkfQKDkJmHRJ3FYeR4gbfGqNq0FO2lMQxXsZc4xg8uwsOyN679RVgqSHyGrYfddF_EmQ_2pMZM2axBXqstXpTk2vREY1H3ukNpwbgNZF7rSQEOx9wXqDR5Wb9Hj9OnJFz37fNg3N7j5qhI8t5ODQzpZltiOTtHm1Iw',
       'https://lh3.googleusercontent.com/aida-public/AB6AXuBQ99NA8pjfGPYhJG0Cz0MZbi7bDDTI82abgwmSexVH1nkseqUTr7dLkOvTMcz2o9zRMbnaQu2_39Ogwue3jy7PZTBjhOXxc6CfNlWYuO7nAzkrW3_oGICxY-2H6KoHzA52CmsAZB0daeGeFk4Kkgweg9maHLZroD8fe-bI5BZxxYhKt0FzXK3a_Lz1eNJNhvfRnb-L8ZT86l4Y2IcLfIsCKRGcqXffSuyteRvFE1J0z5KzJBE1_Ebt-A',
@@ -105,7 +105,7 @@ export const PRODUCTS: Product[] = [
     ageGroup: 'infant',
     timber: 'Solid European Beech',
     timberCode: 'beech',
-    image: '/products/woodkind-stacking.webp',
+    image: 'products/woodkind-stacking.webp',
     description: 'Geometric exploration forms finished in tactile, food-grade organic beeswax and cold-pressed linseed oil.',
     highlights: [
       'Solid European Beech + Linseed Oil',
@@ -368,7 +368,7 @@ export const PRODUCTS: Product[] = [
     ageGroup: 'toddler',
     timber: 'Solid Beech & Woven Cotton',
     timberCode: 'beech',
-    image: '/products/woodkind-wagon.webp',
+    image: 'products/woodkind-wagon.webp',
     description: 'Minimalist wooden toy wagon cart with wooden wheels and woven cotton pull cord resting gracefully in an uncluttered modern children\'s playroom.',
     badge: 'Motion & Cargo',
     status: 'In Stock',
@@ -480,7 +480,7 @@ export const PRODUCTS: Product[] = [
     ageGroup: 'toddler',
     timber: 'Natural wood concept',
     timberCode: 'beech',
-    image: '/products/woodkind-tricycle.webp',
+    image: 'products/woodkind-tricycle.webp',
     description: 'A lightweight-looking wooden tricycle concept inspired by the supplied product reference. Geometry, tipping stability, steering clearances, materials, fasteners, age suitability and testing must be validated before sale.',
     highlights: [
       'Natural wood visual direction',
