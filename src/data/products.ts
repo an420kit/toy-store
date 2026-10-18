@@ -374,8 +374,7 @@ export const PRODUCTS: Product[] = [
     status: 'In Stock',
     rating: 4.9,
     reviewCount: 27
-  }
-,
+  },
   {
     id: 'forest-steps',
     sku: 'WK-FS-001',
