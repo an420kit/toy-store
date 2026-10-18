@@ -12,7 +12,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onShowToast }) => {
   const handleNewsletterSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
-    onShowToast('Welcome to The Lumen Journal', `Monograph release dispatch registered for ${email}`);
+    onShowToast('Welcome to The WOODKIND Journal', `Monograph release dispatch registered for ${email}`);
     setEmail('');
   };
 
@@ -23,7 +23,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onShowToast }) => {
           {/* Brand Manifesto */}
           <div className="lg:col-span-2 space-y-4 pr-0 lg:pr-8">
             <div className="font-serif text-3xl text-[#171411] tracking-tight font-bold">
-              LUMEN
+              WOODKIND
             </div>
             <p className="text-[14px] leading-relaxed text-[#4d4540] max-w-md">
               Sculptural play objects hand-finished in FSC-certified European beechwood. Rooted in
@@ -162,10 +162,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onShowToast }) => {
             </ul>
           </div>
 
-          {/* The Lumen Journal */}
+          {/* The WOODKIND Journal */}
           <div className="space-y-3">
             <div className="text-[12px] uppercase tracking-wider text-[#171411] font-bold">
-              The Lumen Journal
+              The WOODKIND Journal
             </div>
             <p className="text-[13px] text-[#4d4540] leading-relaxed">
               Receive seasonal monographs on developmental play, slow living, and private archival
@@ -197,7 +197,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onShowToast }) => {
 
         {/* Bottom bar */}
         <div className="pt-8 border-t border-[#e4e2df] flex flex-col md:flex-row items-center justify-between gap-4 text-[#7e756f] text-[12px]">
-          <p>© 2025 LUMEN Nordic Toys Ltd. Crafted with reverence in Europe &amp; India.</p>
+          <p>© 2026 WOODKIND Nordic Toys Ltd. Crafted with reverence in Europe &amp; India.</p>
           <div className="flex items-center gap-6">
             <button
               onClick={() => onNavigate('brand-philosophy')}
