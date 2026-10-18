@@ -16,7 +16,7 @@ export const PRODUCTS: Product[] = [
     ageGroup: 'toddler',
     timber: 'Ivory • European Beech',
     timberCode: 'lacquer',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBZAYhi-vHQlYOxTANjZUZXUhFSORYUxk8BWuVylgR5LtV8qKyzhWcsbbA46TER3u44xjC7napnwp1ltDqZuQXhZhztD9uX0kKcuo6V3-v6N1YZdtO7i00lajswcWXcbf4YmKkge7E_MDesy34R6INjdUvaMaVogN2ug-7Hhp3BwGcomMa-KxTlGYCcn54k2LIUMh1xhs9pPWWFXNYxK9biCSYhWTKIl3Ghj94_o_tCWFe0IokYIQ-T4A',
+    image: '/products/woodkind-ride-on.webp',
     additionalImages: [
       'https://lh3.googleusercontent.com/aida-public/AB6AXuCCXFwyYpMXm29hiCHg5SnfmayU0RRM12Ydbqb5CGHo5z35_ifBwpj-d73FgllzURYTLyDdyMVcc8VsArxXHcQ5fkfQKDkJmHRJ3FYeR4gbfGqNq0FO2lMQxXsZc4xg8uwsOyN679RVgqSHyGrYfddF_EmQ_2pMZM2axBXqstXpTk2vREY1H3ukNpwbgNZF7rSQEOx9wXqDR5Wb9Hj9OnJFz37fNg3N7j5qhI8t5ODQzpZltiOTtHm1Iw',
       'https://lh3.googleusercontent.com/aida-public/AB6AXuBQ99NA8pjfGPYhJG0Cz0MZbi7bDDTI82abgwmSexVH1nkseqUTr7dLkOvTMcz2o9zRMbnaQu2_39Ogwue3jy7PZTBjhOXxc6CfNlWYuO7nAzkrW3_oGICxY-2H6KoHzA52CmsAZB0daeGeFk4Kkgweg9maHLZroD8fe-bI5BZxxYhKt0FzXK3a_Lz1eNJNhvfRnb-L8ZT86l4Y2IcLfIsCKRGcqXffSuyteRvFE1J0z5KzJBE1_Ebt-A',
@@ -105,7 +105,7 @@ export const PRODUCTS: Product[] = [
     ageGroup: 'infant',
     timber: 'Solid European Beech',
     timberCode: 'beech',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCENCWMEiPGWKL1iLCb9LXrd6yvrmT2O470TfElu89j_8sGG30LOVTxPIk5x0fDTk9nJGlc-3c4xEJxHQvkgJs6I-jAZubhyrYz3alJRdRwFIJMkbZ3-Yj784RM4OJhBy0xkV0sIzhjyN8JIfdZtDQwDz0gN-bLdGxuGl9dxkOpuv--77GrQNBnqHyhH7DRUEN2JUh5bg44nznQIk-DRs_JIkMsdd5ibKTS6h9hr0ccXgjD-96XUcGw_g',
+    image: '/products/woodkind-stacking.webp',
     description: 'Geometric exploration forms finished in tactile, food-grade organic beeswax and cold-pressed linseed oil.',
     highlights: [
       'Solid European Beech + Linseed Oil',
@@ -368,12 +368,127 @@ export const PRODUCTS: Product[] = [
     ageGroup: 'toddler',
     timber: 'Solid Beech & Woven Cotton',
     timberCode: 'beech',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuApuKJglacCLNgAbH193ab_aBAYRpLSAQgMlbxYtTnkbl9TClkHSzS2Z1EXg5fP2UwGXP1MM-63JgNPiuvKBTV-KWYF5xf4cyCIyfzEYOPT-lPKKmij1kOp2mAwd_pYLf7p0pHOtfpk-jiuw7RJ4Wu_VOOy7mdl7P6wwfWqVWcMxkek_p0Jcs8bWjP-RwwGu9rvW8vsfA_0kzHYRATbdN0EQgvk6eYS-b39WMhV2EOE_LVm36wzb7ZcDg',
+    image: '/products/woodkind-wagon.webp',
     description: 'Minimalist wooden toy wagon cart with wooden wheels and woven cotton pull cord resting gracefully in an uncluttered modern children\'s playroom.',
     badge: 'Motion & Cargo',
     status: 'In Stock',
     rating: 4.9,
     reviewCount: 27
+  },
+  {
+    id: 'forest-steps',
+    sku: 'WK-FS-001',
+    name: 'Forest Steps Balance Set',
+    subtitle: 'A first movement set for stepping, balancing and open-ended pretend play.',
+    category: 'learning',
+    categoryLabel: 'Learning & Montessori',
+    price: 2499,
+    originalPrice: 2799,
+    age: '18 months+',
+    ageGroup: 'toddler',
+    timber: 'Natural wood concept',
+    timberCode: 'beech',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDQKXS5nGrJdq8kOD0m4CYB-yWZoffviasYp4U1GtMkKJPOGtKHgYFkCicWTA47DZZFs1KbMx5ma6_NBS3PSAHJtflUbWzhFlGZVYWxmLkN0oZYeenK0-30TTXfKNj2Q4c6M0DBAZHRvkhtB7T42ujTyjcK5N3PJU5icK_c5ItOqAFPPL8PrCDAuJao4lenX4qo_iKsHBTSPqy063T91saydzkmL_SjumAEYY6q9f0WDYE14OzDv-6_cA',
+    description: 'A compact set of rounded wooden stepping forms designed for supervised balance games and imaginative obstacle paths. Final dimensions, finish and retail price are pending prototype review.',
+    highlights: [
+      'Rounded forms for tactile play',
+      'Compact set for flexible indoor play',
+      'Prototype and supplier quote pending'
+    ],
+    badge: 'Pilot Collection',
+    status: 'Concept — prototype and supplier quote pending'
+  },
+  {
+    id: 'climbing-arch',
+    sku: 'WK-CA-001',
+    name: 'Wooden Climbing Arch',
+    subtitle: 'An open-ended climbing and rocking concept for active play.',
+    category: 'climbing',
+    categoryLabel: 'Climbing & Play Gyms',
+    price: 8499,
+    originalPrice: 9499,
+    age: '2 years+',
+    ageGroup: 'preschool',
+    timber: 'Plywood and solid-wood concept',
+    timberCode: 'birch',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB6Quzc4lzEMfyCoFX2XB8SlsBCIf3_04dQgYXfvutVEmHFQMbDUB5KL7VnW3BhjM0eASdflykcWhq7yZtTto5zOhnI2AcR2M1vAhQyuLGKtqW5NHVVyAHeDCDSxzRbR53sCjtBlx-y316-W2ZBDnhQUFZEpEp04IE6Qbeh6hzTEYEHxLcIwDwLxNK6ZmOa6NolXzZxAx7zdMUxbCbxopXGlrIrtAw__q7hU_e3FVkC_11w40G5P6uI7w',
+    description: 'A curved wooden arch concept for supervised movement play. Geometry, stability, finish, age guidance and all safety requirements must be validated with a physical prototype and qualified testing before sale.',
+    highlights: [
+      'Curved arch format',
+      'Prototype geometry to be confirmed',
+      'Safety and stability testing pending'
+    ],
+    badge: 'Pilot Collection',
+    status: 'Concept — engineering review required'
+  },
+  {
+    id: 'pikler-triangle-ramp',
+    sku: 'WK-PT-001',
+    name: 'Pikler Triangle + Ramp',
+    subtitle: 'A foldable climbing triangle concept with a reversible play ramp.',
+    category: 'climbing',
+    categoryLabel: 'Climbing & Play Gyms',
+    price: 11999,
+    originalPrice: 13499,
+    age: '18 months+',
+    ageGroup: 'toddler',
+    timber: 'Birch plywood and solid-wood concept',
+    timberCode: 'birch',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAVloGp3peEz_mIzG_pDbUzZr4sP_bMZgPLkmzGhL-R8CXMuh4hqo96mAc5yL5xlZfIH2szoB0daHGryIe3rESs-WmqKA7fsfTHvIVnu2MdC7Uzw9IXcYxQG0sC6wpFL7-c3Ahx2dXSOoBvO3Mh1Dd7Jyi0QfaEm9ecUU93ZqxK_J3cBHdw03x9K1vWQjbPYLDy0FAApI_OXKKB8A4a3hIDmWlVTc7YNFL41cn9w_sDWyFT1OnrFyevZw',
+    description: 'A compact Pikler-style triangle and ramp concept for supervised gross-motor play. The pictured image is a reference within the current catalogue; dimensions, locking hardware, stability and safety test results are not yet validated for this proposed product.',
+    highlights: [
+      'Triangle plus ramp configuration',
+      'Fold/lock mechanism to be engineered',
+      'Prototype, supplier quote and testing pending'
+    ],
+    badge: 'Pilot Collection',
+    status: 'Concept — prototype and safety review required'
+  },
+  {
+    id: 'mini-jungle-gym',
+    sku: 'WK-MJG-001',
+    name: 'Mini Jungle Gym',
+    subtitle: 'A compact indoor climbing-play concept for a future launch batch.',
+    category: 'climbing',
+    categoryLabel: 'Climbing & Play Gyms',
+    price: 18999,
+    originalPrice: 20999,
+    age: '2 years+',
+    ageGroup: 'preschool',
+    timber: 'Solid wood and plywood concept',
+    timberCode: 'birch',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCyYY04pj4xtEQPu5HYTfmXMl9nxmsbKWYvg0BdO_2TaFBTRgfIOAIut7SewfYdgm0kNRvSt6q1WIBiY8SphIs3XGfcWvSOeK6Y5Vnc_b-Gq7cEKZD7tvsBBQeEOJKRe5EkAUvm5v7IJaLFrhCOb880ELw3NUkPUA-EiY-nFvDn50cwO0WiTIpyxZWVnubhzD1Qpcwp6EC7kawNA8jQ0bzWr7lM9WHMQUrvRaRBGoDX_FZUDuSDtWHYfw',
+    description: 'A proposed compact indoor activity frame. Final layout, footprint, joinery, assembly instructions, stability, age guidance and safety testing are still to be established; price shown is a planning target.',
+    highlights: [
+      'Compact indoor play concept',
+      'Manufacturing design to be finalized',
+      'All safety validation pending'
+    ],
+    badge: 'Pilot Collection',
+    status: 'Concept — design and supplier quote pending'
+  },
+  {
+    id: 'wooden-tricycle',
+    sku: 'WK-TR-001',
+    name: 'First Ride Wooden Tricycle',
+    subtitle: 'A natural wood tricycle concept for early ride-and-steer play.',
+    category: 'wheels',
+    categoryLabel: 'Wheels & Motion',
+    price: 5999,
+    originalPrice: 6799,
+    age: '2 years+',
+    ageGroup: 'toddler',
+    timber: 'Natural wood concept',
+    timberCode: 'beech',
+    image: '/products/woodkind-tricycle.webp',
+    description: 'A lightweight-looking wooden tricycle concept inspired by the supplied product reference. Geometry, tipping stability, steering clearances, materials, fasteners, age suitability and testing must be validated before sale.',
+    highlights: [
+      'Natural wood visual direction',
+      'Ergonomic proportions to be prototyped',
+      'Safety review and supplier quote pending'
+    ],
+    badge: 'Pilot Collection',
+    status: 'Concept — prototype and testing pending'
   }
 ];
 

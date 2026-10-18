@@ -33,13 +33,13 @@ export const CollectionsScreen: React.FC<CollectionsScreenProps> = ({
   }, [initialCategory]);
 
   const categories = [
-    { id: 'all', label: 'All Archive (50)' },
-    { id: 'wheels', label: 'Wheels & Motion (12)' },
-    { id: 'rocking', label: 'Rocking & Balance (10)' },
-    { id: 'climbing', label: 'Climbing & Gyms (8)' },
-    { id: 'learning', label: 'Learning & Montessori (10)' },
-    { id: 'pretend', label: 'Pretend Play (5)' },
-    { id: 'furniture', label: 'Kids Furniture (5)' },
+    { id: 'all', label: `All Products (${PRODUCTS.length})` },
+    { id: 'wheels', label: `Wheels & Motion (${PRODUCTS.filter((p) => p.category === 'wheels').length})` },
+    { id: 'rocking', label: `Rocking & Balance (${PRODUCTS.filter((p) => p.category === 'rocking').length})` },
+    { id: 'climbing', label: `Climbing & Gyms (${PRODUCTS.filter((p) => p.category === 'climbing').length})` },
+    { id: 'learning', label: `Learning & Montessori (${PRODUCTS.filter((p) => p.category === 'learning').length})` },
+    { id: 'pretend', label: `Pretend Play (${PRODUCTS.filter((p) => p.category === 'pretend').length})` },
+    { id: 'furniture', label: `Kids Furniture (${PRODUCTS.filter((p) => p.category === 'furniture').length})` },
   ];
 
   const filteredProducts = useMemo(() => {
@@ -96,15 +96,13 @@ export const CollectionsScreen: React.FC<CollectionsScreenProps> = ({
             <div className="max-w-2xl space-y-3">
               <div className="flex items-center gap-2 text-[#7d562d] text-[11px] font-bold uppercase tracking-widest">
                 <span className="material-symbols-outlined text-[16px]">filter_vintage</span>
-                <span>Comprehensive Master Archive • 50 Curated Objects</span>
+                <span>WOODKIND Pilot Catalogue • {PRODUCTS.length} Products</span>
               </div>
               <h1 className="font-serif text-3xl md:text-5xl text-[#171411] tracking-tight font-bold">
                 Sculptural Play, Honed in Beechwood
               </h1>
               <p className="text-sm md:text-base text-[#4d4540] leading-relaxed">
-                Explore all 50 bespoke developmental forms inspired by Nordic minimalism and
-                Montessori autonomy. From micro push-toys to heirloom nursery architecture, crafted
-                with organic satin oils and zero synthetics.
+                Explore the current pilot catalogue of wooden ride-ons, balance toys, climbing concepts and Montessori-inspired play pieces. Product specifications, target pricing and launch readiness are confirmed as each prototype is reviewed.
               </p>
             </div>
 
@@ -291,13 +289,13 @@ export const CollectionsScreen: React.FC<CollectionsScreenProps> = ({
               <div className="lg:col-span-8 space-y-3">
                 <div className="inline-flex items-center gap-2 bg-white px-3 py-1 rounded-full text-[#7d562d] text-xs font-bold border border-[#e4e2df]">
                   <span className="material-symbols-outlined text-[16px]">verified</span>
-                  <span>The Lumen Assurance</span>
+                  <span>The WOODKIND Assurance</span>
                 </div>
                 <h2 className="font-serif text-2xl md:text-3xl font-bold text-[#171411]">
                   Heirloom In-Home Trial: 30 Days of Unhurried Wonder
                 </h2>
                 <p className="text-sm md:text-base text-[#4d4540] max-w-2xl leading-relaxed">
-                  Children test toys through their natural pace of discovery. Experience any LUMEN
+                  Children test toys through their natural pace of discovery. Experience any WOODKIND
                   piece in your home for a full month. If it doesn’t inspire lasting calm, curiosity,
                   and aesthetic harmony, our concierge arranges effortless, complimentary collection.
                 </p>
@@ -415,7 +413,7 @@ export const CollectionsScreen: React.FC<CollectionsScreenProps> = ({
                 Regenerative Forest Pledge
               </h4>
               <p className="text-xs text-[#4d4540] leading-relaxed">
-                For every LUMEN toy brought home, two beech saplings are planted in our monitored
+                For every WOODKIND toy brought home, two beech saplings are planted in our monitored
                 Black Forest acreage.
               </p>
               <button

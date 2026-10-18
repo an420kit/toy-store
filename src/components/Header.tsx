@@ -142,16 +142,16 @@ export const Header: React.FC<HeaderProps> = ({
           <button
             onClick={() => onNavigate('home')}
             className="flex items-center gap-2.5 group cursor-pointer text-center focus:outline-none"
-            aria-label="LUMEN Homepage"
+            aria-label="WOODKIND Homepage"
           >
             <img
-              alt="Lumen Nordic Toys Logo"
+              alt="WOODKIND Nordic Toys Logo"
               className="h-7 md:h-8 w-auto object-contain transition-transform group-hover:scale-105"
               src="https://lh3.googleusercontent.com/aida/AEtjO1XndE-ZA6KIQF2WLwO3c9sv69yuIXFel4TRvlZuLxVbttUVPHnQDfbny6cIyLQFeqg17CEBx7FONxJbt9wqR_UupbA2_0b7fEiTf0u13MSdNXr4LrRdqxCW8L4tFfCNXoFmVnzYVic415Qu-YcbcbB5LqOIuXWuPn6d-MqFwfbrFl-BaxhRe_RG0ljyRNbSurux2IxP9ZerVysoalc8vyjQQKC_DlToiuBurKQnAdWCgZAdQbwAiyKKxCvV"
             />
             <div className="flex flex-col items-start leading-none text-left">
               <span className="font-serif text-2xl md:text-3xl font-bold tracking-tight text-[#171411]">
-                LUMEN
+                WOODKIND
               </span>
               <span className="text-[9px] tracking-[0.22em] uppercase text-[#7d562d] font-semibold hidden sm:inline">
                 Nordic Heirloom
@@ -166,7 +166,7 @@ export const Header: React.FC<HeaderProps> = ({
           <button
             onClick={onOpenAiAdvisor}
             className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#171411] bg-gradient-to-r from-[#ffdcbd] via-[#fbf9f6] to-[#ffdcbd] hover:from-[#ffca98] hover:to-[#f5f3f0] px-2.5 sm:px-3.5 py-1.5 rounded-full border border-[#ffca98] shadow-sm transition-all cursor-pointer group"
-            title="LUMEN AI Toy Concierge & Milestone Advisor"
+            title="WOODKIND AI Toy Concierge & Milestone Advisor"
           >
             <span className="material-symbols-outlined text-[16px] text-[#c46927] group-hover:rotate-12 transition-transform">
               auto_awesome
