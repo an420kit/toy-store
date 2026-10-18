@@ -109,7 +109,7 @@ export const FounderPortalScreen: React.FC<FounderPortalProps> = ({ onNavigate, 
           </div>
 
           <div className="bg-[#ffffff] p-4 rounded-xl border border-[#e4e2df] shadow-xs">
-            <p className="text-[11px] font-mono tracking-wider uppercase text-[#7a746e]">Blended Gross Margin</p>
+            <p className="text-[11px] font-mono tracking-wider uppercase text-[#7a746e]">Scenario margin</p>
             <p className="text-2xl font-serif font-bold text-[#171411] mt-1">
               {hideConfidential ? '•••%' : `${grossMarginPercentage}%`}
             </p>
@@ -250,7 +250,7 @@ export const FounderPortalScreen: React.FC<FounderPortalProps> = ({ onNavigate, 
                   onChange={(e) => setPackagingType(e.target.value as any)}
                   className="w-full text-xs p-2.5 rounded-lg border border-[#e4e2df] bg-[#ffffff] text-[#171411] font-sans focus:outline-none focus:ring-1 focus:ring-[#171411]"
                 >
-                  <option value="kraft-rigid">100% Recycled Rigid Archival Kraft Box</option>
+                  <option value="kraft-rigid">Recycled rigid kraft box (quote pending)</option>
                   <option value="luxury-wood-box">Collector Heirloom Crate (+₹370)</option>
                 </select>
               </div>
@@ -374,7 +374,7 @@ export const FounderPortalScreen: React.FC<FounderPortalProps> = ({ onNavigate, 
 
               <div className="mt-4 space-y-3.5">
                 <div className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-[#55866b] text-white flex items-center justify-center text-xs shrink-0 mt-0.5">
+                  <div className="w-5 h-5 rounded-full bg-[#e9dcc9] text-[#6d563b] flex items-center justify-center text-xs shrink-0 mt-0.5">
                     1
                   </div>
                   <div className="text-xs">
@@ -384,7 +384,7 @@ export const FounderPortalScreen: React.FC<FounderPortalProps> = ({ onNavigate, 
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-[#55866b] text-white flex items-center justify-center text-xs shrink-0 mt-0.5">
+                  <div className="w-5 h-5 rounded-full bg-[#e9dcc9] text-[#6d563b] flex items-center justify-center text-xs shrink-0 mt-0.5">
                     1
                   </div>
                   <div className="text-xs">
@@ -609,7 +609,7 @@ export const FounderPortalScreen: React.FC<FounderPortalProps> = ({ onNavigate, 
               <button
                 onClick={() => {
                   setShowBomModal(false);
-                  onShowToast('BOM Exported', 'Full BOM PDF specification bundle generated.');
+                  onShowToast('Draft BOM', 'This planning BOM is not a production specification; use Print / Save PDF to capture the page.');
                 }}
                 className="px-4 py-2 bg-[#171411] text-white rounded-lg text-xs font-medium hover:bg-[#322f2b]"
               >
