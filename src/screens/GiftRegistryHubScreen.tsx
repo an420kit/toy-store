@@ -93,30 +93,27 @@ export const GiftRegistryHubScreen: React.FC<GiftRegistryHubProps> = ({
   const registryBundles = [
     {
       id: 'bundle-infant',
-      name: 'The Newborn & Infant Tactile Suite (0–12 Mo)',
-      desc: 'Hand-turned sensory grasping rattles, organic stacking rings, and curved cradle rocker.',
-      price: 6897,
-      originalPrice: 7999,
-      itemIds: ['sensory-stacking-rings', 'stacking-stones-sorter', 'balance-curved-board'],
-      image: 'https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&w=800&q=80',
+      name: 'Stacking & Balance Starter Set',
+      desc: 'A stacking-and-sorting piece, Forest Steps concept and balance-board concept.',
+      price: 5597,
+            itemIds: ['stacking-stones-sorter', 'forest-steps', 'curved-balance-board'],
+      image: 'products/woodkind-stacking.webp',
     },
     {
       id: 'bundle-toddler',
-      name: 'The Toddler Motor Discovery Suite (1–3 Yrs)',
-      desc: 'The Minimal Ride-On, Sculpted Rocking Swan, and balance arch for gross motor development.',
-      price: 15897,
-      originalPrice: 17999,
-      itemIds: ['minimal-ride-on', 'sculpted-rocking-swan', 'geometric-arch-pikler'],
-      image: 'https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=800&q=80',
+      name: 'Wheels & Rocking Set',
+      desc: 'A wooden ride-on, rocking-horse reference and pull wagon concept.',
+      price: 13997,
+            itemIds: ['minimal-ride-on', 'nordic-rocking-horse', 'the-cart-wagon'],
+      image: 'products/woodkind-ride-on.webp',
     },
     {
       id: 'bundle-architect',
-      name: 'The Master Heirloom Playroom Suite',
-      desc: 'The complete architectural nursery centerpiece: Ride-On, Climber & Slide, and Play Kitchen.',
-      price: 25497,
-      originalPrice: 28999,
-      itemIds: ['minimal-ride-on', 'foldable-climber-slide', 'handcrafted-play-kitchen'],
-      image: 'https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=800&q=80',
+      name: 'Climbing & Balance Concepts',
+      desc: 'A balance-board concept, Pikler triangle plus ramp, and climbing-arch concept.',
+      price: 22297,
+            itemIds: ['curved-balance-board', 'pikler-triangle-ramp', 'climbing-arch'],
+      image: 'products/woodkind-concept-gym.svg',
     },
   ];
 
@@ -512,6 +509,12 @@ export const GiftRegistryHubScreen: React.FC<GiftRegistryHubProps> = ({
 
             {/* Registries Grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {filteredRegistries.length === 0 && (
+                <div className="col-span-full border border-dashed border-[#d8cbbb] bg-[#f7f1e7] px-6 py-12 text-center">
+                  <h3 className="font-serif text-xl text-[#3b352b]">No public registries yet</h3>
+                  <p className="mx-auto mt-2 max-w-[420px] text-sm leading-6 text-[#817767]">Create your own list in My Registry & Shareable Link and send the link to family. Public discovery will show entries after real registry data is connected.</p>
+                </div>
+              )}
               {filteredRegistries.map((reg) => (
                 <div
                   key={reg.id}
