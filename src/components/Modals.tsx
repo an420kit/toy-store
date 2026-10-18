@@ -215,7 +215,7 @@ export const SpecSheetPdfModal: React.FC<{
         <div className="border-b border-[#e4e2df] pb-4 mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <div className="flex items-center gap-2">
-              <span className="font-serif text-2xl font-bold text-[#171411]">LUMEN</span>
+              <span className="font-serif text-2xl font-bold text-[#171411]">WOODKIND</span>
               <span className="text-[10px] bg-[#ffca98] text-[#7a532a] font-bold px-2 py-0.5 rounded uppercase">
                 Confidential Engineering Doc
               </span>
@@ -224,7 +224,7 @@ export const SpecSheetPdfModal: React.FC<{
               Pilot Production Specification Sheets (SKU 01 - 04)
             </h3>
             <p className="text-[12px] text-[#7e756f]">
-              Dossier Ref: #LMN-ENG-2025-Q3 • Release Status: Ready for Laboratory Tooling
+              Draft product brief · planning only · not production approved
             </p>
           </div>
 
@@ -238,13 +238,12 @@ export const SpecSheetPdfModal: React.FC<{
             </button>
             <button
               onClick={() => {
-                alert('Downloading LUMEN_Spec_Sheets_Confidential_Q3_2025.pdf');
-                onClose();
+                window.print();
               }}
               className="flex items-center gap-1.5 bg-[#171411] hover:bg-[#7d562d] text-white px-4 py-2 rounded text-[12px] font-semibold transition-colors cursor-pointer"
             >
               <span className="material-symbols-outlined text-[16px]">download</span>
-              <span>Download PDF</span>
+              <span>Print / Save PDF</span>
             </button>
           </div>
         </div>
@@ -254,19 +253,19 @@ export const SpecSheetPdfModal: React.FC<{
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 bg-[#f5f3f0] rounded-xl border border-[#e4e2df]">
             <div>
               <span className="text-[11px] text-[#7e756f] uppercase block">Timber Density</span>
-              <strong className="text-[#171411]">720 kg/m³ (Kiln Beech)</strong>
+              <strong className="text-[#171411]">Supplier data pending</strong>
             </div>
             <div>
               <span className="text-[11px] text-[#7e756f] uppercase block">Moisture Tolerance</span>
-              <strong className="text-[#171411]">8% – 10% Controlled</strong>
+              <strong className="text-[#171411]">Moisture target pending</strong>
             </div>
             <div>
               <span className="text-[11px] text-[#7e756f] uppercase block">Heavy Metals (EN71-3)</span>
-              <strong className="text-[#171411]">0.00% Non-Detectable</strong>
+              <strong className="text-[#171411]">Testing pending</strong>
             </div>
             <div>
               <span className="text-[11px] text-[#7e756f] uppercase block">Saliva Seal</span>
-              <strong className="text-[#171411]">DIN 53160 Immersion Pass</strong>
+              <strong className="text-[#171411]">Finish test pending</strong>
             </div>
           </div>
 
@@ -281,38 +280,38 @@ export const SpecSheetPdfModal: React.FC<{
                     <th className="p-3">SKU &amp; Prototype</th>
                     <th className="p-3">Dimensions</th>
                     <th className="p-3">Primary Joint</th>
-                    <th className="p-3">Unit COGS</th>
+                    <th className="p-3">Pilot Price Target</th>
                     <th className="p-3">Safety Status</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-[#e4e2df]">
                   <tr className="bg-white">
-                    <td className="p-3 font-medium">SKU #01: Stacking Stones</td>
-                    <td className="p-3">7pcs, 45-85mm</td>
-                    <td className="p-3">Solid lathe-turned</td>
-                    <td className="p-3 font-semibold">₹420</td>
-                    <td className="p-3 text-emerald-700 font-semibold">Choke Test Cleared</td>
+                    <td className="p-3 font-medium">WK-SS-001: Stacking Stones</td>
+                    <td className="p-3">Final dimensions pending</td>
+                    <td className="p-3">Design review pending</td>
+                    <td className="p-3 font-semibold">₹1,299 target</td>
+                    <td className="p-3 text-emerald-700 font-semibold">Small-parts review pending</td>
                   </tr>
                   <tr className="bg-[#fbf9f6]">
-                    <td className="p-3 font-medium">SKU #02: Minimal Ride-On</td>
-                    <td className="p-3">54 × 28 × 36 cm</td>
-                    <td className="p-3">Concealed mortise &amp; dowel</td>
-                    <td className="p-3 font-semibold">₹1,650</td>
-                    <td className="p-3 text-emerald-700 font-semibold">Wheel Pinch Cleared</td>
+                    <td className="p-3 font-medium">WK-WG-001: Wooden Pull Wagon</td>
+                    <td className="p-3">Final dimensions pending</td>
+                    <td className="p-3">Wheel and pull-cord design pending</td>
+                    <td className="p-3 font-semibold">₹3,999 target</td>
+                    <td className="p-3 text-emerald-700 font-semibold">Wheel retention testing pending</td>
                   </tr>
                   <tr className="bg-white">
-                    <td className="p-3 font-medium">SKU #03: Rocking Horse</td>
-                    <td className="p-3">72 × 30 × 44 cm</td>
-                    <td className="p-3">Steam-bent arch runner</td>
-                    <td className="p-3 font-semibold">₹1,980</td>
-                    <td className="p-3 text-emerald-700 font-semibold">≤28° Anti-Tip Pass</td>
+                    <td className="p-3 font-medium">WK-RO-001: Wooden Ride-On</td>
+                    <td className="p-3">Final dimensions pending</td>
+                    <td className="p-3">Final construction pending</td>
+                    <td className="p-3 font-semibold">₹4,499 target</td>
+                    <td className="p-3 text-emerald-700 font-semibold">Stability review pending</td>
                   </tr>
                   <tr className="bg-[#fbf9f6]">
-                    <td className="p-3 font-medium">SKU #04: Climber &amp; Slide</td>
-                    <td className="p-3">88 × 74 × 78 cm</td>
-                    <td className="p-3">Brass toolless lock pins</td>
-                    <td className="p-3 font-semibold">₹3,450</td>
-                    <td className="p-3 text-emerald-700 font-semibold">80kg Dynamic Pass</td>
+                    <td className="p-3 font-medium">WK-PT-001: Pikler Triangle + Ramp</td>
+                    <td className="p-3">Final dimensions pending</td>
+                    <td className="p-3">Locking hardware pending</td>
+                    <td className="p-3 font-semibold">₹11,999 target</td>
+                    <td className="p-3 text-emerald-700 font-semibold">Structural testing pending</td>
                   </tr>
                 </tbody>
               </table>
@@ -320,9 +319,7 @@ export const SpecSheetPdfModal: React.FC<{
           </div>
 
           <div className="p-4 bg-[#ffdcbd]/30 rounded-xl text-[12px] text-[#7a532a] border border-[#ffca98]">
-            <strong>Compliance Officer Note:</strong> Final BIS physical impact drop trials are
-            slated for August 12 at the certified NABL test facility in Ahmedabad. All pilot units
-            satisfy IS 9873 (Parts 1, 2, and 3).
+            <strong>Compliance note:</strong> No product-specific safety certification or test result is confirmed in this brief. Confirm applicable Indian requirements and a qualified test plan before offering any product for sale.
           </div>
         </div>
       </div>
@@ -349,46 +346,43 @@ export const RawWoodBOMModal: React.FC<{
 
         <div className="flex items-center gap-2 text-[#7d562d] font-bold text-[11px] uppercase tracking-wider mb-2">
           <span className="material-symbols-outlined text-[16px]">forest</span>
-          <span>FSC Chain-of-Custody Certification #C140228</span>
+          <span>Sourcing documentation checklist</span>
         </div>
         <h3 className="font-serif text-2xl font-bold text-[#171411]">
           Raw Wood BOM &amp; Forest Sourcing Invoices
         </h3>
         <p className="text-[13px] text-[#4d4540] mt-1">
-          Traceable Bavarian forestry timber ledger and organic oil extraction certificates.
+          Supplier names, invoices, wood species and finish datasheets are pending collection.
         </p>
 
         <div className="mt-6 space-y-4 text-[13px]">
           <div className="p-4 bg-[#f5f3f0] rounded-xl border border-[#e4e2df] space-y-2">
             <div className="flex justify-between font-semibold text-[#171411]">
-              <span>Lot #BV-2025-09 (Bavaria, Germany)</span>
-              <span className="text-emerald-700">Verified FSC 100%</span>
+              <span>Wood species / supplier: pending</span>
+              <span className="text-emerald-700">Documentation pending</span>
             </div>
             <p className="text-[#4d4540] text-[12px]">
-              Kiln-dried Grade-1 European Beech dowels and boards. Harvested from certified sustainable
-              continuous-cover forestry with 2-sapling regenerative replanting ratio.
+              Confirm wood species, grade, moisture content, supplier invoice, and chain-of-custody documents if a sourcing certification is claimed.
             </p>
           </div>
 
           <div className="p-4 bg-[#f5f3f0] rounded-xl border border-[#e4e2df] space-y-2">
             <div className="flex justify-between font-semibold text-[#171411]">
-              <span>Cold-Pressed Linseed Oil &amp; Organic Beeswax</span>
-              <span className="text-emerald-700">DIN 53160 Certified</span>
+              <span>Finish material — supplier to confirm</span>
+              <span className="text-emerald-700">Safety data pending</span>
             </div>
             <p className="text-[#4d4540] text-[12px]">
-              Edible organic grade beeswax from certified organic apiaries in Gujarat. Zero synthetic
-              solvents, petroleum derivatives, or volatile organic compounds.
+              Request a complete finish specification and toy-specific suitability evidence. Do not publish safety, food-contact or chemical-free claims until independently substantiated.
             </p>
           </div>
 
           <div className="p-4 bg-[#f5f3f0] rounded-xl border border-[#e4e2df] space-y-2">
             <div className="flex justify-between font-semibold text-[#171411]">
-              <span>Packaging: Biodegradable Mycelium &amp; Kraft</span>
-              <span className="text-emerald-700">100% Compostable</span>
+              <span>Packaging direction: kraft carton</span>
+              <span className="text-emerald-700">Recyclability to be reviewed</span>
             </div>
             <p className="text-[#4d4540] text-[12px]">
-              Custom-molded mushroom mycelium corner protectors, eliminating petroleum EPS foams
-              entirely from the unboxing flow.
+              Confirm packaging supplier, shipping protection, strength, price and disposal instructions before selecting the final format.
             </p>
           </div>
         </div>
@@ -505,12 +499,12 @@ export const WishlistDrawer: React.FC<{
   const [isPreviewMode, setIsPreviewMode] = useState(false);
 
   // Registry Form State
-  const [registryTitle, setRegistryTitle] = useState("Baby Leo's Heirloom Nursery Registry");
+  const [registryTitle, setRegistryTitle] = useState("My WOODKIND Gift Registry");
   const [childName, setChildName] = useState('Leo');
   const [occasion, setOccasion] = useState('1st Birthday Celebration');
   const [eventDate, setEventDate] = useState('2024-11-20');
   const [noteToFamily, setNoteToFamily] = useState(
-    "We've curated timeless, non-toxic Bavarian beechwood heirloom toys for Leo's playroom. Each piece is crafted to endure for decades. Thank you for celebrating with us!"
+    "I'm creating a gift list from the WOODKIND pilot catalogue. Product specifications and availability are still being confirmed."
   );
 
   if (!isOpen) return null;
@@ -520,13 +514,13 @@ export const WishlistDrawer: React.FC<{
 
   // Generate encoded URL string of current wishlist items
   const generateEncodedRegistryUrl = () => {
-    const origin = typeof window !== 'undefined' ? window.location.origin : 'https://lumen-heirloom.com';
+    const origin = typeof window !== 'undefined' ? window.location.origin : 'https://toys.ankitalgo.store';
     const encodedItems = encodeURIComponent(wishlistIds.join(','));
     const registryCode = `REG-${Math.abs(
       wishlistIds.join('').split('').reduce((acc, char) => acc + char.charCodeAt(0), 1000)
     )}`;
     const encodedRegistryId = encodeURIComponent(registryCode);
-    const encodedTitle = encodeURIComponent(registryTitle.trim() || "Baby Leo's Nursery Registry");
+    const encodedTitle = encodeURIComponent(registryTitle.trim() || "Baby My WOODKIND Gift Registry");
     const encodedChild = encodeURIComponent(childName.trim() || "Leo");
     const encodedOccasion = encodeURIComponent(occasion);
 
@@ -567,16 +561,16 @@ export const WishlistDrawer: React.FC<{
   const handleShareWhatsApp = () => {
     const activeUrl = generatedEncodedUrl || generateEncodedRegistryUrl();
     const text = encodeURIComponent(
-      `Hello! We've created a LUMEN Heirloom Gift Registry for ${childName}'s ${occasion}:\n\n"${registryTitle}"\n\nExplore our curated beechwood nursery wishlist here: ${activeUrl}`
+      `Hello! We've created a WOODKIND Heirloom Gift Registry for ${childName}'s ${occasion}:\n\n"${registryTitle}"\n\nExplore our curated beechwood nursery wishlist here: ${activeUrl}`
     );
     window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
   };
 
   const handleShareEmail = () => {
     const activeUrl = generatedEncodedUrl || generateEncodedRegistryUrl();
-    const subject = encodeURIComponent(`LUMEN Heirloom Gift Registry for ${childName}`);
+    const subject = encodeURIComponent(`WOODKIND Heirloom Gift Registry for ${childName}`);
     const body = encodeURIComponent(
-      `Dear family and friends,\n\nWe have set up an Heirloom Gift Registry for ${childName}'s ${occasion} with LUMEN Nordic Wooden Toys.\n\n${noteToFamily}\n\nYou can browse our saved pieces and gift directly here:\n${activeUrl}\n\nWarmly,\n${registryTitle}`
+      `Dear family and friends,\n\nWe have set up an Heirloom Gift Registry for ${childName}'s ${occasion} with WOODKIND Nordic Wooden Toys.\n\n${noteToFamily}\n\nYou can browse our saved pieces and gift directly here:\n${activeUrl}\n\nWarmly,\n${registryTitle}`
     );
     window.location.href = `mailto:?subject=${subject}&body=${body}`;
   };
@@ -723,7 +717,7 @@ export const WishlistDrawer: React.FC<{
                         <span className="text-xs font-semibold text-[#171411]">
                           {formatINR(product.price)}
                         </span>
-                        <span className="text-[10px] font-mono text-[#55866b]">FSC® Beechwood</span>
+                        <span className="text-[10px] font-mono text-[#55866b]">Material details pending</span>
                       </div>
                       <div className="flex gap-3 mt-1.5">
                         <button
@@ -811,7 +805,7 @@ export const WishlistDrawer: React.FC<{
                     </span>
                   </div>
                   <h4 className="font-serif text-lg font-bold text-[#171411] mt-1">
-                    {registryTitle || "Baby Leo's Nursery Registry"}
+                    {registryTitle || "Baby My WOODKIND Gift Registry"}
                   </h4>
                   <p className="text-xs text-[#7a746e] mt-0.5">
                     {wishlistedProducts.length} heirlooms selected • Aggregate Value: {formatINR(totalRegistryValue)}
@@ -847,7 +841,7 @@ export const WishlistDrawer: React.FC<{
                       type="text"
                       value={registryTitle}
                       onChange={(e) => setRegistryTitle(e.target.value)}
-                      placeholder="e.g. Baby Leo's Nursery Registry"
+                      placeholder="e.g. Baby My WOODKIND Gift Registry"
                       className="w-full p-2.5 rounded-lg border border-[#e4e2df] bg-[#fbf9f6] text-[#171411] focus:outline-none focus:border-[#171411]"
                     />
                   </div>
@@ -971,7 +965,7 @@ export const WishlistDrawer: React.FC<{
                     L
                   </div>
                   <span className="text-[10px] font-mono tracking-widest text-[#d0c5b4] uppercase">
-                    LUMEN HEIRLOOM GIFT REGISTRY
+                    WOODKIND HEIRLOOM GIFT REGISTRY
                   </span>
                   <h3 className="font-serif text-xl font-bold mt-1 text-white">
                     {registryTitle}
@@ -988,7 +982,7 @@ export const WishlistDrawer: React.FC<{
                 <div className="space-y-2.5">
                   <div className="flex justify-between items-center text-xs font-mono text-[#7a746e]">
                     <span>HEIRLOOM PIECES SELECTED ({wishlistedProducts.length})</span>
-                    <span>100% UNCLAIMED</span>
+                    <span>No contributions recorded</span>
                   </div>
 
                   {wishlistedProducts.map((item) => (
@@ -1084,29 +1078,28 @@ export const CustomerAccountModal: React.FC<{
           />
           <div>
             <span className="text-[10px] font-bold uppercase tracking-wider bg-[#ffdcbd] text-[#2c1600] px-2 py-0.5 rounded">
-              Verified Patron &amp; Founder
+              Member profile
             </span>
-            <h3 className="font-serif text-xl font-bold text-[#171411] mt-1">Ananya Singhania</h3>
-            <p className="text-xs text-[#7e756f]">Worli Sea Face, Mumbai • Client #LMN-84920</p>
+            <h3 className="font-serif text-xl font-bold text-[#171411] mt-1">Your WOODKIND profile</h3>
+            <p className="text-xs text-[#7e756f]">Profile preview · order data not connected</p>
           </div>
         </div>
 
         <div className="mt-6 space-y-4 text-xs">
           <div className="p-4 bg-white rounded-xl border border-[#e4e2df] space-y-2">
             <div className="flex justify-between font-bold text-[#171411]">
-              <span>Active In-Home Trial: 30 Days of Wonder</span>
-              <span className="text-[#7d562d]">Day 14 of 30</span>
+              <span>Orders & product support</span>
+              <span className="text-[#7d562d]">Not connected</span>
             </div>
             <p className="text-[#4d4540]">
-              The Minimal Ride-On (Ivory &amp; Beech) is currently in your nursery. Zero return fees,
-              complimentary white-glove reverse collection available upon request.
+              Order status, trial terms, returns and support details will appear once the store's order system is connected.
             </p>
           </div>
 
           <div className="p-4 bg-white rounded-xl border border-[#e4e2df] space-y-2">
-            <span className="font-bold text-[#171411] block">Heirloom Provenance Certificates</span>
+            <span className="font-bold text-[#171411] block">Product and sourcing documents</span>
             <div className="flex items-center justify-between text-[#4d4540] py-1 border-t border-[#f5f3f0]">
-              <span>#LMN-RO-0182 (The Minimal Ride-On)</span>
+              <span>Product specification pending</span>
               <span className="text-[#7d562d] font-semibold cursor-pointer hover:underline">
                 View Certificate ↗
               </span>
@@ -1163,7 +1156,7 @@ export const BespokeConsultationModal: React.FC<{
   onClose: () => void;
   onSubmit: (data: any) => void;
 }> = ({ isOpen, onClose, onSubmit }) => {
-  const [parentName, setParentName] = useState('Ananya Singhania');
+  const [parentName, setParentName] = useState('Your WOODKIND profile');
   const [email, setEmail] = useState('ananya.s@singhaniagroup.in');
   const [city, setCity] = useState('Mumbai, Maharashtra');
   const [nurseryStyle, setNurseryStyle] = useState('Nordic Warm Minimalist');
