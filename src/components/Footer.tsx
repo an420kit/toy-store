@@ -26,18 +26,18 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onShowToast }) => {
               WOODKIND
             </div>
             <p className="text-[14px] leading-relaxed text-[#4d4540] max-w-md">
-              Sculptural play objects hand-finished in FSC-certified European beechwood. Rooted in
+              Thoughtful wooden play concepts, shaped around quiet forms and everyday imagination. Rooted in
               pure Scandinavian design and respectful Montessori principles to nurture developmental
               autonomy through tactile, enduring heirlooms.
             </p>
             <div className="flex flex-wrap items-center gap-2 pt-2 text-[#4d4540] text-[11px] font-medium tracking-wide">
               <div className="flex items-center gap-1.5 bg-[#fbf9f6] px-2.5 py-1 rounded border border-[#e4e2df]">
                 <span className="material-symbols-outlined text-[#7d562d] text-[16px]">forest</span>
-                <span>FSC® Certified Timber</span>
+                <span>Material details in review</span>
               </div>
               <div className="flex items-center gap-1.5 bg-[#fbf9f6] px-2.5 py-1 rounded border border-[#e4e2df]">
                 <span className="material-symbols-outlined text-[#7d562d] text-[16px]">verified_user</span>
-                <span>EN71 &amp; BIS Safety Compliant</span>
+                <span>Product testing before release</span>
               </div>
               <div className="flex items-center gap-1.5 bg-[#fbf9f6] px-2.5 py-1 rounded border border-[#e4e2df]">
                 <span className="material-symbols-outlined text-[#7d562d] text-[16px]">eco</span>
@@ -130,7 +130,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onShowToast }) => {
                   onClick={() => onNavigate('brand-philosophy')}
                   className="hover:text-[#171411] transition-colors cursor-pointer text-left font-medium text-[#7d562d]"
                 >
-                  Safety &amp; Compliance (EN71 / BIS)
+                  Safety review &amp; product information
                 </button>
               </li>
               <li>
@@ -197,7 +197,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onShowToast }) => {
 
         {/* Bottom bar */}
         <div className="pt-8 border-t border-[#e4e2df] flex flex-col md:flex-row items-center justify-between gap-4 text-[#7e756f] text-[12px]">
-          <p>© 2026 WOODKIND Nordic Toys Ltd. Crafted with reverence in Europe &amp; India.</p>
+          <p>© 2026 WOODKIND. A thoughtful start to wooden play.</p>
           <div className="flex items-center gap-6">
             <button
               onClick={() => onNavigate('brand-philosophy')}
