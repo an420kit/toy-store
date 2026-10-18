@@ -38,7 +38,7 @@ export const Header: React.FC<HeaderProps> = ({
     { label: 'Learning & Montessori', screen: 'learning-and-montessori' },
     { label: 'Play Furniture', screen: 'play-furniture' },
     { label: 'Gift Hub & Registry', screen: 'gift-registry' },
-    { label: 'Wood Care & Charter', screen: 'brand-philosophy' },
+    { label: 'Our Approach', screen: 'brand-philosophy' },
   ];
 
   return (
@@ -47,7 +47,7 @@ export const Header: React.FC<HeaderProps> = ({
       <div className="bg-[#171411] text-[#fbf9f6] py-1.5 px-4 text-[11px] tracking-wider uppercase font-medium">
         <div className="max-w-[1440px] mx-auto flex items-center justify-between gap-3">
           <div className="flex items-center gap-2 sm:gap-3 overflow-hidden text-ellipsis whitespace-nowrap">
-            <span>Free insured shipping on heirloom orders across India</span>
+            <span>WOODKIND · Pilot range · details under review</span>
             <span className="opacity-30 hidden sm:inline">•</span>
             <span className="hidden sm:inline">Thoughtful wooden play · Pilot range</span>
           </div>
@@ -130,10 +130,10 @@ export const Header: React.FC<HeaderProps> = ({
           <button
             onClick={onOpenSearch}
             className="hidden md:inline-flex items-center gap-2 text-[12px] text-[#7e756f] hover:text-[#171411] bg-[#f5f3f0] hover:bg-[#eae8e5] px-3 py-1.5 rounded-lg border border-[#e4e2df] transition-colors cursor-pointer"
-            title="Search 50 Archetypes"
+            title="Search WOODKIND products"
           >
             <span className="material-symbols-outlined text-[16px] text-[#7d562d]">search</span>
-            <span>Search 50 Archetypes...</span>
+            <span>Search products...</span>
           </button>
         </div>
 
@@ -144,17 +144,12 @@ export const Header: React.FC<HeaderProps> = ({
             className="flex items-center gap-2.5 group cursor-pointer text-center focus:outline-none"
             aria-label="WOODKIND Homepage"
           >
-            <img
-              alt="WOODKIND Nordic Toys Logo"
-              className="h-7 md:h-8 w-auto object-contain transition-transform group-hover:scale-105"
-              src="https://lh3.googleusercontent.com/aida/AEtjO1XndE-ZA6KIQF2WLwO3c9sv69yuIXFel4TRvlZuLxVbttUVPHnQDfbny6cIyLQFeqg17CEBx7FONxJbt9wqR_UupbA2_0b7fEiTf0u13MSdNXr4LrRdqxCW8L4tFfCNXoFmVnzYVic415Qu-YcbcbB5LqOIuXWuPn6d-MqFwfbrFl-BaxhRe_RG0ljyRNbSurux2IxP9ZerVysoalc8vyjQQKC_DlToiuBurKQnAdWCgZAdQbwAiyKKxCvV"
-            />
             <div className="flex flex-col items-start leading-none text-left">
               <span className="font-serif text-2xl md:text-3xl font-bold tracking-tight text-[#171411]">
                 WOODKIND
               </span>
               <span className="text-[9px] tracking-[0.22em] uppercase text-[#7d562d] font-semibold hidden sm:inline">
-                Nordic Heirloom
+                Wooden Play · A Thoughtful Start
               </span>
             </div>
           </button>
@@ -179,7 +174,7 @@ export const Header: React.FC<HeaderProps> = ({
             onClick={onOpenSearch}
             aria-label="Search Catalog"
             className="md:hidden p-2 text-[#4d4540] hover:text-[#171411] transition-colors rounded-full hover:bg-[#eae8e5] cursor-pointer"
-            title="Search Archetypes"
+            title="Search products"
           >
             <span className="material-symbols-outlined text-[20px]">search</span>
           </button>
@@ -221,11 +216,9 @@ export const Header: React.FC<HeaderProps> = ({
             className="p-1 cursor-pointer focus:outline-none"
             title="Collector Account"
           >
-            <img
-              alt="Profile"
-              className="w-8 h-8 rounded-full object-cover ring-1 ring-[#e4e2df] hover:ring-[#7d562d] transition-all"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHsTYhXqG28SIlepM-9p5ZGrgCwufsBOutMRwoUJgoE1Oeda81nGkFhZ8Y2K2HRCwGo3vvC-D4Xy48MzyJ4cGeMJC2ab4THgj7fymUaQu-_P-zKUq9eNgs_6igTSmyt5rBV-4CN_MJEKlJqrhUD4ZC1qCyBwv8UgTyDSmIERVHByGcLqjCbhPJnJkj3JrD2131N11DBfVqWz2QxHI-btcyU7LeqefyVx8Elz_wl3hQLcnx0oq8CIPlLg"
-            />
+            <span className="flex h-8 w-8 items-center justify-center rounded-full border border-[#ded3c4] bg-[#eee6da] text-[#63523d]">
+              <span className="material-symbols-outlined text-[18px]">person</span>
+            </span>>
           </button>
         </div>
       </div>
