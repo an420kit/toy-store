@@ -25,57 +25,45 @@ import {
 
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState<ScreenType>('home');
-  const [activeProductId, setActiveProductId] = useState<string>('minimal-ride-on');
+  const [activeProductId, setActiveProductId] = useState<string>('the-cart-wagon');
   const [initialCategory, setInitialCategory] = useState<string | undefined>(undefined);
   const [currency, setCurrency] = useState<CurrencyCode>('INR');
 
-  // Cart State (Hydrated from localStorage or Default Debut items)
+  // Cart and wishlist: start clean rather than showing demo items from the old storefront.
   const [cartItems, setCartItems] = useState<CartItem[]>(() => {
     try {
-      const saved = localStorage.getItem('lumen_cart_v1');
+      const saved = localStorage.getItem('woodkind_cart_v1');
       if (saved) {
         const parsed = JSON.parse(saved);
-        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+        if (Array.isArray(parsed)) return parsed.filter((item) => item?.product?.id && PRODUCTS.some((p) => p.id === item.product.id));
       }
     } catch {}
-    return [
-      {
-        product: PRODUCTS[0], // The Minimal Ride-On
-        quantity: 1,
-        selectedColorway: 'Warm Nordic Beech',
-        monogram: 'LEO',
-        includeLeatherTag: true,
-      },
-      {
-        product: PRODUCTS[4], // Sensory Stacking Rings
-        quantity: 1,
-        selectedColorway: 'Natural Beechwood',
-      },
-    ];
+    return [];
   });
 
-  // Wishlist state (Hydrated from localStorage)
   const [wishlistIds, setWishlistIds] = useState<string[]>(() => {
     try {
-      const saved = localStorage.getItem('lumen_wishlist_v1');
+      const saved = localStorage.getItem('woodkind_wishlist_v1');
       if (saved) {
         const parsed = JSON.parse(saved);
-        if (Array.isArray(parsed)) return parsed;
+        if (Array.isArray(parsed)) return parsed.filter((id) => PRODUCTS.some((p) => p.id === id));
       }
     } catch {}
-    return ['sculpted-rocking-swan', 'geometric-arch-pikler'];
+    return [];
   });
 
-  // Sync state changes to localStorage
+  // Persist the current WOODKIND session; clean up the obsolete LUMEN demo keys.
   useEffect(() => {
     try {
-      localStorage.setItem('lumen_cart_v1', JSON.stringify(cartItems));
+      localStorage.setItem('woodkind_cart_v1', JSON.stringify(cartItems));
+      localStorage.removeItem('lumen_cart_v1');
     } catch {}
   }, [cartItems]);
 
   useEffect(() => {
     try {
-      localStorage.setItem('lumen_wishlist_v1', JSON.stringify(wishlistIds));
+      localStorage.setItem('woodkind_wishlist_v1', JSON.stringify(wishlistIds));
+      localStorage.removeItem('lumen_wishlist_v1');
     } catch {}
   }, [wishlistIds]);
 
@@ -89,7 +77,7 @@ export default function App() {
   const [isBOMOpen, setIsBOMOpen] = useState<boolean>(false);
   const [isBespokeOpen, setIsBespokeOpen] = useState<boolean>(false);
   const [isAiAdvisorOpen, setIsAiAdvisorOpen] = useState<boolean>(false);
-  const [modalProductName, setModalProductName] = useState<string>('The Minimal Ride-On');
+  const [modalProductName, setModalProductName] = useState<string>('Wooden Pull Wagon');
 
   // Global Toasts
   const [toasts, setToasts] = useState<ToastMessage[]>([]);
@@ -444,7 +432,7 @@ export default function App() {
         }}
       />
 
-      {/* LUMEN AI Milestone & Keepsake Concierge Modal */}
+      {/* WOODKIND AI Play Advisor Modal */}
       <AiGiftAdvisorModal
         isOpen={isAiAdvisorOpen}
         onClose={() => setIsAiAdvisorOpen(false)}
@@ -459,13 +447,13 @@ export default function App() {
       <button
         onClick={() => setIsAiAdvisorOpen(true)}
         className="fixed bottom-6 left-6 z-40 bg-[#171411] hover:bg-[#7d562d] text-white px-4 py-2.5 rounded-full shadow-2xl border border-[#ffca98]/40 flex items-center gap-2 group transition-all transform hover:scale-105 cursor-pointer"
-        title="Ask LUMEN AI Toy Advisor"
+        title="Ask WOODKIND Play Advisor"
       >
         <span className="material-symbols-outlined text-[#ffca98] text-[20px] animate-pulse">
           auto_awesome
         </span>
         <span className="text-xs font-serif font-bold tracking-wide">
-          ✨ Ask AI Toy Advisor
+          ✨ Ask WOODKIND Play Advisor
         </span>
       </button>
 
