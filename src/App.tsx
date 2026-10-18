@@ -29,53 +29,43 @@ export default function App() {
   const [initialCategory, setInitialCategory] = useState<string | undefined>(undefined);
   const [currency, setCurrency] = useState<CurrencyCode>('INR');
 
-  // Cart State (Hydrated from localStorage or Default Debut items)
+  // Start with a genuinely empty bag; only restore items saved by this WOODKIND app.
   const [cartItems, setCartItems] = useState<CartItem[]>(() => {
     try {
-      const saved = localStorage.getItem('lumen_cart_v1');
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
-      }
-    } catch {}
-    return [
-      {
-        product: PRODUCTS[0], // The Minimal Ride-On
-        quantity: 1,
-        selectedColorway: 'Warm Nordic Beech',
-        monogram: 'LEO',
-        includeLeatherTag: true,
-      },
-      {
-        product: PRODUCTS[4], // Sensory Stacking Rings
-        quantity: 1,
-        selectedColorway: 'Natural Beechwood',
-      },
-    ];
+      const saved = localStorage.getItem('woodkind_cart_v1');
+      const parsed = saved ? JSON.parse(saved) : [];
+      if (!Array.isArray(parsed)) return [];
+      return parsed
+        .filter((item) => item?.product?.id && PRODUCTS.some((product) => product.id === item.product.id))
+        .map((item) => ({ ...item, product: PRODUCTS.find((product) => product.id === item.product.id)! }));
+    } catch {
+      return [];
+    }
   });
 
-  // Wishlist state (Hydrated from localStorage)
+  // Restore only real products from the WOODKIND wishlist; no sample items.
   const [wishlistIds, setWishlistIds] = useState<string[]>(() => {
     try {
-      const saved = localStorage.getItem('lumen_wishlist_v1');
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        if (Array.isArray(parsed)) return parsed;
-      }
-    } catch {}
-    return ['sculpted-rocking-swan', 'geometric-arch-pikler'];
+      const saved = localStorage.getItem('woodkind_wishlist_v1');
+      const parsed = saved ? JSON.parse(saved) : [];
+      return Array.isArray(parsed)
+        ? parsed.filter((id): id is string => typeof id === 'string' && PRODUCTS.some((product) => product.id === id))
+        : [];
+    } catch {
+      return [];
+    }
   });
 
   // Sync state changes to localStorage
   useEffect(() => {
     try {
-      localStorage.setItem('lumen_cart_v1', JSON.stringify(cartItems));
+      localStorage.setItem('woodkind_cart_v1', JSON.stringify(cartItems));
     } catch {}
   }, [cartItems]);
 
   useEffect(() => {
     try {
-      localStorage.setItem('lumen_wishlist_v1', JSON.stringify(wishlistIds));
+      localStorage.setItem('woodkind_wishlist_v1', JSON.stringify(wishlistIds));
     } catch {}
   }, [wishlistIds]);
 
@@ -240,12 +230,12 @@ export default function App() {
     handleAddToCart(product, 1);
   };
 
-  // Order success
-  const handleOrderSuccess = (orderData: any) => {
-    setCartItems([]);
+  // Checkout is a frontend preview until a verified payment/order backend is connected.
+  const handleOrderSuccess = (_orderData: any) => {
     showToast(
-      'Order Confirmed #LMN-' + Math.floor(10000 + Math.random() * 90000),
-      'Thank you! Your heirloom order has been registered for Pilot Batch #01.'
+      'Checkout preview only',
+      'No live order or payment was placed. WOODKIND checkout integration is not active yet.',
+      'info'
     );
   };
 
