@@ -17,11 +17,11 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
 }) => {
   // 5 Debut Core Launch Products
   const debutSkus = [
-    'minimal-ride-on',
-    'nordic-rocking-horse',
-    'foldable-climber-slide',
-    'stacking-stones-sorter',
-    'handcrafted-play-kitchen',
+    'curved-balance-board',
+    'forest-steps',
+    'climbing-arch',
+    'pikler-triangle-ramp',
+    'mini-jungle-gym',
   ];
   const debutProducts = debutSkus
     .map((id) => PRODUCTS.find((p) => p.id === id))
@@ -37,17 +37,16 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
             <div className="lg:col-span-7 space-y-6">
               <div className="inline-flex items-center gap-2 bg-[#fbf9f6] px-3.5 py-1.5 rounded-full text-[#7d562d] text-[12px] font-semibold tracking-wider uppercase border border-[#e4e2df] shadow-sm">
                 <span className="material-symbols-outlined text-[16px]">eco</span>
-                <span>Artisanal Debut • Heirloom Reserve 2025</span>
+                <span>WOODKIND • Pilot Collection</span>
               </div>
 
               <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#171411] tracking-tight leading-[1.12]">
-                Heirloom Toys, <br className="hidden sm:inline" />
-                Crafted in Pure Wood &amp; Quiet Curves.
+                Wooden Play, <br className="hidden sm:inline" />
+                Made for Everyday Discovery.
               </h1>
 
               <p className="text-base sm:text-lg text-[#4d4540] max-w-xl leading-relaxed">
-                Designed for intentional childhoods. Free from plastic, artificial noise, and
-                fleeting trends. Rooted in Scandinavian minimalism and Montessori principles.
+                Explore our pilot range—from balance boards and stepping sets to climbing concepts and first rides. Pilot prices and availability remain subject to prototype, supplier and safety validation.
               </p>
 
               <div className="flex flex-wrap items-center gap-4 pt-2">
@@ -160,7 +159,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
               </div>
               <div className="overflow-hidden rounded-xl bg-[#f5f3f0] shadow-inner border border-[#cfc4bd]">
                 <img
-                  alt="LUMEN Master Toy Collection Series 1"
+                  alt="WOODKIND Master Toy Collection Series 1"
                   className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-500"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgcE-84tGgayP_rjdBt_MrwPtu6V68VlUzM6S6QTYbubggsMAF7x4abHp7A1S3lrofrDWylJZsfYjTprFbjyAwOkmPHVepMe_s0v5U1VFOOGf3bFSWYQjfw1NMVE-WrqOP_KZ5DAJHDrIRtppteXXQXTsR9fa9awYV_Fzgqi3Fb32Tq8HOb6yZ1s3I6Mhpcbtb8Ymqn2tQuU75Xp8yZA3FUWsOBIQnTUZoYtVi-k8DUGEst1Qz0yHqmEDle8yK9hs-Uts"
                 />
@@ -190,7 +189,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
               </div>
               <div className="overflow-hidden rounded-xl bg-[#f5f3f0] shadow-inner border border-[#cfc4bd]">
                 <img
-                  alt="LUMEN Master Toy Collection Series 2"
+                  alt="WOODKIND Master Toy Collection Series 2"
                   className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-500"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcbiQ4bxllqAGBWmkkdRjGJcZ6nP0bPhveRnNzZ_SIkNGKPmRL5Wx0NhpKFkF762l_wd37Qg_dxqeSq9Res3A7ecIBQGX9aVuqxn7resv3gBrDwE4dQwoFSA9VHPAHrqCDahfsb4zeHdJ7SkS6M_q-cfotE0hCXfDlqAnAjZCOFzK5DtqaEwjf7_kkoV43I6YYFAroRW-9JDBnNXbWhXifXD4vpAA81jUu1yi7GbOJb-gWst-JgDF5kibuuOrKUXmHwhY"
                 />
@@ -226,7 +225,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
             </div>
           </div>
 
-          {/* Grid of 5 Tested Debut Prototypes */}
+          {/* WOODKIND Pilot Collection */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {debutProducts.map((prod, idx) => (
               <div
@@ -412,7 +411,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
             <div className="lg:col-span-5 space-y-6">
               <span className="text-[11px] font-bold uppercase tracking-widest text-[#7d562d]">
-                The Lumen Standard
+                The WOODKIND Standard
               </span>
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-[#171411]">
                 Why European Craftsmanship Matters
@@ -633,7 +632,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                   ))}
                 </div>
                 <p className="font-serif italic text-[14px] text-[#171411] leading-relaxed">
-                  “Finding toys that aren't garish plastic is nearly impossible in Mumbai. Lumen's
+                  “Finding toys that aren't garish plastic is nearly impossible in Mumbai. WOODKIND's
                   shape sorters and stacking stones are absolute works of quiet art. Exceptional wood
                   finish.”
                 </p>
