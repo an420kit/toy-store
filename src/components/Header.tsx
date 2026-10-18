@@ -130,10 +130,10 @@ export const Header: React.FC<HeaderProps> = ({
           <button
             onClick={onOpenSearch}
             className="hidden md:inline-flex items-center gap-2 text-[12px] text-[#7e756f] hover:text-[#171411] bg-[#f5f3f0] hover:bg-[#eae8e5] px-3 py-1.5 rounded-lg border border-[#e4e2df] transition-colors cursor-pointer"
-            title="Search 50 Archetypes"
+            title="Search pilot products"
           >
             <span className="material-symbols-outlined text-[16px] text-[#7d562d]">search</span>
-            <span>Search 50 Archetypes...</span>
+            <span>Search pilot products...</span>
           </button>
         </div>
 
@@ -179,7 +179,7 @@ export const Header: React.FC<HeaderProps> = ({
             onClick={onOpenSearch}
             aria-label="Search Catalog"
             className="md:hidden p-2 text-[#4d4540] hover:text-[#171411] transition-colors rounded-full hover:bg-[#eae8e5] cursor-pointer"
-            title="Search Archetypes"
+            title="Search products"
           >
             <span className="material-symbols-outlined text-[20px]">search</span>
           </button>
