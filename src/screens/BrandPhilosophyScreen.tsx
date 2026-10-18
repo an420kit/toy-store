@@ -6,160 +6,69 @@ interface BrandPhilosophyScreenProps {
   onShowToast?: (title: string, subtitle: string) => void;
 }
 
-export const BrandPhilosophyScreen: React.FC<BrandPhilosophyScreenProps> = ({
-  onNavigate,
-  onShowToast,
-}) => {
-  return (
-    <div className="flex flex-col w-full bg-[#fbf9f6] text-[#171411]">
-      {/* Hero Header */}
-      <section className="w-full bg-[#f5f3f0] py-16 md:py-24 border-b border-[#e4e2df]">
-        <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 text-center space-y-4">
-          <div className="inline-flex items-center gap-2 bg-[#fbf9f6] px-3.5 py-1.5 rounded-full text-[#7d562d] text-xs font-semibold tracking-wider uppercase border border-[#e4e2df] shadow-xs">
-            <span className="material-symbols-outlined text-[16px]">eco</span>
-            <span>The Lumen Manifesto • Sustainable Heirloom Charter</span>
-          </div>
-          <h1 className="font-serif text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#171411] max-w-3xl mx-auto">
-            Quiet Wood, Enduring Childhoods
-          </h1>
-          <p className="text-base md:text-lg text-[#4d4540] max-w-2xl mx-auto leading-relaxed">
-            We exist to counter the disposable, battery-driven toys that overwhelm children&apos;s senses.
-            Every LUMEN object is shaped by hand from European beechwood to foster calm focus, open curiosity,
-            and generational wonder.
-          </p>
+export const BrandPhilosophyScreen: React.FC<BrandPhilosophyScreenProps> = ({ onNavigate, onShowToast }) => (
+  <div className="flex flex-col w-full bg-[#fbf9f6] text-[#20291f]">
+    <section className="bg-[#f0ece4] border-b border-[#e3d8c8]">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-12 py-14 md:py-20">
+        <span className="inline-flex rounded-full bg-white/80 border border-[#ded3c3] px-4 py-2 text-[10px] uppercase tracking-[0.2em] font-bold text-[#876541]">The WOODKIND approach</span>
+        <h1 className="font-serif text-4xl md:text-6xl leading-tight max-w-3xl mt-5">Thoughtful forms. Transparent choices.</h1>
+        <p className="text-base md:text-lg text-[#675e52] max-w-2xl leading-relaxed mt-5">We are shaping a focused collection of wooden play concepts for calmer, open-ended play. The current range is in pilot development, so materials, dimensions, age guidance and safety requirements will be published only after they are verified.</p>
+        <button onClick={() => onNavigate('all-collections')} className="mt-7 rounded-lg bg-[#233b2d] hover:bg-[#314d3b] px-6 py-3.5 text-sm font-semibold text-white transition-colors">Explore the pilot collection →</button>
+      </div>
+    </section>
+
+    <section className="max-w-[1200px] mx-auto w-full px-4 sm:px-6 lg:px-12 py-12 md:py-16">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <article className="rounded-2xl bg-white border border-[#e7e0d5] p-6 md:p-7">
+          <span className="text-[#8b6845] text-2xl">01</span>
+          <h2 className="font-serif text-2xl mt-4">Material clarity</h2>
+          <p className="text-sm text-[#70665a] leading-relaxed mt-3">Each listing will identify the actual timber, coatings and hardware after supplier specifications are checked. No sourcing or certification badge is implied before evidence is available.</p>
+          <span className="inline-flex mt-5 rounded-full bg-[#f2eee7] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.13em] text-[#79664d]">Verification pending</span>
+        </article>
+        <article className="rounded-2xl bg-white border border-[#e7e0d5] p-6 md:p-7">
+          <span className="text-[#8b6845] text-2xl">02</span>
+          <h2 className="font-serif text-2xl mt-4">Useful by design</h2>
+          <p className="text-sm text-[#70665a] leading-relaxed mt-3">The collection explores balance, movement, rocking, climbing and tactile play. Prototype geometry and manufacturing choices will be tested before final product claims are made.</p>
+          <span className="inline-flex mt-5 rounded-full bg-[#f2eee7] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.13em] text-[#79664d]">Pilot development</span>
+        </article>
+        <article className="rounded-2xl bg-white border border-[#e7e0d5] p-6 md:p-7">
+          <span className="text-[#8b6845] text-2xl">03</span>
+          <h2 className="font-serif text-2xl mt-4">Safety before sales</h2>
+          <p className="text-sm text-[#70665a] leading-relaxed mt-3">Age suitability, pinch points, stability, capacity, finish safety and assembly guidance are launch gates. We will not claim completed testing or certification until the relevant evidence exists.</p>
+          <span className="inline-flex mt-5 rounded-full bg-[#f2eee7] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.13em] text-[#79664d]">Testing not yet claimed</span>
+        </article>
+      </div>
+    </section>
+
+    <section className="bg-[#f3efe7] border-y border-[#e3d8c8]">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-12 py-12 md:py-16">
+        <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-[#8b6845]">Before the first order</span>
+        <h2 className="font-serif text-3xl md:text-4xl mt-2 max-w-2xl">A product page should answer the questions that matter.</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-8">
+          {[
+            ['Materials & finish', 'Supplier documents and coating details will be confirmed.'],
+            ['Dimensions & assembly', 'Measured prototype specifications and instructions are pending.'],
+            ['Age guidance & use', 'Published only after appropriate review and testing.'],
+            ['Price, shipping & returns', 'Policies will be shown when live commerce is configured.'],
+          ].map(([title, detail]) => (
+            <div key={title} className="rounded-xl bg-white border border-[#e3d8c8] p-5">
+              <h3 className="font-serif text-xl">{title}</h3>
+              <p className="text-sm text-[#70665a] mt-2 leading-relaxed">{detail}</p>
+            </div>
+          ))}
         </div>
-      </section>
+      </div>
+    </section>
 
-      {/* 3 Pillars */}
-      <section className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 py-16 md:py-20 space-y-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-white p-8 rounded-2xl border border-[#e4e2df] shadow-xs space-y-4">
-            <div className="w-12 h-12 rounded-xl bg-[#ffdcbd]/40 text-[#7d562d] flex items-center justify-center">
-              <span className="material-symbols-outlined text-[28px]">forest</span>
-            </div>
-            <h3 className="font-serif text-2xl font-bold text-[#171411]">100% FSC® Certified Timber</h3>
-            <p className="text-sm text-[#4d4540] leading-relaxed">
-              Milled solely from sustainably harvested German and Bavarian European beech (<em>Fagus sylvatica</em>).
-              For every toy welcomed into a family nursery, two saplings are planted in our monitored Black Forest acreage.
-            </p>
-            <div className="pt-2 text-xs font-semibold text-[#7d562d] flex items-center gap-1.5">
-              <span className="material-symbols-outlined text-[16px]">check_circle</span>
-              <span>Zero clear-cutting • Chain-of-custody certified</span>
-            </div>
-          </div>
-
-          <div className="bg-white p-8 rounded-2xl border border-[#e4e2df] shadow-xs space-y-4">
-            <div className="w-12 h-12 rounded-xl bg-[#ffdcbd]/40 text-[#7d562d] flex items-center justify-center">
-              <span className="material-symbols-outlined text-[28px]">spa</span>
-            </div>
-            <h3 className="font-serif text-2xl font-bold text-[#171411]">Organic Cold-Pressed Oils</h3>
-            <p className="text-sm text-[#4d4540] leading-relaxed">
-              Finished using raw cold-pressed linseed oils, organic beeswax, and waterborne food-safe pigments.
-              Free of volatile organic compounds (VOCs), formaldehyde, phthalates, and plasticizers.
-            </p>
-            <div className="pt-2 text-xs font-semibold text-[#7d562d] flex items-center gap-1.5">
-              <span className="material-symbols-outlined text-[16px]">check_circle</span>
-              <span>Teething safe • Saliva resistant (DIN 53160)</span>
-            </div>
-          </div>
-
-          <div className="bg-white p-8 rounded-2xl border border-[#e4e2df] shadow-xs space-y-4">
-            <div className="w-12 h-12 rounded-xl bg-[#ffdcbd]/40 text-[#7d562d] flex items-center justify-center">
-              <span className="material-symbols-outlined text-[28px]">family_history</span>
-            </div>
-            <h3 className="font-serif text-2xl font-bold text-[#171411]">10-Year Heirloom Warranty</h3>
-            <p className="text-sm text-[#4d4540] leading-relaxed">
-              Constructed with mortise-and-tenon joints and brass hardware designed to outlive trends.
-              If any structural joinery ever loosens within ten years, our master workshop restores or replaces it.
-            </p>
-            <div className="pt-2 text-xs font-semibold text-[#7d562d] flex items-center gap-1.5">
-              <span className="material-symbols-outlined text-[16px]">check_circle</span>
-              <span>Generational repair kits included with orders</span>
-            </div>
-          </div>
+    <section className="max-w-[1200px] mx-auto w-full px-4 sm:px-6 lg:px-12 py-12 md:py-16">
+      <div className="rounded-2xl bg-[#233b2d] text-white px-6 py-10 md:px-10 md:py-12">
+        <h2 className="font-serif text-3xl md:text-4xl">Help shape the pilot.</h2>
+        <p className="text-sm text-white/75 max-w-xl leading-relaxed mt-3">Share the product, age range or use case you are interested in. Enquiries are a research step, not a confirmed order.</p>
+        <div className="flex flex-wrap gap-3 mt-6">
+          <button onClick={() => { onShowToast?.('Pilot enquiry', 'Checkout and payment are not active yet. Use this as a product-interest enquiry only.'); onNavigate('all-collections'); }} className="rounded-lg bg-[#f5e8d6] text-[#233b2d] hover:bg-white px-5 py-3 text-sm font-semibold transition-colors">Browse products</button>
+          <button onClick={() => onNavigate('home')} className="rounded-lg border border-white/35 hover:bg-white/10 px-5 py-3 text-sm font-semibold transition-colors">Back to home</button>
         </div>
-
-        {/* Detailed Wood Care Guide */}
-        <div className="bg-[#f5f3f0] rounded-3xl p-8 md:p-12 border border-[#e4e2df] space-y-8">
-          <div className="max-w-2xl space-y-2">
-            <span className="text-[11px] uppercase font-bold tracking-widest text-[#7d562d]">Care &amp; Restoration Monograph</span>
-            <h2 className="font-serif text-3xl font-bold text-[#171411]">
-              How to Nurture Natural Beechwood
-            </h2>
-            <p className="text-sm text-[#4d4540]">
-              Like fine heirloom furniture, solid beechwood matures gracefully with a warm amber patina.
-              Here is how to care for your pieces:
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white p-5 rounded-xl border border-[#e4e2df] space-y-2">
-              <span className="text-xs font-bold text-[#7d562d] uppercase">01 • Daily Cleaning</span>
-              <h4 className="font-serif font-bold text-base text-[#171411]">Damp Cloth Only</h4>
-              <p className="text-xs text-[#4d4540] leading-relaxed">
-                Wipe gently with a slightly damp cotton cloth. Avoid submerged soaking, harsh chemical detergents, or steam cleaners.
-              </p>
-            </div>
-
-            <div className="bg-white p-5 rounded-xl border border-[#e4e2df] space-y-2">
-              <span className="text-xs font-bold text-[#7d562d] uppercase">02 • Annual Nourishment</span>
-              <h4 className="font-serif font-bold text-base text-[#171411]">Beeswax Reconditioning</h4>
-              <p className="text-xs text-[#4d4540] leading-relaxed">
-                Apply a thin coat of natural beeswax balm once a year to hydrate wood fibers and restore the silky hand feel.
-              </p>
-            </div>
-
-            <div className="bg-white p-5 rounded-xl border border-[#e4e2df] space-y-2">
-              <span className="text-xs font-bold text-[#7d562d] uppercase">03 • Minor Scratches</span>
-              <h4 className="font-serif font-bold text-base text-[#171411]">Fine 320-Grit Buff</h4>
-              <p className="text-xs text-[#4d4540] leading-relaxed">
-                Small toddler play marks can be buffed with the included 320-grit sanding pad along the wood grain and sealed with oil.
-              </p>
-            </div>
-
-            <div className="bg-white p-5 rounded-xl border border-[#e4e2df] space-y-2">
-              <span className="text-xs font-bold text-[#7d562d] uppercase">04 • Environment</span>
-              <h4 className="font-serif font-bold text-base text-[#171411]">Room Humidity</h4>
-              <p className="text-xs text-[#4d4540] leading-relaxed">
-                Keep indoor relative humidity between 40% and 65%. Avoid resting wooden pieces against heating radiators or direct midday monsoons.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Legal & Safety Compliance Tabs */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
-          <div className="p-6 bg-white rounded-2xl border border-[#e4e2df] space-y-2">
-            <h4 className="font-serif font-bold text-lg text-[#171411]">BIS IS 9873 Certification</h4>
-            <p className="text-xs text-[#4d4540] leading-relaxed">
-              Certified under the Bureau of Indian Standards toy safety specifications for mechanical stability, flammability, and zero heavy metal migration.
-            </p>
-          </div>
-          <div className="p-6 bg-white rounded-2xl border border-[#e4e2df] space-y-2">
-            <h4 className="font-serif font-bold text-lg text-[#171411]">EN 71-1, 2, 3 Compliant</h4>
-            <p className="text-xs text-[#4d4540] leading-relaxed">
-              Full European Union conformity verifying safety thresholds for pinch points, wheel entrapments, small part choke tests, and organic surface saliva safety.
-            </p>
-          </div>
-          <div className="p-6 bg-white rounded-2xl border border-[#e4e2df] space-y-2">
-            <h4 className="font-serif font-bold text-lg text-[#171411]">30-Day Quiet Home Trial</h4>
-            <p className="text-xs text-[#4d4540] leading-relaxed">
-              Take 30 days to experience any LUMEN object in your nursery. If it doesn’t inspire lasting harmony, complimentary doorstep return pickup is provided across India.
-            </p>
-          </div>
-        </div>
-
-        {/* Return to Collections CTA */}
-        <div className="text-center pt-8 pb-4 space-y-4">
-          <button
-            onClick={() => onNavigate('all-collections')}
-            className="bg-[#171411] text-white hover:bg-[#7d562d] px-8 py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2 shadow-md transition-colors cursor-pointer"
-          >
-            <span>Explore The 50 Archetypes Master Archive</span>
-            <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
-          </button>
-        </div>
-      </section>
-    </div>
-  );
-};
+      </div>
+    </section>
+  </div>
+);
