@@ -33,10 +33,10 @@ function ProductImage({ product, priority = false }: { product: Product; priorit
         src={product.image}
         alt={product.name}
         loading={priority ? 'eager' : 'lazy'}
-        className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.045]"
+        className="relative z-10 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.045]"
         onError={(event) => { event.currentTarget.style.display = 'none'; }}
       />
-      <div className="absolute inset-0 -z-0 flex items-center justify-center bg-[radial-gradient(circle_at_50%_35%,#f8f3eb,#e5d4bd)]">
+      <div className="absolute inset-0 z-0 flex items-center justify-center bg-[radial-gradient(circle_at_50%_35%,#f8f3eb,#e5d4bd)]">
         <div className="flex flex-col items-center gap-2 text-center text-[#766149]">
           <span className="font-serif text-3xl italic">W.</span>
           <span className="text-[9px] uppercase tracking-[0.24em]">Product concept</span>
