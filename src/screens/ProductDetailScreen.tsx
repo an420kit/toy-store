@@ -518,226 +518,25 @@ export const ProductDetailScreen: React.FC<ProductDetailScreenProps> = ({
         </div>
       </section>
 
-      {/* Deep Dive Technical Specifications & Curated Accordions */}
-      <section className="max-w-[1440px] w-full mx-auto px-4 md:px-8 lg:px-12 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-          {/* Section Intro Sticky Left */}
-          <div className="lg:col-span-4 space-y-4">
-            <span className="text-[11px] uppercase font-bold tracking-wider text-[#7d562d]">
-              Technical Dossier
-            </span>
-            <h2 className="font-serif text-3xl font-bold text-[#171411]">
-              Certifications, dimensions &amp; developmental science.
-            </h2>
-            <p className="text-sm text-[#4d4540]">
-              Complete clarity on materials, dimensions, and maintenance. We believe heirlooms
-              should arrive with total transparency.
-            </p>
-
-            {/* Inline Visual Scale Chart SVG */}
-            <div className="p-4 bg-[#efeeeb] rounded-2xl mt-4 space-y-2 border border-[#cfc4bd]">
-              <div className="flex items-center justify-between text-[#171411] text-xs font-bold">
-                <span>Developmental Progression Ratio</span>
-                <span className="text-[#7d562d]">98% Autonomy Index</span>
-              </div>
-              <svg
-                className="w-full h-12 text-[#7d562d]"
-                fill="none"
-                viewBox="0 0 320 48"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M0 40 C 60 40, 100 28, 160 22 C 220 16, 260 8, 320 4"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeWidth="2.5"
-                ></path>
-                <circle cx="160" cy="22" fill="currentColor" r="4.5"></circle>
-                <circle cx="320" cy="4" fill="currentColor" r="4.5"></circle>
-              </svg>
-              <div className="flex justify-between text-[11px] text-[#7e756f]">
-                <span>12 Mo: Trunk Balance</span>
-                <span>24 Mo: Coordinated Propulsion</span>
-              </div>
-            </div>
+      <section className="w-full bg-[#f3efe7] py-12 md:py-16 border-y border-[#e3d8c8]">
+        <div className="max-w-[1200px] mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          <div>
+            <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-[#8a6847]">Product dossier</span>
+            <h2 className="font-serif text-3xl md:text-4xl mt-2">Details that will be verified before launch.</h2>
+            <p className="text-sm text-[#6d6256] leading-relaxed mt-4">The images show the intended visual direction, not a certified production unit. Final dimensions, materials, finishes, age guidance, assembly instructions and capacity will be published after engineering and supplier review.</p>
           </div>
-
-          {/* Interactive Accordion Tabs Right */}
-          <div className="lg:col-span-8 flex flex-col gap-3">
-            {/* Accordion 1 */}
-            <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-[#e4e2df]">
-              <details className="group" open>
-                <summary className="flex items-center justify-between p-6 cursor-pointer list-none select-none">
-                  <div className="flex items-center gap-4">
-                    <span className="w-8 h-8 rounded-full bg-[#efeeeb] flex items-center justify-center text-xs font-bold text-[#171411]">
-                      01
-                    </span>
-                    <div>
-                      <h3 className="font-serif font-bold text-base text-[#171411]">
-                        Materials &amp; Non-Toxic Finishing
-                      </h3>
-                      <p className="text-xs text-[#7e756f]">
-                        Material and finish details to be confirmed
-                      </p>
-                    </div>
-                  </div>
-                  <span className="material-symbols-outlined text-[#7d562d] group-open:rotate-180 transition-transform">
-                    expand_more
-                  </span>
-                </summary>
-                <div className="px-6 pb-6 pt-0 text-[#4d4540] text-xs space-y-3 border-t border-[#f5f3f0]">
-                  <p>
-                    Every wooden element is milled from responsibly harvested, FSC-certified German
-                    European beech (<em>Fagus sylvatica</em>), prized for its exceptional density,
-                    shock resistance, and splinter-free grain.
-                  </p>
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2">
-                    <li className="flex items-start gap-2">
-                      <span className="material-symbols-outlined text-[#7d562d] text-[18px]">
-                        check_circle
-                      </span>
-                      <span>
-                        <strong>Zero-VOC Lacquer:</strong> Waterborne formulation passing German DIN
-                        53160 saliva resistance tests.
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="material-symbols-outlined text-[#7d562d] text-[18px]">
-                        check_circle
-                      </span>
-                      <span>
-                        <strong>Organic Flaxseed Oil:</strong> Sealed naturally to prevent moisture
-                        staining and retain natural warmth.
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="material-symbols-outlined text-[#7d562d] text-[18px]">
-                        check_circle
-                      </span>
-                      <span>
-                        <strong>Machined Brass Axles:</strong> Self-lubricating bushing system
-                        engineered for quiet decades of push-along play.
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="material-symbols-outlined text-[#7d562d] text-[18px]">
-                        check_circle
-                      </span>
-                      <span>
-                        <strong>Eco Packaging:</strong> 100% recycled unbleached kraft paper box with
-                        biodegradable mycelium corner protectors.
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </details>
-            </div>
-
-            {/* Accordion 2 */}
-            <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-[#e4e2df]">
-              <details className="group">
-                <summary className="flex items-center justify-between p-6 cursor-pointer list-none select-none">
-                  <div className="flex items-center gap-4">
-                    <span className="w-8 h-8 rounded-full bg-[#efeeeb] flex items-center justify-center text-xs font-bold text-[#171411]">
-                      02
-                    </span>
-                    <div>
-                      <h3 className="font-serif font-bold text-base text-[#171411]">
-                        Developmental &amp; Montessori Foundation
-                      </h3>
-                      <p className="text-xs text-[#7e756f]">
-                        Gross-motor coordination, spatial planning &amp; calm focus
-                      </p>
-                    </div>
-                  </div>
-                  <span className="material-symbols-outlined text-[#7d562d] group-open:rotate-180 transition-transform">
-                    expand_more
-                  </span>
-                </summary>
-                <div className="px-6 pb-6 pt-0 text-[#4d4540] text-xs space-y-3 border-t border-[#f5f3f0]">
-                  <p>
-                    Designed in collaboration with early childhood Montessori pedagogues to support
-                    intrinsic motor milestones without sensory fatigue.
-                  </p>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3 pt-2">
-                    <div className="p-3 bg-[#f5f3f0] rounded-xl">
-                      <h4 className="font-serif font-bold text-[#171411] mb-1">Proprioception</h4>
-                      <p>Helps children gauge boundary zones, turning radius, and foot force.</p>
-                    </div>
-                    <div className="p-3 bg-[#f5f3f0] rounded-xl">
-                      <h4 className="font-serif font-bold text-[#171411] mb-1">
-                        Bilateral Coordination
-                      </h4>
-                      <p>Engages alternating leg muscle groups while maintaining upper stabilizer.</p>
-                    </div>
-                    <div className="p-3 bg-[#f5f3f0] rounded-xl">
-                      <h4 className="font-serif font-bold text-[#171411] mb-1">
-                        Zero Overstimulation
-                      </h4>
-                      <p>No batteries or electronic chimes. The child commands tempo and sound.</p>
-                    </div>
-                  </div>
-                </div>
-              </details>
-            </div>
-
-            {/* Accordion 3 */}
-            <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-[#e4e2df]">
-              <details className="group">
-                <summary className="flex items-center justify-between p-6 cursor-pointer list-none select-none">
-                  <div className="flex items-center gap-4">
-                    <span className="w-8 h-8 rounded-full bg-[#efeeeb] flex items-center justify-center text-xs font-bold text-[#171411]">
-                      03
-                    </span>
-                    <div>
-                      <h3 className="font-serif font-bold text-base text-[#171411]">
-                        Dimensions, Weight &amp; BIS Safety
-                      </h3>
-                      <p className="text-xs text-[#7e756f]">
-                        Precise nursery measurements and certification credentials
-                      </p>
-                    </div>
-                  </div>
-                  <span className="material-symbols-outlined text-[#7d562d] group-open:rotate-180 transition-transform">
-                    expand_more
-                  </span>
-                </summary>
-                <div className="px-6 pb-6 pt-0 text-[#4d4540] text-xs space-y-4 border-t border-[#f5f3f0]">
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
-                    <div className="p-3 bg-[#f5f3f0] rounded-xl">
-                      <span className="text-[10px] text-[#7e756f] uppercase block">Length</span>
-                      <p className="font-serif font-bold text-sm text-[#171411]">54 cm (21.2 in)</p>
-                    </div>
-                    <div className="p-3 bg-[#f5f3f0] rounded-xl">
-                      <span className="text-[10px] text-[#7e756f] uppercase block">Width</span>
-                      <p className="font-serif font-bold text-sm text-[#171411]">28 cm (11.0 in)</p>
-                    </div>
-                    <div className="p-3 bg-[#f5f3f0] rounded-xl">
-                      <span className="text-[10px] text-[#7e756f] uppercase block">Seat Height</span>
-                      <p className="font-serif font-bold text-sm text-[#171411]">22 cm (8.6 in)</p>
-                    </div>
-                    <div className="p-3 bg-[#f5f3f0] rounded-xl">
-                      <span className="text-[10px] text-[#7e756f] uppercase block">Handlebar</span>
-                      <p className="font-serif font-bold text-sm text-[#171411]">36 cm (14.1 in)</p>
-                    </div>
-                  </div>
-                  <div className="p-3.5 bg-[#fbf9f6] rounded-xl flex items-center justify-between border border-[#e4e2df]">
-                    <div>
-                      <span className="text-[10px] uppercase font-bold text-[#7d562d] block">
-                        Compliance Credentials
-                      </span>
-                      <p className="text-xs font-medium text-[#171411]">
-                        Certified under BIS IS-9873 (Parts 1, 2, 3) and European Union EN-71
-                        Standards.
-                      </p>
-                    </div>
-                    <span className="material-symbols-outlined text-[#7d562d] text-2xl">
-                      verified_user
-                    </span>
-                  </div>
-                </div>
-              </details>
-            </div>
+          <div className="rounded-2xl bg-white border border-[#e2d7c8] p-5 space-y-3">
+            {[
+              ['Materials & finish', 'Supplier and coating specifications pending'],
+              ['Dimensions & assembly', 'Prototype measurements pending'],
+              ['Age guidance & stability', 'Qualified safety review pending'],
+              ['Price, delivery & returns', 'Confirmed when the launch plan is ready'],
+            ].map(([title, detail]) => (
+              <div key={title} className="py-2 border-b border-[#eee7dc] last:border-0">
+                <p className="text-sm font-semibold text-[#2b332b]">{title}</p>
+                <p className="text-xs text-[#7d7469] mt-1">{detail}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -758,7 +557,7 @@ export const ProductDetailScreen: React.FC<ProductDetailScreenProps> = ({
               onClick={() => onNavigate('all-collections')}
               className="text-xs text-[#171411] hover:text-[#7d562d] uppercase tracking-wider flex items-center gap-1 font-bold transition-colors cursor-pointer"
             >
-              <span>Explore All 50 Archetypes</span>
+              <span>Explore all pilot products</span>
               <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
             </button>
           </div>
