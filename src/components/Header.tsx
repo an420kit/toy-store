@@ -49,7 +49,7 @@ export const Header: React.FC<HeaderProps> = ({
           <div className="flex items-center gap-2 sm:gap-3 overflow-hidden text-ellipsis whitespace-nowrap">
             <span>Free insured shipping on heirloom orders across India</span>
             <span className="opacity-30 hidden sm:inline">•</span>
-            <span className="hidden sm:inline">100% Sustainable European Beech Wood</span>
+            <span className="hidden sm:inline">Thoughtful wooden play · Pilot range</span>
           </div>
           <div className="flex items-center gap-3 shrink-0">
             <button
