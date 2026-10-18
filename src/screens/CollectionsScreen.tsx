@@ -38,8 +38,6 @@ export const CollectionsScreen: React.FC<CollectionsScreenProps> = ({
     { id: 'rocking', label: `Rocking & Balance (${PRODUCTS.filter((p) => p.category === 'rocking').length})` },
     { id: 'climbing', label: `Climbing & Gyms (${PRODUCTS.filter((p) => p.category === 'climbing').length})` },
     { id: 'learning', label: `Learning & Montessori (${PRODUCTS.filter((p) => p.category === 'learning').length})` },
-    { id: 'pretend', label: `Pretend Play (${PRODUCTS.filter((p) => p.category === 'pretend').length})` },
-    { id: 'furniture', label: `Kids Furniture (${PRODUCTS.filter((p) => p.category === 'furniture').length})` },
   ];
 
   const filteredProducts = useMemo(() => {
@@ -99,10 +97,10 @@ export const CollectionsScreen: React.FC<CollectionsScreenProps> = ({
                 <span>WOODKIND Pilot Catalogue • {PRODUCTS.length} Products</span>
               </div>
               <h1 className="font-serif text-3xl md:text-5xl text-[#171411] tracking-tight font-bold">
-                Sculptural Play, Honed in Beechwood
+                The WOODKIND Pilot Collection
               </h1>
               <p className="text-sm md:text-base text-[#4d4540] leading-relaxed">
-                Explore the current pilot catalogue of wooden ride-ons, balance toys, climbing concepts and Montessori-inspired play pieces. Product specifications, target pricing and launch readiness are confirmed as each prototype is reviewed.
+                Explore ten wooden-play concepts across first rides, pull toys, balance, climbing and tactile play. This is a pilot catalogue—not a claim of available stock or completed product testing.
               </p>
             </div>
 
@@ -110,28 +108,28 @@ export const CollectionsScreen: React.FC<CollectionsScreenProps> = ({
             <div className="flex items-center gap-4 sm:gap-6 bg-white p-4 rounded-xl shadow-sm border border-[#e4e2df]">
               <div className="space-y-0.5">
                 <span className="text-[10px] text-[#7e756f] uppercase block font-semibold">
-                  Material Standard
+                  Range
                 </span>
                 <span className="font-serif font-bold text-sm text-[#171411]">
-                  100% FSC® Certified
+                  {PRODUCTS.length} pilot concepts
                 </span>
               </div>
               <div className="w-px h-8 bg-[#e4e2df]"></div>
               <div className="space-y-0.5">
                 <span className="text-[10px] text-[#7e756f] uppercase block font-semibold">
-                  Craft Origin
+                  Product status
                 </span>
                 <span className="font-serif font-bold text-sm text-[#171411]">
-                  Bavarian Beech &amp; Birch
+                  Prototype stage
                 </span>
               </div>
               <div className="w-px h-8 bg-[#e4e2df]"></div>
               <div className="space-y-0.5">
                 <span className="text-[10px] text-[#7e756f] uppercase block font-semibold">
-                  Warranty
+                  Prices
                 </span>
                 <span className="font-serif font-bold text-sm text-[#171411]">
-                  10-Year Heirloom
+                  Indicative targets
                 </span>
               </div>
             </div>
@@ -232,7 +230,7 @@ export const CollectionsScreen: React.FC<CollectionsScreenProps> = ({
                   <option value="featured">Sort: Curated Index</option>
                   <option value="low-high">Price: Low to High</option>
                   <option value="high-low">Price: High to Low</option>
-                  <option value="popular">Most Coveted</option>
+                  <option value="popular">Pilot order</option>
                 </select>
                 <span className="material-symbols-outlined pointer-events-none absolute right-2 top-2 text-sm text-[#171411]">
                   sort
@@ -252,7 +250,7 @@ export const CollectionsScreen: React.FC<CollectionsScreenProps> = ({
               <span className="material-symbols-outlined text-4xl text-[#7d562d]">search_off</span>
               <h3 className="font-serif text-2xl font-bold text-[#171411]">No Heirloom Objects Found</h3>
               <p className="text-sm text-[#4d4540] max-w-md mx-auto">
-                No items match your active filters in this category. Reset filters to explore our full master archive.
+                No products match these filters. Reset them to see all WOODKIND pilot concepts.
               </p>
               <button
                 onClick={() => {
@@ -282,35 +280,33 @@ export const CollectionsScreen: React.FC<CollectionsScreenProps> = ({
             </div>
           )}
 
-          {/* EDITORIAL INTERLUDE: Heirloom Testing Banner */}
+          {/* Pilot-readiness note */}
           <div className="w-full bg-[#efeeeb] rounded-2xl p-8 md:p-12 relative overflow-hidden shadow-sm border border-[#cfc4bd]">
             <div className="absolute -right-20 -bottom-20 w-96 h-96 rounded-full bg-[#7d562d]/5 blur-3xl pointer-events-none"></div>
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-8 space-y-3">
                 <div className="inline-flex items-center gap-2 bg-white px-3 py-1 rounded-full text-[#7d562d] text-xs font-bold border border-[#e4e2df]">
-                  <span className="material-symbols-outlined text-[16px]">verified</span>
-                  <span>The WOODKIND Assurance</span>
+                  <span className="material-symbols-outlined text-[16px]">construction</span>
+                  <span>Before launch</span>
                 </div>
                 <h2 className="font-serif text-2xl md:text-3xl font-bold text-[#171411]">
-                  Heirloom In-Home Trial: 30 Days of Unhurried Wonder
+                  Prototype first. Then open sales.
                 </h2>
                 <p className="text-sm md:text-base text-[#4d4540] max-w-2xl leading-relaxed">
-                  Children test toys through their natural pace of discovery. Experience any WOODKIND
-                  piece in your home for a full month. If it doesn’t inspire lasting calm, curiosity,
-                  and aesthetic harmony, our concierge arranges effortless, complimentary collection.
+                  We are still validating product dimensions, materials, supplier pricing, age guidance and safety requirements. Paid orders and shipping promises will be enabled only after those details and a real order system are in place.
                 </p>
                 <div className="flex flex-wrap items-center gap-6 pt-2 text-xs font-semibold text-[#171411]">
                   <div className="flex items-center gap-1.5">
                     <span className="material-symbols-outlined text-[#7d562d] text-sm">cycle</span>
-                    <span>Zero Return Fees</span>
+                    <span>Returns policy pending</span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <span className="material-symbols-outlined text-[#7d562d] text-sm">security</span>
-                    <span>Natural Beeswax Touch-up Kit Included</span>
+                    <span>Finish specification pending</span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <span className="material-symbols-outlined text-[#7d562d] text-sm">child_care</span>
-                    <span>Tested to EN71 &amp; BIS Norms</span>
+                    <span>Safety testing pending</span>
                   </div>
                 </div>
               </div>
@@ -319,10 +315,10 @@ export const CollectionsScreen: React.FC<CollectionsScreenProps> = ({
                   onClick={() => onNavigate('brand-philosophy')}
                   className="w-full sm:w-auto text-center bg-[#171411] hover:bg-[#7d562d] text-white px-6 py-3 rounded-lg text-xs font-bold uppercase tracking-wider transition-all shadow-md cursor-pointer"
                 >
-                  Read Heirloom Charter
+                  Read our approach
                 </button>
                 <span className="text-[#7e756f] text-[11px]">
-                  Available across all major Indian metros
+                  Launch geography not yet confirmed
                 </span>
               </div>
             </div>
@@ -348,35 +344,9 @@ export const CollectionsScreen: React.FC<CollectionsScreenProps> = ({
           {/* Pagination & Archive Navigation */}
           <div className="pt-8 border-t border-[#e4e2df] flex flex-col md:flex-row items-center justify-between gap-6 text-[#7e756f]">
             <div className="text-xs">
-              Displaying objects <span className="font-bold text-[#171411]">1 to {filteredProducts.length}</span> of{' '}
-              <span className="font-bold text-[#171411]">50</span> cataloged master models
+              Showing <span className="font-bold text-[#171411]">{filteredProducts.length}</span> matching pilot products from {PRODUCTS.length} total.
             </div>
-            <div className="flex items-center gap-2">
-              {[1, 2, 3, 4].map((page) => (
-                <button
-                  key={page}
-                  onClick={() => setCurrentPage(page)}
-                  className={`w-9 h-9 rounded-lg text-xs font-bold flex items-center justify-center transition-colors cursor-pointer ${
-                    currentPage === page
-                      ? 'bg-[#171411] text-white shadow-sm'
-                      : 'bg-[#f5f3f0] hover:bg-[#efeeeb] text-[#171411]'
-                  }`}
-                >
-                  {page}
-                </button>
-              ))}
-              <span className="px-1 text-[#7e756f]">…</span>
-              <button
-                onClick={() => setCurrentPage((p) => Math.min(4, p + 1))}
-                className="w-9 h-9 rounded-lg bg-[#f5f3f0] hover:bg-[#efeeeb] text-[#171411] flex items-center justify-center transition-colors cursor-pointer"
-                title="Next Page"
-              >
-                <span className="material-symbols-outlined text-sm">arrow_forward</span>
-              </button>
-            </div>
-            <div className="flex items-center gap-2 text-[11px] text-[#7e756f]">
-              <span className="material-symbols-outlined text-sm text-[#7d562d]">local_shipping</span>
-              <span>Pan-India complimentary delivery via temperature-shielded freight</span>
+            <span className="text-[11px] uppercase tracking-[0.16em] font-bold text-[#31543e]">Pilot range · {PRODUCTS.length} concepts</span>
             </div>
           </div>
         </div>
@@ -432,7 +402,7 @@ export const CollectionsScreen: React.FC<CollectionsScreenProps> = ({
                 Interior Design Advisory
               </h4>
               <p className="text-xs text-[#4d4540] leading-relaxed">
-                Book a complimentary 20-minute digital consultation with our nursery ergonomics
+                Share your requirements while the pilot range is being refined.
                 specialists.
               </p>
               <button
