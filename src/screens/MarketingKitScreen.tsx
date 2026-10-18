@@ -30,10 +30,10 @@ export const MarketingKitScreen: React.FC<MarketingKitProps> = ({ onNavigate, on
               <span className="text-xs font-mono text-[#d0c5b4]">GTM Tooling • Batch #01 Debut</span>
             </div>
             <h1 className="text-2xl md:text-3xl font-serif font-bold text-[#ffffff] mt-1">
-              LUMEN Brand Launch & Acquisition Kit
+              WOODKIND Pilot Launch & Content Kit
             </h1>
             <p className="text-xs text-[#a0988e] mt-1 max-w-2xl">
-              Turnkey positioning angles, tested editorial email drafts, paid creative hooks, and creator briefing dossiers for the debut European beechwood drop.
+              Editable positioning angles, email outlines, paid creative hooks and creator briefs for the WOODKIND pilot range. Verify every factual claim before publishing.
             </p>
           </div>
 
@@ -92,7 +92,7 @@ export const MarketingKitScreen: React.FC<MarketingKitProps> = ({ onNavigate, on
                     "Playrooms that belong in architectural digests."
                   </h3>
                   <p className="text-xs text-[#5c554e] mt-3 leading-relaxed">
-                    Targeted at modern design-conscious parents weary of neon plastic clutter. Positions LUMEN objects as sculptural centerpieces that foster quiet focus and blend seamlessly with mid-century interior spaces.
+                    A design-led message for families who want considered objects in shared living spaces. Show the product's actual form and explain how it fits into everyday play.
                   </p>
                   <div className="mt-4 p-3 bg-[#faf8f4] rounded-lg border border-[#eeeae3] text-xs font-mono space-y-1">
                     <p className="text-[#7a746e]">Target CAC: <strong className="text-[#171411]">₹1,150</strong></p>
@@ -103,7 +103,7 @@ export const MarketingKitScreen: React.FC<MarketingKitProps> = ({ onNavigate, on
                   <button
                     onClick={() =>
                       copyToClipboard(
-                        `Headline: Playrooms that belong in architectural digests.\nHook: You don't have to sacrifice your home's aesthetics to give your child boundless open-ended play. Crafted from solid Bavarian beechwood and finished with cold-pressed organic linseed oil.`,
+                        `Headline: Playrooms that belong in architectural digests.\nHook: You don't have to sacrifice your home's aesthetics to give your child boundless open-ended play. Final material species, coating and finish are still being confirmed with suppliers.`,
                         'Angle #01 Hook',
                         'angle1'
                       )
@@ -125,7 +125,7 @@ export const MarketingKitScreen: React.FC<MarketingKitProps> = ({ onNavigate, on
                     "Built for your toddler today. Kept for their toddler in 2055."
                   </h3>
                   <p className="text-xs text-[#5c554e] mt-3 leading-relaxed">
-                    Focuses on radical longevity, sustainable FSC forestry, zero planned obsolescence, and the emotional value of passing down heirloom toys through generations.
+                    Focuses on open-ended play, repairability where designed for it, and buying fewer pieces thoughtfully. Do not promise lifespan or sourcing certifications without evidence.
                   </p>
                   <div className="mt-4 p-3 bg-[#faf8f4] rounded-lg border border-[#eeeae3] text-xs font-mono space-y-1">
                     <p className="text-[#7a746e]">Target CAC: <strong className="text-[#171411]">₹1,280</strong></p>
@@ -136,7 +136,7 @@ export const MarketingKitScreen: React.FC<MarketingKitProps> = ({ onNavigate, on
                   <button
                     onClick={() =>
                       copyToClipboard(
-                        `Headline: Built for your toddler today. Kept for their toddler in 2055.\nHook: In a world of disposable plastic playthings destined for landfills in 6 months, LUMEN toys are turned from 40mm solid timber monoliths. Guaranteed for 10 years of unbounded discovery.`,
+                        `Headline: Wooden play for everyday discovery.\nHook: Explore a pilot range of balance, ride-on and tactile play concepts. Final materials, dimensions, finishes and durability information will be confirmed before release.`,
                         'Angle #02 Hook',
                         'angle2'
                       )
@@ -152,13 +152,13 @@ export const MarketingKitScreen: React.FC<MarketingKitProps> = ({ onNavigate, on
               <div className="bg-[#ffffff] rounded-2xl border border-[#e4e2df] p-6 shadow-xs flex flex-col justify-between">
                 <div>
                   <span className="text-[10px] font-mono uppercase tracking-wider text-[#8b5a3c] font-semibold">
-                    Core Angle #03 • Sensory Non-Toxic Pure
+                    Core Angle #03 • Tactile Play & Everyday Use
                   </span>
                   <h3 className="font-serif text-xl font-bold text-[#171411] mt-2">
                     "Zero microplastics. Zero synthetic varnishes. Just pure wood."
                   </h3>
                   <p className="text-xs text-[#5c554e] mt-3 leading-relaxed">
-                    Appeals to health-conscious parents seeking non-toxic, safe materials for teething children. Highlights EN71 food-contact safety ratings and botanical oil finishes.
+                    For caregivers interested in tactile play and material details. Mention final finishes or safety only after supplier documentation and product-specific testing.
                   </p>
                   <div className="mt-4 p-3 bg-[#faf8f4] rounded-lg border border-[#eeeae3] text-xs font-mono space-y-1">
                     <p className="text-[#7a746e]">Target CAC: <strong className="text-[#171411]">₹980</strong></p>
@@ -169,7 +169,7 @@ export const MarketingKitScreen: React.FC<MarketingKitProps> = ({ onNavigate, on
                   <button
                     onClick={() =>
                       copyToClipboard(
-                        `Headline: Zero microplastics. Zero synthetic varnishes. Just pure wood.\nHook: What your child touches every day matters. Every curve is finished by hand using cold-pressed Swedish linseed oil and organic beeswax. Safe for teething gums, quiet for calm homes.`,
+                        `Headline: Thoughtfully shaped for little hands.\nHook: Explore the form, use and material direction of each WOODKIND pilot piece. Final finish details and age guidance will be published after product review.`,
                         'Angle #03 Hook',
                         'angle3'
                       )
@@ -188,14 +188,14 @@ export const MarketingKitScreen: React.FC<MarketingKitProps> = ({ onNavigate, on
               <p className="text-xs text-[#7a746e] mt-1 font-mono">FOR INTERNAL TEAM, PR PARTNERS & CAMPAIGN MANAGERS</p>
 
               <blockquote className="mt-4 p-5 rounded-xl bg-[#faf8f4] border-l-4 border-[#c46927] text-sm text-[#322f2b] italic leading-relaxed">
-                "For conscious parents and discerning caregivers who cherish deliberate aesthetics and sensory growth, LUMEN is the Nordic-inspired heirloom toy atelier that turns Bavarian beechwood into timeless instruments of childhood. Unlike mass-manufactured synthetic toys that overstimulate and break, LUMEN delivers architectural monoliths engineered with whisper-quiet rubber bearings and organic edible oil finishes, designed to be loved today and passed down tomorrow."
+                "WOODKIND is developing a considered range of wooden play pieces for homes where design and everyday usefulness matter. The pilot catalogue spans balance, movement and tactile discovery. Materials, durability, finish and safety information will be shared as each product is validated."
               </blockquote>
 
               <div className="mt-6 flex justify-end">
                 <button
                   onClick={() =>
                     copyToClipboard(
-                      `"For conscious parents and discerning caregivers who cherish deliberate aesthetics and sensory growth, LUMEN is the Nordic-inspired heirloom toy atelier that turns Bavarian beechwood into timeless instruments of childhood. Unlike mass-manufactured synthetic toys that overstimulate and break, LUMEN delivers architectural monoliths engineered with whisper-quiet rubber bearings and organic edible oil finishes, designed to be loved today and passed down tomorrow."`,
+                      `"WOODKIND is developing a considered range of wooden play pieces for homes where design and everyday usefulness matter. The pilot catalogue spans balance, movement and tactile discovery. Materials, durability, finish and safety information will be shared as each product is validated."`,
                       'Positioning Statement',
                       'pos'
                     )
@@ -221,15 +221,15 @@ export const MarketingKitScreen: React.FC<MarketingKitProps> = ({ onNavigate, on
                 <div className="mt-4 space-y-3 text-xs">
                   <div>
                     <span className="font-mono text-[#7a746e] block uppercase text-[10px]">Subject Line Option A (Curiosity):</span>
-                    <p className="font-medium text-[#171411] mt-0.5">The nursery toy that lasts 50 years (Debut Batch #01)</p>
+                    <p className="font-medium text-[#171411] mt-0.5">Wooden play for everyday discovery</p>
                   </div>
                   <div>
                     <span className="font-mono text-[#7a746e] block uppercase text-[10px]">Subject Line Option B (Direct):</span>
-                    <p className="font-medium text-[#171411] mt-0.5">Introducing LUMEN — Heirloom Beechwood Toys for Mindful Homes</p>
+                    <p className="font-medium text-[#171411] mt-0.5">Introducing WOODKIND — Wooden Play for Thoughtful Homes</p>
                   </div>
                   <div>
                     <span className="font-mono text-[#7a746e] block uppercase text-[10px]">Preview Snippet Text:</span>
-                    <p className="text-[#5c554e] mt-0.5">100 limited units. Zero synthetic varnishes. Handcrafted in Bavarian beechwood.</p>
+                    <p className="text-[#5c554e] mt-0.5">Pilot products in development. Final specifications, supplier quotes and release timing are being confirmed.</p>
                   </div>
                 </div>
 
@@ -237,7 +237,7 @@ export const MarketingKitScreen: React.FC<MarketingKitProps> = ({ onNavigate, on
                   <button
                     onClick={() =>
                       copyToClipboard(
-                        `Subject: The nursery toy that lasts 50 years (Debut Batch #01)\n\nDear friend,\n\nLook around your child's playroom. How many objects will survive until their tenth birthday? How many will you cherish saving in the attic for your grandchildren?\n\nWe started LUMEN with a single conviction: children deserve play objects crafted with the same dignity, timeless beauty, and architectural restraint as an Eames lounge or an Alvar Aalto stool.\n\nToday, we are opening Debut Batch #01 — exactly 100 numbered pieces of The Minimal Ride-On, milled from sustainably harvested European beechwood and hand-finished with Swedish linseed oil.\n\nReserve your heirloom: https://lumen-heirloom.com/debut\n\nWarmly,\nThe LUMEN Atelier`,
+                        `Subject: Wooden play for everyday discovery\n\nDear friend,\n\nLook around your child's playroom. How many objects will survive until their tenth birthday? How many will you cherish saving in the attic for your grandchildren?\n\nWe started WOODKIND with a single conviction: children deserve play objects crafted with the same dignity, timeless beauty, and architectural restraint as an Eames lounge or an Alvar Aalto stool.\n\nToday, we are opening Debut Batch #01 — exactly 100 numbered pieces of The Minimal Ride-On, milled from sustainably harvested European beechwood and hand-finished with Swedish linseed oil.\n\nReserve your heirloom: https://toys.ankitalgo.store/debut\n\nWarmly,\nThe WOODKIND Atelier`,
                         'Email Newsletter Copy',
                         'email-copy'
                       )
@@ -270,23 +270,23 @@ export const MarketingKitScreen: React.FC<MarketingKitProps> = ({ onNavigate, on
                 {/* Email Hero Image */}
                 <img
                   src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&w=800&q=80"
-                  alt="LUMEN Beechwood Ride On"
+                  alt="WOODKIND Beechwood Ride On"
                   className="w-full h-56 object-cover"
                 />
 
                 {/* Email Body */}
                 <div className="p-6 md:p-8 space-y-4 text-xs font-sans text-[#3a352e] leading-relaxed">
                   <p className="font-serif text-base font-bold text-[#171411]">
-                    The nursery toy that will last 50 years.
+                    Wooden play, thoughtfully considered.
                   </p>
                   <p>
                     Look around your child’s playroom. How many objects will survive until their tenth birthday? How many will you cherish saving in the attic for your grandchildren?
                   </p>
                   <p>
-                    We started LUMEN with a single conviction: children deserve play objects crafted with the same dignity, architectural restraint, and honest materiality as heirloom Scandinavian furniture.
+                    WOODKIND is building a focused range of wooden play pieces with a warm, understated design language. The pilot range is moving through prototype and supplier review.
                   </p>
                   <p>
-                    Today, we open Debut Batch #01: 100 limited, numbered units of <strong>The Minimal Ride-On</strong> and <strong>The Sculpted Rocking Swan</strong>. Milled from sustainably harvested Bavarian beechwood, fitted with silent rubber bearings, and sealed with cold-pressed organic linseed oil.
+                    The current pilot range includes a wooden ride-on and rocking-horse reference alongside balance, climbing and tactile-play concepts. Final material choices, manufacturing specifications, availability and pricing will be confirmed product by product.
                   </p>
 
                   <div className="pt-2 text-center">
@@ -305,7 +305,7 @@ export const MarketingKitScreen: React.FC<MarketingKitProps> = ({ onNavigate, on
 
                 {/* Email Footer */}
                 <div className="bg-[#f2efe9] p-4 text-center border-t border-[#e4e2df] text-[10px] text-[#7a746e] font-mono">
-                  <p>© 2024 LUMEN Nordic Heirloom Toys. Crafted for mindful childhoods.</p>
+                  <p>© 2026 WOODKIND. Thoughtful wooden play, in development.</p>
                   <p className="mt-1">Unsubscribe • Manage Preferences</p>
                 </div>
               </div>
@@ -330,7 +330,7 @@ export const MarketingKitScreen: React.FC<MarketingKitProps> = ({ onNavigate, on
                     Creative: "Quiet Play vs Plastic Overstimulation"
                   </h4>
                   <div className="mt-3 p-3 bg-[#faf8f4] rounded-lg border border-[#eeeae3] text-xs font-mono space-y-1.5 text-[#4a453e]">
-                    <p><strong>Primary Text:</strong> If you are tired of batteries, blinking lights, and plastic toys scattered across your living room floor, meet LUMEN. Handcrafted from European beechwood with zero toxic chemicals. Designed for calm focus and open imagination.</p>
+                    <p><strong>Primary Text:</strong> Meet WOODKIND: a pilot range of wooden ride-ons, balance pieces, climbing concepts and tactile toys. Product details and material choices are being confirmed as designs progress.</p>
                     <p><strong>Headline:</strong> Nordic Heirloom Wooden Toys</p>
                     <p><strong>Call to Action:</strong> Shop Now</p>
                   </div>
@@ -339,7 +339,7 @@ export const MarketingKitScreen: React.FC<MarketingKitProps> = ({ onNavigate, on
                   <button
                     onClick={() =>
                       copyToClipboard(
-                        `PRIMARY TEXT:\nIf you are tired of batteries, blinking lights, and plastic toys scattered across your living room floor, meet LUMEN. Handcrafted from European beechwood with zero toxic chemicals. Designed for calm focus and open imagination.\n\nHEADLINE:\nNordic Heirloom Wooden Toys (Debut Batch)\n\nCTA: Shop Now`,
+                        `PRIMARY TEXT:\nMeet WOODKIND: a pilot range of wooden ride-ons, balance pieces, climbing concepts and tactile toys. Product details and material choices are being confirmed as designs progress.\n\nHEADLINE:\nNordic Heirloom Wooden Toys (Debut Batch)\n\nCTA: Shop Now`,
                         'Meta Ad Copy #01',
                         'meta1'
                       )
@@ -365,14 +365,14 @@ export const MarketingKitScreen: React.FC<MarketingKitProps> = ({ onNavigate, on
                   </h4>
                   <div className="mt-3 p-3 bg-[#faf8f4] rounded-lg border border-[#eeeae3] text-xs font-mono space-y-1.5 text-[#4a453e]">
                     <p><strong>Visual Script:</strong> Close up of silent rubber wheels gliding over oak hardwood floor. Mother runs fingers over hand-sanded curved beechwood handle. Zero sound except subtle rolling.</p>
-                    <p><strong>Overlay Text:</strong> "Silent rubber bearings. 40mm solid European beechwood. Heirloom guaranteed."</p>
+                    <p><strong>Overlay Text:</strong> "Wooden play concepts · final specifications pending"</p>
                   </div>
                 </div>
                 <div className="mt-6 pt-4 border-t border-[#eeeae3]">
                   <button
                     onClick={() =>
                       copyToClipboard(
-                        `HOOK: The most calming sound you'll hear in a playroom.\nOVERLAY: Silent rubber bearings. Solid European beech. No plastic, no screens.\nCAPTION: Designed to foster quiet confidence and deep motor coordination. Meet Batch #01.\nLINK: lumen-heirloom.com`,
+                        `HOOK: Meet the WOODKIND pilot range.\nOVERLAY: Wooden play, thoughtfully considered.\nCAPTION: Explore balance, ride-on and tactile-play concepts. Materials, specifications and launch timing are being confirmed.\nLINK: toys.ankitalgo.store`,
                         'Reels Video Script',
                         'reels1'
                       )
@@ -396,11 +396,11 @@ export const MarketingKitScreen: React.FC<MarketingKitProps> = ({ onNavigate, on
 
               <div className="mt-4 p-4 rounded-xl bg-[#faf8f4] border border-[#eeeae3] space-y-2 text-xs font-mono">
                 <p className="text-[#1a0dab] font-sans font-medium text-sm hover:underline cursor-pointer">
-                  LUMEN — Handcrafted Nordic Wooden Toys | Batch #01 Now Open
+                  WOODKIND — Wooden Play, Thoughtfully Made
                 </p>
-                <p className="text-[#006621] text-[11px]">https://www.lumen-heirloom.com/debut-batch</p>
+                <p className="text-[#006621] text-[11px]">https://www.toys.ankitalgo.store/debut-batch</p>
                 <p className="text-[#545454] font-sans">
-                  Heirloom toys crafted from FSC® European beechwood. Silent rubber bearings, non-toxic organic linseed finish, and custom nursery monograms. 10-year heirloom guarantee.
+                  Explore wooden ride-ons, balance pieces and tactile play concepts. Indicative pilot prices; final materials, specifications and availability are pending review.
                 </p>
               </div>
 
@@ -408,7 +408,7 @@ export const MarketingKitScreen: React.FC<MarketingKitProps> = ({ onNavigate, on
                 <button
                   onClick={() =>
                     copyToClipboard(
-                      `Headline 1: LUMEN — Nordic Wooden Toys\nHeadline 2: 100% Solid Beechwood\nHeadline 3: Debut Batch #01 Available\nDescription: Handcrafted heirloom playthings engineered for quiet motor discovery. Safe organic finishes and custom initials monogramming. Free shipping.`,
+                      `Headline 1: WOODKIND — Wooden Play\nHeadline 2: Pilot Collection\nHeadline 3: Thoughtfully Designed Play Pieces\nDescription: Explore balance, ride-on and tactile-play concepts. Indicative pricing; supplier details and final specifications are being confirmed.`,
                       'Google Ads Copy',
                       'gsearch'
                     )
@@ -435,7 +435,7 @@ export const MarketingKitScreen: React.FC<MarketingKitProps> = ({ onNavigate, on
                 <div className="p-4 rounded-xl bg-[#faf8f4] border border-[#eeeae3]">
                   <span className="font-mono text-xs font-bold text-[#c46927] block">1. The Unboxing Moment</span>
                   <p className="text-xs text-[#5c554e] mt-1.5 leading-relaxed">
-                    Capture the unboxing of the rigid kraft crate, untying the unbleached cotton dustbag, and the faint natural aroma of organic linseed oil.
+                    Capture the product's actual packaging and finish only after those details are confirmed; avoid showing unapproved prototypes as production-ready.
                   </p>
                 </div>
                 <div className="p-4 rounded-xl bg-[#faf8f4] border border-[#eeeae3]">
@@ -456,7 +456,7 @@ export const MarketingKitScreen: React.FC<MarketingKitProps> = ({ onNavigate, on
                 <button
                   onClick={() =>
                     copyToClipboard(
-                      `LUMEN CREATOR BRIEF:\n- Brand: LUMEN Nordic Heirloom Wooden Toys\n- Deliverable: 1x Instagram Reel / TikTok + 3x High-Res In-Situ Photos\n- Talking Points: 100% European Beechwood, Silent Bearings, Non-toxic Linseed finish, No batteries, 10-year guarantee.\n- Discount Code: HEIRLOOM10 for 10% off debut batch.`,
+                      `WOODKIND CREATOR BRIEF:\n- Brand: WOODKIND wooden play pilot collection\n- Deliverable: 1 short-form video + 3 lifestyle/product photos\n- Talking points: the specific product, its intended play use, verified materials only, and current pilot status\n- Avoid claims about certification, age suitability, load ratings, lifespan or discounts unless confirmed.`,
                       'Creator Briefing Kit',
                       'creator'
                     )
@@ -477,14 +477,14 @@ export const MarketingKitScreen: React.FC<MarketingKitProps> = ({ onNavigate, on
               <div>
                 <span className="text-[10px] font-mono tracking-widest uppercase text-[#7a746e]">FOR IMMEDIATE RELEASE</span>
                 <h3 className="font-serif text-2xl font-bold text-[#171411] mt-1">
-                  LUMEN Unveils Debut Heirloom Toy Collection Honed in Bavarian Beechwood
+                  WOODKIND Shares Its Pilot Range of Wooden Play Concepts
                 </h3>
                 <p className="text-xs text-[#7a746e] font-mono mt-0.5">NEW DELHI / STOCKHOLM — Q3 2024</p>
               </div>
               <button
                 onClick={() =>
                   copyToClipboard(
-                    `FOR IMMEDIATE RELEASE:\n\nLUMEN Unveils Debut Heirloom Toy Collection Honed in Bavarian Beechwood\n\nDesign Atelier Reinvents Early Childhood Play With Architectural Restraint, Zero Plastics, and Whisper-Quiet Mechanical Engineering.\n\nToday marks the public launch of LUMEN, an independent design atelier crafting generational wooden toys from sustainably harvested European beechwood...`,
+                    `FOR IMMEDIATE RELEASE:\n\nWOODKIND Shares Its Pilot Range of Wooden Play Concepts\n\nDesign Atelier Reinvents Early Childhood Play With Architectural Restraint, Zero Plastics, and Whisper-Quiet Mechanical Engineering.\n\nToday marks the public launch of WOODKIND, an independent design atelier crafting generational wooden toys from sustainably harvested European beechwood...`,
                     'Press Release',
                     'pr-copy'
                   )
@@ -497,13 +497,13 @@ export const MarketingKitScreen: React.FC<MarketingKitProps> = ({ onNavigate, on
 
             <div className="text-xs text-[#4a453e] font-sans leading-relaxed space-y-4 max-w-3xl">
               <p>
-                <strong>NEW DELHI & STOCKHOLM</strong> — Today marks the official unveiling of <strong>LUMEN</strong>, a contemporary design studio dedicated to re-imagining children’s toys through the lens of Nordic minimalism, honest materials, and radical heirloom durability.
+                <strong>INDIA</strong> — WOODKIND is developing a contemporary wooden-play range with warm natural textures and a restrained design language. The first catalogue is a pilot, and product details will be validated before sale.
               </p>
               <p>
-                In an era where over 80% of children’s toys are made of non-recyclable plastic and discarded within six months, LUMEN introduces an antidote: sculpted play objects designed to endure for 50 years. The Debut Collection features five hero archetypes, led by <em>The Minimal Ride-On</em> and <em>The Sculpted Rocking Swan</em>.
+                The pilot catalogue brings together a pull wagon, ride-on, rocking-horse reference, balance board, climbing concepts and tactile toys. No lifespan, sourcing or safety certification claims are made until supported by product-specific evidence.
               </p>
               <p>
-                “We asked ourselves why children’s spaces must be saturated with disposable plastic that overstimulates their senses and clutters our homes,” says the founding team. “Children possess an innate sensitivity to honest weight, warmth, and grain. By using solid Bavarian beechwood and cold-pressed organic botanical oils, we create toys that honor their developmental journey.”
+                “We are building WOODKIND one product at a time,” says the founding team. “Our focus is on useful forms, thoughtful details and honest information as each design moves through prototyping and supplier review.”
               </p>
             </div>
           </div>
