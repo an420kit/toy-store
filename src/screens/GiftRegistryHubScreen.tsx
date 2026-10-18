@@ -22,64 +22,30 @@ export const GiftRegistryHubScreen: React.FC<GiftRegistryHubProps> = ({
   const [copiedLink, setCopiedLink] = useState(false);
 
   // Registry Settings
-  const [registryTitle, setRegistryTitle] = useState("Baby Leo's Heirloom Nursery Registry");
-  const [childName, setChildName] = useState('Leo');
-  const [occasion, setOccasion] = useState('1st Birthday Celebration');
-  const [eventDate, setEventDate] = useState('2024-11-20');
+  const [registryTitle, setRegistryTitle] = useState('My WOODKIND Gift Registry');
+  const [childName, setChildName] = useState('');
+  const [occasion, setOccasion] = useState('Celebration');
+  const [eventDate, setEventDate] = useState('');
   const [noteToFamily, setNoteToFamily] = useState(
-    "We have chosen timeless, non-toxic Bavarian beechwood toys for Leo's playroom. Each heirloom piece is designed to be passed down through generations. Thank you for celebrating with our family!"
+    "We’re putting together a small collection of play pieces for a special occasion. Some product specifications and launch details are still being confirmed."
   );
 
   // Group gifting modal / contribution state
   const [contributeProduct, setContributeProduct] = useState<Product | null>(null);
   const [contributionAmount, setContributionAmount] = useState<number>(2500);
 
-  // Pre-seeded community registries for "Find a Registry"
-  const sampleRegistries = [
-    {
-      id: 'LMN-REG-8492',
-      title: "Baby Leo's Heirloom Nursery Registry",
-      parents: 'Ananya & Siddharth Singhania',
-      child: 'Leo',
-      occasion: '1st Birthday Celebration',
-      date: 'Nov 20, 2024',
-      itemCount: 4,
-      totalValue: 24796,
-      fundedPercent: 65,
-      items: ['minimal-ride-on', 'nordic-rocking-horse', 'geometric-arch-pikler'],
-    },
-    {
-      id: 'LMN-REG-5120',
-      title: "Aria's Montessori Sensory Playroom",
-      parents: 'Dr. Meera & Rohan Varma',
-      child: 'Aria',
-      occasion: 'Luxury Baby Shower',
-      date: 'Dec 05, 2024',
-      itemCount: 3,
-      totalValue: 18297,
-      fundedPercent: 40,
-      items: ['stacking-stones-sorter', 'sensory-stacking-rings', 'foldable-climber-slide'],
-    },
-    {
-      id: 'LMN-REG-9934',
-      title: "Kabir & Tara's Welcome World Registry",
-      parents: 'Vikram & Radhika Oberoi',
-      child: 'Twins Kabir & Tara',
-      occasion: 'Naming Ceremony',
-      date: 'Jan 15, 2025',
-      itemCount: 5,
-      totalValue: 32495,
-      fundedPercent: 85,
-      items: ['minimal-ride-on', 'handcrafted-play-kitchen', 'nordic-rocking-horse'],
-    },
-  ];
+  // No sample families or contribution figures are shown; this list fills when public registry data is connected.
+  const sampleRegistries: Array<{
+    id: string; title: string; parents: string; child: string; occasion: string;
+    date: string; itemCount: number; totalValue: number; fundedPercent: number; items: string[];
+  }> = [];
 
   const wishlistedProducts = PRODUCTS.filter((p) => wishlistIds.includes(p.id));
   const totalRegistryValue = wishlistedProducts.reduce((sum, p) => sum + p.price, 0);
 
   // Generate encoded URL string of current wishlist items
   const generateEncodedRegistryUrl = () => {
-    const origin = typeof window !== 'undefined' ? window.location.origin : 'https://lumen-heirloom.com';
+    const origin = typeof window !== 'undefined' ? window.location.origin : 'https://toys.ankitalgo.store';
     const encodedItems = encodeURIComponent(wishlistIds.join(','));
     const registryCode = `REG-${Math.abs(
       wishlistIds.join('').split('').reduce((acc, char) => acc + char.charCodeAt(0), 1000)
@@ -106,15 +72,15 @@ export const GiftRegistryHubScreen: React.FC<GiftRegistryHubProps> = ({
 
   const handleShareWhatsApp = () => {
     const text = encodeURIComponent(
-      `Hello! We've created a LUMEN Heirloom Gift Registry for ${childName}'s ${occasion}:\n\n"${registryTitle}"\n\nExplore our curated beechwood nursery wishlist here: ${shareUrl}`
+      `Hello! We've created a WOODKIND Heirloom Gift Registry for ${childName}'s ${occasion}:\n\n"${registryTitle}"\n\nExplore our curated beechwood nursery wishlist here: ${shareUrl}`
     );
     window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
   };
 
   const handleShareEmail = () => {
-    const subject = encodeURIComponent(`LUMEN Heirloom Gift Registry for ${childName}`);
+    const subject = encodeURIComponent(`WOODKIND Heirloom Gift Registry for ${childName}`);
     const body = encodeURIComponent(
-      `Dear family and friends,\n\nWe have set up an Heirloom Gift Registry for ${childName}'s ${occasion} with LUMEN Nordic Wooden Toys.\n\n${noteToFamily}\n\nYou can browse our saved pieces and gift directly here:\n${shareUrl}\n\nWarmly,\n${registryTitle}`
+      `Dear family and friends,\n\nWe have set up an Heirloom Gift Registry for ${childName}'s ${occasion} with WOODKIND Nordic Wooden Toys.\n\n${noteToFamily}\n\nYou can browse our saved pieces and gift directly here:\n${shareUrl}\n\nWarmly,\n${registryTitle}`
     );
     window.location.href = `mailto:?subject=${subject}&body=${body}`;
   };
@@ -189,7 +155,7 @@ export const GiftRegistryHubScreen: React.FC<GiftRegistryHubProps> = ({
                 <span className="text-xs font-mono text-[#d0c5b4]">Architectural Nursery Gifting</span>
               </div>
               <h1 className="text-3xl md:text-5xl font-serif font-bold text-[#ffffff] leading-tight">
-                LUMEN Heirloom Gift Registry Hub
+                WOODKIND Heirloom Gift Registry Hub
               </h1>
               <p className="text-sm text-[#a0988e] leading-relaxed">
                 Curate an intentional, plastic-free nursery for baby showers, first birthdays, and naming celebrations. Share an encoded link or print an archival keepsake card for family and loved ones.
@@ -492,7 +458,7 @@ export const GiftRegistryHubScreen: React.FC<GiftRegistryHubProps> = ({
                   </p>
                   <div className="pt-2 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-[#d0c5b4]">
                     <span>REGISTRY: LMN-REG-8492</span>
-                    <span>100% EUROPEAN BEECHWOOD</span>
+                    <span>WOODKIND PILOT COLLECTION</span>
                   </div>
                 </div>
 
