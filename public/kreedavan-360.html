@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KREEDAVAN | 360° Product View</title>
+<meta name="description" content="Explore a KREEDAVAN wooden climbing triangle in interactive 3D.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#24362b;--green:#3d5c45;--muted:#68736a;--cream:#f7f5ee;--line:#e4e3d8;--white:#fffefa;--gold:#c59a55}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif}a{color:inherit;text-decoration:none}.top{padding:17px 5vw;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;background:rgba(255,254,250,.88)}.brand{font-family:'Playfair Display',serif;font-size:24px;letter-spacing:2px;font-weight:700}.brand small{display:block;font:10px 'DM Sans';letter-spacing:3px;margin-top:2px}.back{font-size:13px;color:var(--muted)}main{max-width:1180px;margin:auto;padding:38px 22px 64px}.crumb{font-size:12px;color:var(--muted);margin-bottom:22px}.layout{display:grid;grid-template-columns:1.25fr .85fr;gap:50px;align-items:center}.viewer-wrap{background:#efeee5;border-radius:20px;overflow:hidden;position:relative;border:1px solid #e5e2d6;min-height:500px}.viewer{width:100%;height:500px;display:block;touch-action:none;cursor:grab}.viewer:active{cursor:grabbing}.view-label{position:absolute;top:18px;left:18px;background:#fffefaeb;border:1px solid #e5e2d6;border-radius:99px;padding:8px 12px;font-size:11px;letter-spacing:.8px}.reset{position:absolute;right:16px;top:16px;border:1px solid #deddd1;background:#fffefa;border-radius:50%;width:38px;height:38px;font-size:18px;cursor:pointer}.hint{text-align:center;color:var(--muted);font-size:12px;padding:0 12px 18px}.details{padding:8px 0}.eyebrow{color:var(--green);font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700}.details h1{font:600 clamp(32px,4vw,48px)/1.08 'Playfair Display',serif;margin:13px 0}.subtitle{color:var(--muted);line-height:1.7;font-size:15px}.price{font-size:26px;font-weight:700;margin:22px 0 5px}.tax{font-size:11px;color:var(--muted)}.rule{border:0;border-top:1px solid var(--line);margin:25px 0}.label{font-size:12px;font-weight:700;margin-bottom:11px}.swatches{display:flex;gap:10px;margin-bottom:24px}.swatch{width:36px;height:36px;border-radius:50%;border:3px solid var(--cream);outline:1px solid #d7d5c9;cursor:pointer}.swatch.active{outline:2px solid var(--green)}.actions{display:flex;gap:10px}.btn{border:0;border-radius:99px;padding:15px 19px;font-weight:700;font-size:13px;cursor:pointer}.primary{background:var(--green);color:white;flex:1}.secondary{background:transparent;border:1px solid #c9cabe;color:var(--ink)}.notice{font-size:11px;line-height:1.6;color:var(--muted);margin-top:15px}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:38px}.feature{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:16px}.feature b{display:block;font-size:12px;margin:7px 0}.feature span{font-size:11px;color:var(--muted);line-height:1.5}.foot{text-align:center;color:var(--muted);font-size:11px;margin-top:38px}
+@media(max-width:760px){main{padding:24px 15px 44px}.layout{grid-template-columns:1fr;gap:28px}.viewer-wrap{min-height:350px}.viewer{height:350px}.details h1{font-size:36px}.features{gap:8px}.feature{padding:12px 10px}.feature span{font-size:10px}.top{padding:14px 17px}}
+</style>
+</head>
+<body>
+<header class="top"><a class="brand" href="./kreedavan-preview.html">KREEDAVAN<small>PLAY • GROW • DISCOVER</small></a><a class="back" href="./kreedavan-preview.html">← Back to collection</a></header>
+<main>
+<div class="crumb">Home / Climbing & Movement / <b>360° product view</b></div>
+<div class="layout">
+<section>
+<div class="viewer-wrap"><div class="view-label">INTERACTIVE 3D · 360°</div><button class="reset" id="reset" aria-label="Reset view" title="Reset view">↺</button><canvas id="viewer" class="viewer" aria-label="Interactive 3D wooden climbing triangle. Drag to rotate, scroll to zoom."></canvas><div class="hint">Drag to rotate · Scroll or pinch to zoom · Explore every angle</div></div>
+<div class="features"><div class="feature">✦<b>Thoughtfully made</b><span>Rounded edges and a smooth wood finish.</span></div><div class="feature">⌁<b>Open-ended play</b><span>Encourages movement and exploration.</span></div><div class="feature">♡<b>Made to last</b><span>Designed for years of family play.</span></div></div>
+</section>
+<aside class="details"><div class="eyebrow">The movement collection</div><h1>Little Climber<br>Triangle</h1><p class="subtitle">A simple, beautiful climbing frame for big little adventures. Rotate the model to explore its shape, rails and side supports before you choose.</p><div class="price">₹8,499</div><div class="tax">Illustrative preview price · final price to be confirmed</div><hr class="rule"><div class="label">WOOD FINISH</div><div class="swatches"><button class="swatch active" data-color="#c9955b" aria-label="Natural oak" title="Natural oak" style="background:#c9955b"></button><button class="swatch" data-color="#e0c99f" aria-label="Light birch" title="Light birch" style="background:#e0c99f"></button><button class="swatch" data-color="#8d6345" aria-label="Warm walnut" title="Warm walnut" style="background:#8d6345"></button></div><div class="label">MODEL CONTROLS</div><p class="subtitle" style="font-size:13px">Use one finger or mouse to rotate. Use the wheel or pinch gesture to zoom in and out.</p><div class="actions"><button class="btn primary" id="rotate">▶ Auto rotate</button><button class="btn secondary" id="front">Front view</button></div><p class="notice">3D concept preview: this interactive model demonstrates the product-view experience. It is a simplified illustrative model, not a manufacturing drawing or an exact production model. Replace it with a scanned or CAD-approved model before using it to represent a final product.</p></aside>
+</div><div class="foot">KREEDAVAN · Thoughtful play, naturally.</div>
+</main>
+<script type="module">
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js';
+const canvas=document.querySelector('#viewer');
+const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+const scene=new THREE.Scene();scene.background=new THREE.Color('#efeee5');
+const camera=new THREE.PerspectiveCamera(35,1,.1,100);camera.position.set(4.4,3.2,6.4);
+scene.add(new THREE.HemisphereLight(0xffffff,0xb0a58d,2.1));
+const key=new THREE.DirectionalLight(0xffffff,3);key.position.set(3,7,5);key.castShadow=true;scene.add(key);
+const fill=new THREE.DirectionalLight(0xffe3b8,1.1);fill.position.set(-5,3,-4);scene.add(fill);
+const wood=new THREE.MeshStandardMaterial({color:'#c9955b',roughness:.38,metalness:0});
+const darkWood=new THREE.MeshStandardMaterial({color:'#a97745',roughness:.42});
+const floor=new THREE.Mesh(new THREE.PlaneGeometry(200,200),new THREE.MeshStandardMaterial({color:'#efeee5',roughness:1}));floor.rotation.x=-Math.PI/2;floor.position.y=-.04;floor.receiveShadow=true;scene.add(floor);
+const model=new THREE.Group();scene.add(model);
+function rod(a,b,r,mat=wood){const A=new THREE.Vector3(...a),B=new THREE.Vector3(...b),d=new THREE.Vector3().subVectors(B,A);const m=new THREE.Mesh(new THREE.CylinderGeometry(r,r,d.length(),16),mat);m.position.copy(A).add(B).multiplyScalar(.5);m.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),d.normalize());m.castShadow=true;m.receiveShadow=true;model.add(m);return m}
+function sphere(p,r,mat){const m=new THREE.Mesh(new THREE.SphereGeometry(r,16,12),mat);m.position.set(...p);m.castShadow=true;model.add(m)}
+// Simplified A-frame climbing triangle, built from real 3D geometry.
+const width=1.9, height=2.05, depth=.78;
+for(const z of [-depth/2,depth/2]){
+ rod([-width/2,0,z],[0,height,z],.075,wood);
+ rod([0,height,z],[width/2,0,z],.075,wood);
+ rod([-width/2,0,z],[width/2,0,z],.065,darkWood);
+ for(let i=1;i<=7;i++){const t=i/8;const y=height*t;const half=width/2*(1-t);rod([-half,y,z],[half,y,z],.032,wood)}
+}
+for(const x of [-width/2,width/2]){rod([x,0,-depth/2],[x,0,depth/2],.065,darkWood);sphere([x,.02,0],.075,darkWood)}
+// Cross braces to give the frame volume and show its depth.
+rod([-width/2,0,-depth/2],[0,height,depth/2],.035,darkWood);
+rod([width/2,0,-depth/2],[0,height,depth/2],.035,darkWood);
+const groundShadow=new THREE.Mesh(new THREE.CircleGeometry(1.5,48),new THREE.MeshBasicMaterial({color:'#d5d1c4',transparent:true,opacity:.42}));groundShadow.rotation.x=-Math.PI/2;groundShadow.position.y=-.025;groundShadow.scale.set(1.2,.65,1);scene.add(groundShadow);
+model.rotation.y=-.28;
+let dragging=false,lastX=0,lastY=0,auto=false,pointerMoved=false;
+canvas.addEventListener('pointerdown',e=>{dragging=true;pointerMoved=false;lastX=e.clientX;lastY=e.clientY;canvas.setPointerCapture(e.pointerId)});
+canvas.addEventListener('pointermove',e=>{if(!dragging)return;const dx=e.clientX-lastX,dy=e.clientY-lastY;if(Math.abs(dx)+Math.abs(dy)>2)pointerMoved=true;model.rotation.y+=dx*.009;model.rotation.x=Math.max(-.35,Math.min(.35,model.rotation.x+dy*.004));lastX=e.clientX;lastY=e.clientY;auto=false;document.querySelector('#rotate').textContent='▶ Auto rotate'});
+canvas.addEventListener('pointerup',()=>dragging=false);canvas.addEventListener('pointercancel',()=>dragging=false);
+canvas.addEventListener('wheel',e=>{e.preventDefault();camera.position.multiplyScalar(e.deltaY>0?1.08:.92);camera.position.clampLength(3.5,10)},{passive:false});
+let touchDist=0;canvas.addEventListener('touchstart',e=>{if(e.touches.length===2)touchDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY)},{passive:true});
+canvas.addEventListener('touchmove',e=>{if(e.touches.length===2){const d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);if(touchDist){camera.position.multiplyScalar(touchDist>d?1.025:.975);camera.position.clampLength(3.5,10)}touchDist=d}},{passive:true});
+document.querySelector('#reset').onclick=()=>{model.rotation.set(0,-.28,0);camera.position.set(4.4,3.2,6.4);camera.lookAt(0,.95,0)};
+document.querySelector('#front').onclick=()=>{model.rotation.set(0,0,0);camera.position.set(0,2.4,7);camera.lookAt(0,.95,0)};
+document.querySelector('#rotate').onclick=()=>{auto=!auto;document.querySelector('#rotate').textContent=auto?'Ⅱ Pause rotation':'▶ Auto rotate'};
+document.querySelectorAll('.swatch').forEach(btn=>btn.onclick=()=>{document.querySelectorAll('.swatch').forEach(b=>b.classList.remove('active'));btn.classList.add('active');wood.color.set(btn.dataset.color);darkWood.color.copy(wood.color).multiplyScalar(.78)});
+function resize(){const w=canvas.clientWidth,h=canvas.clientHeight;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix()}new ResizeObserver(resize).observe(canvas);resize();camera.lookAt(0,.95,0);
+function animate(){requestAnimationFrame(animate);if(auto&&!dragging)model.rotation.y+=.005;renderer.render(scene,camera)}animate();
+</script>
+</body></html>
